@@ -1,0 +1,114 @@
+2025-12-07T21:14:05.404Z [DEBUG] Watching for changes in setting files /home/mikaisomerville/footprint/.claude/settings.json...
+2025-12-07T21:14:05.407Z [ERROR] Failed to save config with lock: Error: ENOENT: no such file or directory, lstat '/home/mikaisomerville/.claude.json'
+2025-12-07T21:14:05.407Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.51243.1765142045407
+2025-12-07T21:14:05.407Z [DEBUG] Setting permissions for new file: 600
+2025-12-07T21:14:05.414Z [DEBUG] Temp file written successfully, size: 135 bytes
+2025-12-07T21:14:05.414Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.51243.1765142045407 to /home/mikaisomerville/.claude.json
+2025-12-07T21:14:05.414Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-07T21:14:05.426Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.51243.1765142045426
+2025-12-07T21:14:05.427Z [DEBUG] Preserving file permissions: 100600
+2025-12-07T21:14:05.433Z [DEBUG] Temp file written successfully, size: 183 bytes
+2025-12-07T21:14:05.433Z [DEBUG] Applied original permissions to temp file
+2025-12-07T21:14:05.433Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.51243.1765142045426 to /home/mikaisomerville/.claude.json
+2025-12-07T21:14:05.434Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-07T21:14:05.455Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2025-12-07T21:14:05.455Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2025-12-07T21:14:05.455Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2025-12-07T21:14:05.456Z [DEBUG] [LSP SERVER MANAGER] initialize() called
+2025-12-07T21:14:05.456Z [DEBUG] [LSP SERVER MANAGER] Calling getAllLspServers()
+2025-12-07T21:14:05.458Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.51243.1765142045458
+2025-12-07T21:14:05.458Z [DEBUG] Preserving file permissions: 100600
+2025-12-07T21:14:05.465Z [DEBUG] Temp file written successfully, size: 220 bytes
+2025-12-07T21:14:05.465Z [DEBUG] Applied original permissions to temp file
+2025-12-07T21:14:05.465Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.51243.1765142045458 to /home/mikaisomerville/.claude.json
+2025-12-07T21:14:05.465Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-07T21:14:05.467Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.51243.1765142045467
+2025-12-07T21:14:05.468Z [DEBUG] Preserving file permissions: 100600
+2025-12-07T21:14:05.475Z [DEBUG] Temp file written successfully, size: 255 bytes
+2025-12-07T21:14:05.475Z [DEBUG] Applied original permissions to temp file
+2025-12-07T21:14:05.475Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.51243.1765142045467 to /home/mikaisomerville/.claude.json
+2025-12-07T21:14:05.475Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-07T21:14:05.480Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2025-12-07T21:14:05.496Z [DEBUG] Loading skills from directories: managed=/etc/claude-code/.claude/skills, user=/home/mikaisomerville/.claude/skills, project=/home/mikaisomerville/footprint/.claude/skills
+2025-12-07T21:14:05.496Z [DEBUG] >>>>> getPluginSkills CALLED <<<<<
+2025-12-07T21:14:06.124Z [DEBUG] installed_plugins.json doesn't exist yet at /home/mikaisomerville/.claude/plugins/installed_plugins.json, returning empty object
+2025-12-07T21:14:06.177Z [DEBUG] Creating shell snapshot for bash (/bin/bash)
+2025-12-07T21:14:06.177Z [DEBUG] Looking for shell config file: /home/mikaisomerville/.bashrc
+2025-12-07T21:14:06.177Z [DEBUG] Snapshots directory: /home/mikaisomerville/.claude/shell-snapshots
+2025-12-07T21:14:06.178Z [DEBUG] Creating snapshot at: /home/mikaisomerville/.claude/shell-snapshots/snapshot-bash-1765142046177-wosf60.sh
+2025-12-07T21:14:06.178Z [DEBUG] Shell binary exists: true
+2025-12-07T21:14:06.178Z [DEBUG] Execution timeout: 10000ms
+2025-12-07T21:14:06.181Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude/todos/5e598a1b-fef1-4e6d-9738-a20304ffdf45-agent-5e598a1b-fef1-4e6d-9738-a20304ffdf45.json.tmp.51243.1765142046181
+2025-12-07T21:14:06.200Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-07T21:14:06.200Z [DEBUG] Renaming /home/mikaisomerville/.claude/todos/5e598a1b-fef1-4e6d-9738-a20304ffdf45-agent-5e598a1b-fef1-4e6d-9738-a20304ffdf45.json.tmp.51243.1765142046181 to /home/mikaisomerville/.claude/todos/5e598a1b-fef1-4e6d-9738-a20304ffdf45-agent-5e598a1b-fef1-4e6d-9738-a20304ffdf45.json
+2025-12-07T21:14:06.200Z [DEBUG] File /home/mikaisomerville/.claude/todos/5e598a1b-fef1-4e6d-9738-a20304ffdf45-agent-5e598a1b-fef1-4e6d-9738-a20304ffdf45.json written atomically
+2025-12-07T21:14:06.223Z [DEBUG] Total LSP servers loaded: 0
+2025-12-07T21:14:06.223Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2025-12-07T21:14:06.223Z [DEBUG] Total plugin skills loaded: 0
+2025-12-07T21:14:06.223Z [DEBUG] Total plugin commands loaded: 0
+2025-12-07T21:14:06.223Z [DEBUG] Registered 0 hooks from 0 plugins
+2025-12-07T21:14:06.290Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2025-12-07T21:14:06.290Z [DEBUG] LSP manager initialized with 0 servers
+2025-12-07T21:14:06.290Z [DEBUG] Loaded 0 unique skills (managed: 0, user: 0, project: 0, duplicates removed: 0)
+2025-12-07T21:14:06.370Z [DEBUG] LSP server manager initialized successfully
+2025-12-07T21:14:06.370Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2025-12-07T21:14:06.372Z [DEBUG] getSkills returning: 0 skill dir commands, 0 plugin skills
+2025-12-07T21:14:06.436Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.51243.1765142046436
+2025-12-07T21:14:06.436Z [DEBUG] Preserving file permissions: 100600
+2025-12-07T21:14:06.445Z [DEBUG] Temp file written successfully, size: 319 bytes
+2025-12-07T21:14:06.445Z [DEBUG] Applied original permissions to temp file
+2025-12-07T21:14:06.445Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.51243.1765142046436 to /home/mikaisomerville/.claude.json
+2025-12-07T21:14:06.445Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-07T21:14:06.451Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.51243.1765142046451
+2025-12-07T21:14:06.451Z [DEBUG] Preserving file permissions: 100600
+2025-12-07T21:14:06.463Z [DEBUG] Temp file written successfully, size: 349 bytes
+2025-12-07T21:14:06.463Z [DEBUG] Applied original permissions to temp file
+2025-12-07T21:14:06.463Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.51243.1765142046451 to /home/mikaisomerville/.claude.json
+2025-12-07T21:14:06.464Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-07T21:14:06.676Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.51243.1765142046676
+2025-12-07T21:14:06.676Z [DEBUG] Preserving file permissions: 100600
+2025-12-07T21:14:06.698Z [DEBUG] Temp file written successfully, size: 43256 bytes
+2025-12-07T21:14:06.698Z [DEBUG] Applied original permissions to temp file
+2025-12-07T21:14:06.698Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.51243.1765142046676 to /home/mikaisomerville/.claude.json
+2025-12-07T21:14:06.698Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-07T21:14:06.765Z [DEBUG] Git remote URL: git@github.com:generatezero/footprint.git
+2025-12-07T21:14:06.765Z [DEBUG] Parsed repository: generatezero/footprint from git@github.com:generatezero/footprint.git
+2025-12-07T21:14:06.765Z [DEBUG] Parsed repository: generatezero/footprint from URL: git@github.com:generatezero/footprint.git
+2025-12-07T21:14:06.769Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.51243.1765142046769
+2025-12-07T21:14:06.769Z [DEBUG] Preserving file permissions: 100600
+2025-12-07T21:14:06.783Z [DEBUG] Temp file written successfully, size: 43362 bytes
+2025-12-07T21:14:06.783Z [DEBUG] Applied original permissions to temp file
+2025-12-07T21:14:06.783Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.51243.1765142046769 to /home/mikaisomerville/.claude.json
+2025-12-07T21:14:06.783Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-07T21:14:06.783Z [DEBUG] Added /home/mikaisomerville/footprint to tracked paths for repo generatezero/footprint
+2025-12-07T21:14:06.807Z [DEBUG] Shell snapshot created successfully (3560 bytes)
+2025-12-07T21:14:06.822Z [DEBUG] Install: Starting installation process (force=false, target=undefined)
+2025-12-07T21:14:06.822Z [DEBUG] Install: Calling installLatest(force=true, target=undefined, forceReinstall=false)
+2025-12-07T21:14:07.533Z [ERROR] Error streaming, falling back to non-streaming mode: Could not resolve authentication method. Expected either apiKey or authToken to be set. Or for one of the "X-Api-Key" or "Authorization" headers to be explicitly omitted
+2025-12-07T21:14:07.547Z [ERROR] Error in non-streaming fallback: Could not resolve authentication method. Expected either apiKey or authToken to be set. Or for one of the "X-Api-Key" or "Authorization" headers to be explicitly omitted
+2025-12-07T21:14:07.548Z [ERROR] Error: Error: Could not resolve authentication method. Expected either apiKey or authToken to be set. Or for one of the "X-Api-Key" or "Authorization" headers to be explicitly omitted
+    at validateHeaders (/$bunfs/root/claude:1234:1013)
+    at buildHeaders (/$bunfs/root/claude:1234:8516)
+    at async buildRequest (/$bunfs/root/claude:1234:7582)
+    at async makeRequest (/$bunfs/root/claude:1234:3410)
+    at processTicksAndRejections (native:7:39)
+2025-12-07T21:14:07.877Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/home/mikaisomerville/.claude/downloads/claude-2.0.61-linux-x64)
+2025-12-07T21:14:08.200Z [DEBUG] Checking for native installer update to version 2.0.61
+2025-12-07T21:14:08.203Z [DEBUG] Downloading native installer version 2.0.61
+2025-12-07T21:14:32.587Z [DEBUG] CDN dark read succeeded for 2.0.61
+2025-12-07T21:14:32.650Z [DEBUG] Successfully updated to version 2.0.61
+2025-12-07T21:14:32.654Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.51243.1765142072654
+2025-12-07T21:14:32.654Z [DEBUG] Preserving file permissions: 100600
+2025-12-07T21:14:32.662Z [DEBUG] Temp file written successfully, size: 43403 bytes
+2025-12-07T21:14:32.662Z [DEBUG] Applied original permissions to temp file
+2025-12-07T21:14:32.662Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.51243.1765142072654 to /home/mikaisomerville/.claude.json
+2025-12-07T21:14:32.662Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-07T21:14:32.662Z [DEBUG] Native installer: Set installMethod to "native" and disabled legacy auto-updater for protection
+2025-12-07T21:14:32.663Z [DEBUG] Install: installLatest returned version=2.0.61, wasUpdated=true, lockFailed=false
+2025-12-07T21:14:32.664Z [DEBUG] Install: Setup launcher completed with 1 messages
+2025-12-07T21:14:32.664Z [DEBUG] Install: Setup message: Native installation exists but ~/.local/bin is not in your PATH. Run:
+
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
+2025-12-07T21:14:32.664Z [DEBUG] Install: Cleaning up npm installations after successful install
+2025-12-07T21:14:33.468Z [DEBUG] Removed global npm installation of @anthropic-ai/claude-code
+2025-12-07T21:14:33.468Z [DEBUG] Cleaned up 1 npm installation(s)

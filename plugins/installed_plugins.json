@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "plugins": {
+    "ast-grep@ast-grep-marketplace": {
+      "version": "1.0.0",
+      "installedAt": "2025-12-17T20:09:36.693Z",
+      "lastUpdated": "2025-12-17T20:09:36.693Z",
+      "installPath": "/home/mikaisomerville/.claude/plugins/cache/ast-grep-marketplace/ast-grep/1.0.0",
+      "isLocal": true
+    }
+  }
+}

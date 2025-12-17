@@ -1,0 +1,314 @@
+2025-12-17T20:09:26.628Z [DEBUG] Watching for changes in setting files /home/mikaisomerville/.claude/settings.json, /home/mikaisomerville/.claude/settings.json...
+2025-12-17T20:09:26.673Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2025-12-17T20:09:26.673Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2025-12-17T20:09:26.673Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2025-12-17T20:09:26.673Z [DEBUG] [LSP SERVER MANAGER] initialize() called
+2025-12-17T20:09:26.673Z [DEBUG] [LSP SERVER MANAGER] Calling getAllLspServers()
+2025-12-17T20:09:26.683Z [DEBUG] Loading plugin hookify from source: "./plugins/hookify"
+2025-12-17T20:09:26.683Z [DEBUG] Using manifest version for hookify@claude-code-plugins: 0.1.0
+2025-12-17T20:09:26.693Z [DEBUG] Plugin hookify@claude-code-plugins version 0.1.0 already cached at /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/hookify/0.1.0
+2025-12-17T20:09:26.693Z [DEBUG] Copied local plugin hookify to versioned cache: /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/hookify/0.1.0
+2025-12-17T20:09:26.695Z [DEBUG] Loaded hooks from standard location for plugin hookify: /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/hookify/0.1.0/hooks/hooks.json
+2025-12-17T20:09:26.695Z [DEBUG] Loading plugin pr-review-toolkit from source: "./plugins/pr-review-toolkit"
+2025-12-17T20:09:26.695Z [DEBUG] Using manifest version for pr-review-toolkit@claude-code-plugins: 1.0.0
+2025-12-17T20:09:26.695Z [DEBUG] Plugin pr-review-toolkit@claude-code-plugins version 1.0.0 already cached at /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/pr-review-toolkit/1.0.0
+2025-12-17T20:09:26.695Z [DEBUG] Copied local plugin pr-review-toolkit to versioned cache: /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/pr-review-toolkit/1.0.0
+2025-12-17T20:09:26.696Z [DEBUG] Loading plugin commit-commands from source: "./plugins/commit-commands"
+2025-12-17T20:09:26.696Z [DEBUG] Using manifest version for commit-commands@claude-code-plugins: 1.0.0
+2025-12-17T20:09:26.697Z [DEBUG] Plugin commit-commands@claude-code-plugins version 1.0.0 already cached at /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/commit-commands/1.0.0
+2025-12-17T20:09:26.697Z [DEBUG] Copied local plugin commit-commands to versioned cache: /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/commit-commands/1.0.0
+2025-12-17T20:09:26.698Z [DEBUG] Loading plugin feature-dev from source: "./plugins/feature-dev"
+2025-12-17T20:09:26.698Z [DEBUG] Using manifest version for feature-dev@claude-code-plugins: 1.0.0
+2025-12-17T20:09:26.699Z [DEBUG] Plugin feature-dev@claude-code-plugins version 1.0.0 already cached at /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/feature-dev/1.0.0
+2025-12-17T20:09:26.699Z [DEBUG] Copied local plugin feature-dev to versioned cache: /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/feature-dev/1.0.0
+2025-12-17T20:09:26.700Z [DEBUG] Loading plugin frontend-design from source: "./plugins/frontend-design"
+2025-12-17T20:09:26.700Z [DEBUG] Using manifest version for frontend-design@claude-code-plugins: 1.0.0
+2025-12-17T20:09:26.700Z [DEBUG] Plugin frontend-design@claude-code-plugins version 1.0.0 already cached at /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/frontend-design/1.0.0
+2025-12-17T20:09:26.700Z [DEBUG] Copied local plugin frontend-design to versioned cache: /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/frontend-design/1.0.0
+2025-12-17T20:09:26.700Z [DEBUG] Loading plugin ast-grep from source: "./ast-grep"
+2025-12-17T20:09:26.701Z [DEBUG] Using manifest version for ast-grep@ast-grep-marketplace: 1.0.0
+2025-12-17T20:09:26.701Z [DEBUG] Plugin ast-grep@ast-grep-marketplace version 1.0.0 already cached at /home/mikaisomerville/.claude/plugins/cache/ast-grep-marketplace/ast-grep/1.0.0
+2025-12-17T20:09:26.701Z [DEBUG] Copied local plugin ast-grep to versioned cache: /home/mikaisomerville/.claude/plugins/cache/ast-grep-marketplace/ast-grep/1.0.0
+2025-12-17T20:09:26.701Z [DEBUG] Loading plugin dev-browser from source: "./"
+2025-12-17T20:09:26.758Z [DEBUG] Git remote URL: null
+2025-12-17T20:09:26.758Z [DEBUG] No git remote URL found
+2025-12-17T20:09:26.758Z [DEBUG] Not in a GitHub repository, skipping path mapping update
+2025-12-17T20:09:26.760Z [DEBUG] Using git SHA for dev-browser@dev-browser-marketplace: e77f8ab8bd54
+2025-12-17T20:09:26.760Z [DEBUG] Plugin dev-browser@dev-browser-marketplace version e77f8ab8bd54 already cached at /home/mikaisomerville/.claude/plugins/cache/dev-browser-marketplace/dev-browser/e77f8ab8bd54
+2025-12-17T20:09:26.760Z [DEBUG] Copied local plugin dev-browser to versioned cache: /home/mikaisomerville/.claude/plugins/cache/dev-browser-marketplace/dev-browser/e77f8ab8bd54
+2025-12-17T20:09:26.761Z [DEBUG] Processing 1 skill paths for plugin dev-browser
+2025-12-17T20:09:26.761Z [DEBUG] Checking skill path: ./skills/dev-browser -> /home/mikaisomerville/.claude/plugins/cache/dev-browser-marketplace/dev-browser/e77f8ab8bd54/skills/dev-browser (exists: true)
+2025-12-17T20:09:26.761Z [DEBUG] Found 1 valid skill paths for plugin dev-browser, setting skillsPaths
+2025-12-17T20:09:26.761Z [DEBUG] Found 7 plugins (7 enabled, 0 disabled)
+2025-12-17T20:09:26.783Z [DEBUG] [SLOW OPERATION DETECTED] execSyncWithDefaults (12.9ms): ldd /bin/ls 2>/dev/null
+2025-12-17T20:09:26.797Z [DEBUG] Loading skills from directories: managed=/etc/claude-code/.claude/skills, user=/home/mikaisomerville/.claude/skills, project=[]
+2025-12-17T20:09:26.799Z [DEBUG] >>>>> getPluginSkills CALLED <<<<<
+2025-12-17T20:09:26.808Z [DEBUG] Loaded 2 installed plugins from /home/mikaisomerville/.claude/plugins/installed_plugins.json (schema version 1)
+2025-12-17T20:09:26.809Z [DEBUG] Official marketplace auto-install already attempted, skipping
+2025-12-17T20:09:26.835Z [DEBUG] Creating shell snapshot for bash (/bin/bash)
+2025-12-17T20:09:26.835Z [DEBUG] Looking for shell config file: /home/mikaisomerville/.bashrc
+2025-12-17T20:09:26.835Z [DEBUG] Snapshots directory: /home/mikaisomerville/.claude/shell-snapshots
+2025-12-17T20:09:26.837Z [DEBUG] Creating snapshot at: /home/mikaisomerville/.claude/shell-snapshots/snapshot-bash-1766002166835-kyif16.sh
+2025-12-17T20:09:26.837Z [DEBUG] Shell binary exists: true
+2025-12-17T20:09:26.837Z [DEBUG] Execution timeout: 10000ms
+2025-12-17T20:09:26.839Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude/todos/c8f6c273-2303-4904-ad09-1824297e6183-agent-c8f6c273-2303-4904-ad09-1824297e6183.json.tmp.7378.1766002166839
+2025-12-17T20:09:26.858Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (18.4ms)
+2025-12-17T20:09:26.858Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-17T20:09:26.858Z [DEBUG] Renaming /home/mikaisomerville/.claude/todos/c8f6c273-2303-4904-ad09-1824297e6183-agent-c8f6c273-2303-4904-ad09-1824297e6183.json.tmp.7378.1766002166839 to /home/mikaisomerville/.claude/todos/c8f6c273-2303-4904-ad09-1824297e6183-agent-c8f6c273-2303-4904-ad09-1824297e6183.json
+2025-12-17T20:09:26.858Z [DEBUG] File /home/mikaisomerville/.claude/todos/c8f6c273-2303-4904-ad09-1824297e6183-agent-c8f6c273-2303-4904-ad09-1824297e6183.json written atomically
+2025-12-17T20:09:26.862Z [DEBUG] Auto-updating 3 installed marketplaces in background
+2025-12-17T20:09:26.862Z [DEBUG] Auto-updating marketplace "claude-code-plugins"
+2025-12-17T20:09:26.863Z [DEBUG] Auto-updating marketplace "ast-grep-marketplace"
+2025-12-17T20:09:26.863Z [DEBUG] Auto-updating marketplace "dev-browser-marketplace"
+2025-12-17T20:09:26.863Z [DEBUG] getPluginSkills: Processing 7 enabled plugins
+2025-12-17T20:09:26.863Z [DEBUG] Checking plugin hookify: skillsPath=exists, skillsPaths=0 paths
+2025-12-17T20:09:26.863Z [DEBUG] Attempting to load skills from plugin hookify default skillsPath: /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/hookify/0.1.0/skills
+2025-12-17T20:09:26.866Z [DEBUG] Loading hooks from plugin: hookify
+2025-12-17T20:09:26.866Z [DEBUG] Registered 4 hooks from 7 plugins
+2025-12-17T20:09:26.886Z [DEBUG] Loaded 4 unique skills (managed: 0, user: 4, project: 0, duplicates removed: 0)
+2025-12-17T20:09:26.886Z [DEBUG] Loaded 1 skills from plugin hookify default directory
+2025-12-17T20:09:26.886Z [DEBUG] Checking plugin pr-review-toolkit: skillsPath=none, skillsPaths=0 paths
+2025-12-17T20:09:26.886Z [DEBUG] Checking plugin commit-commands: skillsPath=none, skillsPaths=0 paths
+2025-12-17T20:09:26.886Z [DEBUG] Checking plugin feature-dev: skillsPath=none, skillsPaths=0 paths
+2025-12-17T20:09:26.886Z [DEBUG] Checking plugin frontend-design: skillsPath=exists, skillsPaths=0 paths
+2025-12-17T20:09:26.886Z [DEBUG] Attempting to load skills from plugin frontend-design default skillsPath: /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/frontend-design/1.0.0/skills
+2025-12-17T20:09:26.887Z [DEBUG] Loaded 4 commands from plugin hookify default directory
+2025-12-17T20:09:26.932Z [DEBUG] Loaded 1 skills from plugin frontend-design default directory
+2025-12-17T20:09:26.932Z [DEBUG] Checking plugin ast-grep: skillsPath=exists, skillsPaths=0 paths
+2025-12-17T20:09:26.932Z [DEBUG] Attempting to load skills from plugin ast-grep default skillsPath: /home/mikaisomerville/.claude/plugins/cache/ast-grep-marketplace/ast-grep/1.0.0/skills
+2025-12-17T20:09:26.933Z [DEBUG] Loaded 1 commands from plugin pr-review-toolkit default directory
+2025-12-17T20:09:26.935Z [DEBUG] Loaded 1 skills from plugin ast-grep default directory
+2025-12-17T20:09:26.935Z [DEBUG] Checking plugin dev-browser: skillsPath=exists, skillsPaths=1 paths
+2025-12-17T20:09:26.935Z [DEBUG] Attempting to load skills from plugin dev-browser default skillsPath: /home/mikaisomerville/.claude/plugins/cache/dev-browser-marketplace/dev-browser/e77f8ab8bd54/skills
+2025-12-17T20:09:26.935Z [DEBUG] Loaded 3 commands from plugin commit-commands default directory
+2025-12-17T20:09:26.935Z [DEBUG] Loaded 1 skills from plugin dev-browser default directory
+2025-12-17T20:09:26.935Z [DEBUG] Attempting to load skills from plugin dev-browser skillsPaths: /home/mikaisomerville/.claude/plugins/cache/dev-browser-marketplace/dev-browser/e77f8ab8bd54/skills/dev-browser
+2025-12-17T20:09:26.935Z [DEBUG] Loading from skillPath: /home/mikaisomerville/.claude/plugins/cache/dev-browser-marketplace/dev-browser/e77f8ab8bd54/skills/dev-browser for plugin dev-browser
+2025-12-17T20:09:26.935Z [DEBUG] Loaded 1 commands from plugin feature-dev default directory
+2025-12-17T20:09:26.935Z [DEBUG] Total plugin commands loaded: 9
+2025-12-17T20:09:26.936Z [DEBUG] Loaded 1 skills from plugin dev-browser custom path: /home/mikaisomerville/.claude/plugins/cache/dev-browser-marketplace/dev-browser/e77f8ab8bd54/skills/dev-browser
+2025-12-17T20:09:26.936Z [DEBUG] Total plugin skills loaded: 5
+2025-12-17T20:09:26.937Z [DEBUG] Loaded 1 agents from plugin hookify default directory
+2025-12-17T20:09:26.938Z [DEBUG] Loaded 6 agents from plugin pr-review-toolkit default directory
+2025-12-17T20:09:26.938Z [DEBUG] Loaded 3 agents from plugin feature-dev default directory
+2025-12-17T20:09:26.938Z [DEBUG] Total plugin agents loaded: 10
+2025-12-17T20:09:26.945Z [DEBUG] getSkills returning: 4 skill dir commands, 5 plugin skills
+2025-12-17T20:09:26.951Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /home/mikaisomerville/.local/share/claude/versions/2.0.65 (expected in multi-process scenarios)
+    at UvI (/$bunfs/root/claude:2594:1618)
+    at QAA (/$bunfs/root/claude:2594:1296)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T20:09:26.978Z [DEBUG] [SLOW OPERATION DETECTED] fs.statSync (5.2ms)
+2025-12-17T20:09:26.983Z [DEBUG] Shell snapshot created successfully (4060 bytes)
+2025-12-17T20:09:26.991Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /home/mikaisomerville/.local/share/claude/versions/2.0.61 (expected in multi-process scenarios)
+    at UvI (/$bunfs/root/claude:2594:1618)
+    at XAA (/$bunfs/root/claude:2592:35618)
+    at async FAA (/$bunfs/root/claude:2594:3428)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T20:09:26.991Z [DEBUG] Protecting locked version from cleanup: 2.0.61
+2025-12-17T20:09:27.019Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /home/mikaisomerville/.local/share/claude/versions/2.0.71 (expected in multi-process scenarios)
+    at UvI (/$bunfs/root/claude:2594:1618)
+    at XAA (/$bunfs/root/claude:2592:35618)
+    at async FAA (/$bunfs/root/claude:2594:3428)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T20:09:27.019Z [DEBUG] Protecting locked version from cleanup: 2.0.71
+2025-12-17T20:09:27.019Z [DEBUG] Total LSP servers loaded: 0
+2025-12-17T20:09:27.019Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2025-12-17T20:09:27.019Z [DEBUG] LSP manager initialized with 0 servers
+2025-12-17T20:09:27.019Z [DEBUG] LSP server manager initialized successfully
+2025-12-17T20:09:27.019Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2025-12-17T20:09:27.097Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.7378.1766002167097
+2025-12-17T20:09:27.097Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T20:09:27.126Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (28.1ms)
+2025-12-17T20:09:27.126Z [DEBUG] Temp file written successfully, size: 55554 bytes
+2025-12-17T20:09:27.126Z [DEBUG] Applied original permissions to temp file
+2025-12-17T20:09:27.126Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.7378.1766002167097 to /home/mikaisomerville/.claude.json
+2025-12-17T20:09:27.126Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T20:09:27.657Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (5.6ms)
+2025-12-17T20:09:27.658Z [DEBUG] Successfully refreshed marketplace: claude-code-plugins
+2025-12-17T20:09:27.658Z [DEBUG] Successfully auto-updated marketplace "claude-code-plugins"
+2025-12-17T20:09:27.682Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (7.4ms)
+2025-12-17T20:09:27.682Z [DEBUG] Successfully refreshed marketplace: ast-grep-marketplace
+2025-12-17T20:09:27.682Z [DEBUG] Successfully auto-updated marketplace "ast-grep-marketplace"
+2025-12-17T20:09:27.705Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (5.7ms)
+2025-12-17T20:09:27.705Z [DEBUG] Successfully refreshed marketplace: dev-browser-marketplace
+2025-12-17T20:09:27.705Z [DEBUG] Successfully auto-updated marketplace "dev-browser-marketplace"
+2025-12-17T20:09:29.019Z [DEBUG] Syncing installed_plugins_v2.json with enabledPlugins from all settings.json files
+2025-12-17T20:09:29.020Z [DEBUG] Loaded 2 installed plugins from V2 file at /home/mikaisomerville/.claude/plugins/installed_plugins_v2.json
+2025-12-17T20:09:29.072Z [DEBUG] Skill prompt: showing "hookify:writing-rules" (userFacingName="Writing Hookify Rules")
+2025-12-17T20:09:29.072Z [DEBUG] Skill prompt: showing "frontend-design:frontend-design" (userFacingName="frontend-design")
+2025-12-17T20:09:29.072Z [DEBUG] Skill prompt: showing "ast-grep:ast-grep" (userFacingName="ast-grep")
+2025-12-17T20:09:29.072Z [DEBUG] Skill prompt: showing "dev-browser:dev-browser" (userFacingName="dev-browser")
+2025-12-17T20:09:29.072Z [DEBUG] Skill prompt: showing "dev-browser:dev-browser" (userFacingName="dev-browser")
+2025-12-17T20:09:29.073Z [DEBUG] Skills and commands included in Skill tool: writing-style, typescript-patterns, serverless-aws, code-review, Writing Hookify Rules, frontend-design, ast-grep, dev-browser, dev-browser
+2025-12-17T20:09:29.073Z [DEBUG] Skill prompt: showing "hookify:writing-rules" (userFacingName="Writing Hookify Rules")
+2025-12-17T20:09:29.073Z [DEBUG] Skill prompt: showing "frontend-design:frontend-design" (userFacingName="frontend-design")
+2025-12-17T20:09:29.073Z [DEBUG] Skill prompt: showing "ast-grep:ast-grep" (userFacingName="ast-grep")
+2025-12-17T20:09:29.073Z [DEBUG] Skill prompt: showing "dev-browser:dev-browser" (userFacingName="dev-browser")
+2025-12-17T20:09:29.073Z [DEBUG] Skill prompt: showing "dev-browser:dev-browser" (userFacingName="dev-browser")
+2025-12-17T20:09:29.073Z [DEBUG] Slash commands included in SlashCommand tool: /hookify:help, /hookify:list, /hookify:configure, /hookify:hookify, /pr-review-toolkit:review-pr, /commit-commands:commit, /commit-commands:clean_gone, /commit-commands:commit-push-pr, /feature-dev:feature-dev
+2025-12-17T20:09:29.077Z [DEBUG] Summarizing all 41 messages (~0 tokens)
+2025-12-17T20:09:29.092Z [DEBUG] Skipping SubagentStart:Explore hook execution - workspace trust not accepted
+2025-12-17T20:09:29.098Z [DEBUG] Skipping SubagentStart:Plan hook execution - workspace trust not accepted
+2025-12-17T20:09:29.102Z [DEBUG] Added hookify@claude-code-plugins with scope project
+2025-12-17T20:09:29.125Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (18.3ms)
+2025-12-17T20:09:29.127Z [DEBUG] Added pr-review-toolkit@claude-code-plugins with scope project
+2025-12-17T20:09:29.143Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (12.8ms)
+2025-12-17T20:09:29.149Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (5.9ms)
+2025-12-17T20:09:29.162Z [DEBUG] Added commit-commands@claude-code-plugins with scope project
+2025-12-17T20:09:29.170Z [DEBUG] Added feature-dev@claude-code-plugins with scope project
+2025-12-17T20:09:29.173Z [DEBUG] Added frontend-design@claude-code-plugins with scope project
+2025-12-17T20:09:29.173Z [DEBUG] Updated ast-grep@ast-grep-marketplace scope to project (settings.json is source of truth)
+2025-12-17T20:09:29.173Z [DEBUG] Updated dev-browser@dev-browser-marketplace scope to project (settings.json is source of truth)
+2025-12-17T20:09:29.179Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (6.1ms)
+2025-12-17T20:09:29.179Z [DEBUG] Saved 7 installed plugins to V2 file at /home/mikaisomerville/.claude/plugins/installed_plugins_v2.json
+2025-12-17T20:09:29.179Z [DEBUG] Sync completed: 5 added, 2 updated in installed_plugins_v2.json
+2025-12-17T20:09:29.185Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (5.3ms)
+2025-12-17T20:09:29.185Z [DEBUG] Saved 0 installed plugins to /home/mikaisomerville/.claude/plugins/installed_plugins.json (schema version 1)
+2025-12-17T20:09:29.185Z [DEBUG] V1 file updated with 0 user-scope plugins
+2025-12-17T20:09:29.185Z [DEBUG] Initialized versioned plugins system with 7 plugins
+2025-12-17T20:09:29.188Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.7378.1766002169188
+2025-12-17T20:09:29.188Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T20:09:29.194Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (5.7ms)
+2025-12-17T20:09:29.194Z [DEBUG] Temp file written successfully, size: 55554 bytes
+2025-12-17T20:09:29.194Z [DEBUG] Applied original permissions to temp file
+2025-12-17T20:09:29.194Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.7378.1766002169188 to /home/mikaisomerville/.claude.json
+2025-12-17T20:09:29.194Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T20:09:29.197Z [DEBUG] Skipping SessionStart:startup hook execution - workspace trust not accepted
+2025-12-17T20:09:29.231Z [DEBUG] performStartupChecks called
+2025-12-17T20:09:29.232Z [DEBUG] Trust not accepted for current directory - skipping plugin installations
+2025-12-17T20:09:30.395Z [DEBUG] [SLOW OPERATION DETECTED] execSyncWithDefaults (1163.0ms): powershell.exe -Command '$env:USERPROFILE'
+2025-12-17T20:09:30.419Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-12-17T20:09:31.527Z [DEBUG] [SLOW OPERATION DETECTED] execSyncWithDefaults (1105.1ms): powershell.exe -Command '$env:USERPROFILE'
+2025-12-17T20:09:31.535Z [DEBUG] Loaded plugins - Enabled: 7, Disabled: 0, Commands: 9, Agents: 10, Errors: 0
+2025-12-17T20:09:31.558Z [DEBUG] Stream started - received first chunk
+2025-12-17T20:09:31.562Z [DEBUG] Stream started - received first chunk
+2025-12-17T20:09:31.593Z [DEBUG] MCP server "ide": Starting connection with timeout of 30000ms
+2025-12-17T20:09:31.598Z [DEBUG] Skipping SubagentStop hook execution - workspace trust not accepted
+2025-12-17T20:09:31.619Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.7378.1766002171619
+2025-12-17T20:09:31.619Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T20:09:31.637Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (18.2ms)
+2025-12-17T20:09:31.637Z [DEBUG] Temp file written successfully, size: 55554 bytes
+2025-12-17T20:09:31.637Z [DEBUG] Applied original permissions to temp file
+2025-12-17T20:09:31.637Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.7378.1766002171619 to /home/mikaisomerville/.claude.json
+2025-12-17T20:09:31.637Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T20:09:31.638Z [DEBUG] Metrics opt-out API response: enabled=true, vcsLinking=false
+2025-12-17T20:09:31.662Z [DEBUG] Stream started - received first chunk
+2025-12-17T20:09:31.667Z [DEBUG] MCP server "ide": Successfully connected to ws-ide server in 79ms
+2025-12-17T20:09:31.668Z [DEBUG] MCP server "ide": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":false,"serverVersion":{"name":"Claude Code VSCode MCP","version":"2.0.72"}}
+2025-12-17T20:09:32.814Z [DEBUG] [SLOW OPERATION DETECTED] execSyncWithDefaults (1047.3ms): powershell.exe -Command '$env:USERPROFILE'
+2025-12-17T20:09:33.827Z [DEBUG] [SLOW OPERATION DETECTED] execSyncWithDefaults (1004.3ms): powershell.exe -Command '$env:USERPROFILE'
+2025-12-17T20:09:33.862Z [DEBUG] Skipping SubagentStop hook execution - workspace trust not accepted
+2025-12-17T20:09:34.049Z [DEBUG] Checking for native installer update to version 2.0.71
+2025-12-17T20:09:36.680Z [DEBUG] Caching plugin from source: "/home/mikaisomerville/.claude/plugins/marketplaces/ast-grep-marketplace/ast-grep" to temporary path /home/mikaisomerville/.claude/plugins/cache/temp_local_1766002176680_kyhw2v
+2025-12-17T20:09:36.686Z [DEBUG] Successfully cached plugin ast-grep to /home/mikaisomerville/.claude/plugins/cache/ast-grep
+2025-12-17T20:09:36.714Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (14.8ms)
+2025-12-17T20:09:36.714Z [DEBUG] Saved 1 installed plugins to /home/mikaisomerville/.claude/plugins/installed_plugins.json (schema version 1)
+2025-12-17T20:09:36.714Z [DEBUG] Added installed plugin to V1: ast-grep@ast-grep-marketplace
+2025-12-17T20:09:36.714Z [DEBUG] Added installed plugin to V2: ast-grep@ast-grep-marketplace (scope: user)
+2025-12-17T20:09:36.720Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (5.8ms)
+2025-12-17T20:09:36.720Z [DEBUG] Saved 7 installed plugins to V2 file at /home/mikaisomerville/.claude/plugins/installed_plugins_v2.json
+2025-12-17T20:09:36.721Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude/settings.json.tmp.7378.1766002176721
+2025-12-17T20:09:36.721Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T20:09:36.729Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (8.1ms)
+2025-12-17T20:09:36.729Z [DEBUG] Temp file written successfully, size: 389 bytes
+2025-12-17T20:09:36.729Z [DEBUG] Applied original permissions to temp file
+2025-12-17T20:09:36.729Z [DEBUG] Renaming /home/mikaisomerville/.claude/settings.json.tmp.7378.1766002176721 to /home/mikaisomerville/.claude/settings.json
+2025-12-17T20:09:36.729Z [DEBUG] File /home/mikaisomerville/.claude/settings.json written atomically
+2025-12-17T20:09:36.731Z [DEBUG] Loading plugin hookify from source: "./plugins/hookify"
+2025-12-17T20:09:36.732Z [DEBUG] Using manifest version for hookify@claude-code-plugins: 0.1.0
+2025-12-17T20:09:36.732Z [DEBUG] Plugin hookify@claude-code-plugins version 0.1.0 already cached at /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/hookify/0.1.0
+2025-12-17T20:09:36.732Z [DEBUG] Copied local plugin hookify to versioned cache: /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/hookify/0.1.0
+2025-12-17T20:09:36.732Z [DEBUG] Loaded hooks from standard location for plugin hookify: /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/hookify/0.1.0/hooks/hooks.json
+2025-12-17T20:09:36.732Z [DEBUG] Loading plugin pr-review-toolkit from source: "./plugins/pr-review-toolkit"
+2025-12-17T20:09:36.732Z [DEBUG] Using manifest version for pr-review-toolkit@claude-code-plugins: 1.0.0
+2025-12-17T20:09:36.733Z [DEBUG] Plugin pr-review-toolkit@claude-code-plugins version 1.0.0 already cached at /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/pr-review-toolkit/1.0.0
+2025-12-17T20:09:36.733Z [DEBUG] Copied local plugin pr-review-toolkit to versioned cache: /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/pr-review-toolkit/1.0.0
+2025-12-17T20:09:36.733Z [DEBUG] Loading plugin commit-commands from source: "./plugins/commit-commands"
+2025-12-17T20:09:36.733Z [DEBUG] Using manifest version for commit-commands@claude-code-plugins: 1.0.0
+2025-12-17T20:09:36.733Z [DEBUG] Plugin commit-commands@claude-code-plugins version 1.0.0 already cached at /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/commit-commands/1.0.0
+2025-12-17T20:09:36.733Z [DEBUG] Copied local plugin commit-commands to versioned cache: /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/commit-commands/1.0.0
+2025-12-17T20:09:36.733Z [DEBUG] Loading plugin feature-dev from source: "./plugins/feature-dev"
+2025-12-17T20:09:36.733Z [DEBUG] Using manifest version for feature-dev@claude-code-plugins: 1.0.0
+2025-12-17T20:09:36.733Z [DEBUG] Plugin feature-dev@claude-code-plugins version 1.0.0 already cached at /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/feature-dev/1.0.0
+2025-12-17T20:09:36.733Z [DEBUG] Copied local plugin feature-dev to versioned cache: /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/feature-dev/1.0.0
+2025-12-17T20:09:36.734Z [DEBUG] Loading plugin frontend-design from source: "./plugins/frontend-design"
+2025-12-17T20:09:36.734Z [DEBUG] Using manifest version for frontend-design@claude-code-plugins: 1.0.0
+2025-12-17T20:09:36.734Z [DEBUG] Plugin frontend-design@claude-code-plugins version 1.0.0 already cached at /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/frontend-design/1.0.0
+2025-12-17T20:09:36.734Z [DEBUG] Copied local plugin frontend-design to versioned cache: /home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/frontend-design/1.0.0
+2025-12-17T20:09:36.734Z [DEBUG] Loading plugin ast-grep from source: "./ast-grep"
+2025-12-17T20:09:36.734Z [DEBUG] Using manifest version for ast-grep@ast-grep-marketplace: 1.0.0
+2025-12-17T20:09:36.734Z [DEBUG] Plugin ast-grep@ast-grep-marketplace version 1.0.0 already cached at /home/mikaisomerville/.claude/plugins/cache/ast-grep-marketplace/ast-grep/1.0.0
+2025-12-17T20:09:36.734Z [DEBUG] Copied local plugin ast-grep to versioned cache: /home/mikaisomerville/.claude/plugins/cache/ast-grep-marketplace/ast-grep/1.0.0
+2025-12-17T20:09:36.735Z [DEBUG] Loading plugin dev-browser from source: "./"
+2025-12-17T20:09:36.749Z [DEBUG] Using git SHA for dev-browser@dev-browser-marketplace: e77f8ab8bd54
+2025-12-17T20:09:36.749Z [DEBUG] Plugin dev-browser@dev-browser-marketplace version e77f8ab8bd54 already cached at /home/mikaisomerville/.claude/plugins/cache/dev-browser-marketplace/dev-browser/e77f8ab8bd54
+2025-12-17T20:09:36.749Z [DEBUG] Copied local plugin dev-browser to versioned cache: /home/mikaisomerville/.claude/plugins/cache/dev-browser-marketplace/dev-browser/e77f8ab8bd54
+2025-12-17T20:09:36.749Z [DEBUG] Processing 1 skill paths for plugin dev-browser
+2025-12-17T20:09:36.749Z [DEBUG] Checking skill path: ./skills/dev-browser -> /home/mikaisomerville/.claude/plugins/cache/dev-browser-marketplace/dev-browser/e77f8ab8bd54/skills/dev-browser (exists: true)
+2025-12-17T20:09:36.750Z [DEBUG] Found 1 valid skill paths for plugin dev-browser, setting skillsPaths
+2025-12-17T20:09:36.750Z [DEBUG] Found 7 plugins (7 enabled, 0 disabled)
+2025-12-17T20:09:36.750Z [DEBUG] Loaded 1 agents from plugin hookify default directory
+2025-12-17T20:09:36.750Z [DEBUG] Loaded 6 agents from plugin pr-review-toolkit default directory
+2025-12-17T20:09:36.750Z [DEBUG] Loaded 3 agents from plugin feature-dev default directory
+2025-12-17T20:09:36.750Z [DEBUG] Total plugin agents loaded: 10
+2025-12-17T20:09:36.750Z [DEBUG] Loaded 4 commands from plugin hookify default directory
+2025-12-17T20:09:36.750Z [DEBUG] Loaded 1 commands from plugin pr-review-toolkit default directory
+2025-12-17T20:09:36.750Z [DEBUG] Loaded 3 commands from plugin commit-commands default directory
+2025-12-17T20:09:36.751Z [DEBUG] Loaded 1 commands from plugin feature-dev default directory
+2025-12-17T20:09:36.751Z [DEBUG] Total plugin commands loaded: 9
+2025-12-17T20:09:36.759Z [DEBUG] FileHistory: Added snapshot for ddcfe219-79e0-479f-85d6-c4febfcbbb86, tracking 0 files
+2025-12-17T20:09:36.761Z [DEBUG] UserCommandMessage rendering: "plugin" (args: "install ast-grep")
+2025-12-17T20:09:36.761Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T20:09:36.780Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-12-17T20:09:36.788Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.7378.1766002176788
+2025-12-17T20:09:36.788Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T20:09:36.799Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (10.9ms)
+2025-12-17T20:09:36.799Z [DEBUG] Temp file written successfully, size: 55577 bytes
+2025-12-17T20:09:36.799Z [DEBUG] Applied original permissions to temp file
+2025-12-17T20:09:36.799Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.7378.1766002176788 to /home/mikaisomerville/.claude.json
+2025-12-17T20:09:36.799Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T20:09:36.821Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.7378.1766002176821
+2025-12-17T20:09:36.821Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T20:09:36.828Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (7.4ms)
+2025-12-17T20:09:36.829Z [DEBUG] Temp file written successfully, size: 55608 bytes
+2025-12-17T20:09:36.829Z [DEBUG] Applied original permissions to temp file
+2025-12-17T20:09:36.829Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.7378.1766002176821 to /home/mikaisomerville/.claude.json
+2025-12-17T20:09:36.829Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T20:09:37.954Z [DEBUG] Checking for native installer update to version 2.0.71
+2025-12-17T20:09:40.709Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /home/mikaisomerville/.local/share/claude/versions/2.0.71 (expected in multi-process scenarios)
+    at UvI (/$bunfs/root/claude:2594:1618)
+    at XAA (/$bunfs/root/claude:2592:35618)
+    at async ed0 (/$bunfs/root/claude:2592:37719)
+    at async mv (/$bunfs/root/claude:2594:236)
+    at async <anonymous> (/$bunfs/root/claude:2594:13006)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T20:09:42.078Z [DEBUG] [SLOW OPERATION DETECTED] fs.statSync (5.3ms)
+2025-12-17T20:09:44.642Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /home/mikaisomerville/.local/share/claude/versions/2.0.71 (expected in multi-process scenarios)
+    at UvI (/$bunfs/root/claude:2594:1618)
+    at XAA (/$bunfs/root/claude:2592:35618)
+    at async ed0 (/$bunfs/root/claude:2592:37719)
+    at async mv (/$bunfs/root/claude:2594:236)
+    at async <anonymous> (/$bunfs/root/claude:2594:13006)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T20:09:46.281Z [DEBUG] FileHistory: Making snapshot for message e22ac2fe-097d-4894-9df2-a0f3d7708aef
+2025-12-17T20:09:46.281Z [DEBUG] FileHistory: Added snapshot for e22ac2fe-097d-4894-9df2-a0f3d7708aef, tracking 0 files
+2025-12-17T20:09:46.286Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.7378.1766002186286
+2025-12-17T20:09:46.286Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T20:09:46.293Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (6.6ms)
+2025-12-17T20:09:46.293Z [DEBUG] Temp file written successfully, size: 55635 bytes
+2025-12-17T20:09:46.293Z [DEBUG] Applied original permissions to temp file
+2025-12-17T20:09:46.293Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.7378.1766002186286 to /home/mikaisomerville/.claude.json
+2025-12-17T20:09:46.293Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T20:09:46.306Z [DEBUG] UserCommandMessage rendering: "plugin" (args: "none")
+2025-12-17T20:09:46.306Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T20:09:46.329Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-12-17T20:09:46.760Z [DEBUG] Checking for native installer update to version 2.0.71
+2025-12-17T20:09:52.750Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-12-17T20:09:53.536Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /home/mikaisomerville/.local/share/claude/versions/2.0.71 (expected in multi-process scenarios)
+    at UvI (/$bunfs/root/claude:2594:1618)
+    at XAA (/$bunfs/root/claude:2592:35618)
+    at async ed0 (/$bunfs/root/claude:2592:37719)
+    at async mv (/$bunfs/root/claude:2594:236)
+    at async <anonymous> (/$bunfs/root/claude:2594:13006)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T20:09:55.690Z [DEBUG] Skipping SessionEnd:prompt_input_exit hook execution - workspace trust not accepted

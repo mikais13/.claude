@@ -1,0 +1,72 @@
+[
+  {
+    "content": "Create AbstractOrganisationalUnitCsvParser base class",
+    "status": "completed",
+    "activeForm": "Creating AbstractOrganisationalUnitCsvParser base class"
+  },
+  {
+    "content": "Refactor OrganisationCsvParser to extend base class",
+    "status": "completed",
+    "activeForm": "Refactoring OrganisationCsvParser to extend base class"
+  },
+  {
+    "content": "Run existing tests to verify no regression",
+    "status": "in_progress",
+    "activeForm": "Running existing tests to verify no regression"
+  },
+  {
+    "content": "Create FacilityCsvParser constants",
+    "status": "pending",
+    "activeForm": "Creating FacilityCsvParser constants"
+  },
+  {
+    "content": "Create FacilityCsvParser interfaces",
+    "status": "pending",
+    "activeForm": "Creating FacilityCsvParser interfaces"
+  },
+  {
+    "content": "Implement FacilityCsvParser",
+    "status": "pending",
+    "activeForm": "Implementing FacilityCsvParser"
+  },
+  {
+    "content": "Write FacilityCsvParser tests",
+    "status": "pending",
+    "activeForm": "Writing FacilityCsvParser tests"
+  },
+  {
+    "content": "Add BulkFacility types to OrganisationRepository interface",
+    "status": "pending",
+    "activeForm": "Adding BulkFacility types to OrganisationRepository interface"
+  },
+  {
+    "content": "Implement bulkUploadOrganisationsAndFacilities in repository",
+    "status": "pending",
+    "activeForm": "Implementing bulkUploadOrganisationsAndFacilities in repository"
+  },
+  {
+    "content": "Update OrganisationUpload interface with facilityCount",
+    "status": "pending",
+    "activeForm": "Updating OrganisationUpload interface with facilityCount"
+  },
+  {
+    "content": "Update Organisation.service.ts with facilities support",
+    "status": "pending",
+    "activeForm": "Updating Organisation.service.ts with facilities support"
+  },
+  {
+    "content": "Update API route to handle facilities file",
+    "status": "pending",
+    "activeForm": "Updating API route to handle facilities file"
+  },
+  {
+    "content": "Add integration tests for facilities upload",
+    "status": "pending",
+    "activeForm": "Adding integration tests for facilities upload"
+  },
+  {
+    "content": "Run type check, lint, and tests",
+    "status": "pending",
+    "activeForm": "Running type check, lint, and tests"
+  }
+]

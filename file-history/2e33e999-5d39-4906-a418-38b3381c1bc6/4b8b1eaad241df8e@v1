@@ -1,0 +1,39 @@
+import { TagDto } from "../models/Tag.model";
+
+export interface ITagRepository {
+  getTags(searchTerm?: string): Promise<TagDto[]>;
+  getManyTagsByNames(names: string[]): Promise<TagDto[]>;
+  createTag(tag: TagInput): Promise<TagDto>;
+  updateTag(tagId: string, tag: TagInput): Promise<TagDto>;
+  deleteTag(tagId: string): Promise<TagDto>;
+  /**
+   * Function to add tags to a facility.
+   * Returns count of tags added
+   */
+  addAssociatedTagsByFacilityId(
+    facilityId: number,
+    tagIds: string[]
+  ): Promise<number>;
+  /**
+  /**
+   * Function to remove all tags tied to a facility.
+   * Returns count of tags removed
+   */
+  removeAssociatedTagsByFacilityId(organisationId: number): Promise<number>;
+  /**
+   * Function to remove all associations tied to a tag from a Facility_Tag table.
+   * Returns count of associations removed
+   */
+  removeAssociatedFacilitiesByTagId(tagId: string): Promise<number>;
+  /**
+   * Function to remove all associations tied to a tag from a Organisation_Unit_Tag table.
+   * Returns count of associations removed
+   */
+  removeAssociatedUnitsByTagId(tagId: string): Promise<number>;
+  /**
+   * Function to create many tags at once
+   */
+  createManyTags(tags: TagInput[]): Promise<TagDto[]>;
+}
+
+export type TagInput = Omit<TagDto, "id">;

@@ -1,0 +1,7 @@
+[
+  {
+    "content": "Fix expect().toThrow() syntax in parser tests",
+    "status": "in_progress",
+    "activeForm": "Fixing expect().toThrow() syntax in parser tests"
+  }
+]

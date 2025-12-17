@@ -1,0 +1,116 @@
+import { NextRequest, NextResponse } from "next/server";
+import z from "zod";
+
+import { protectedRoute } from "@/modules/ProtectedRoute/ProtectedRoute";
+import { PERMISSION } from "@/server/modules/Auth/models/Permission";
+import {
+  ParentOrganisationInfo,
+  UploadOrganisationResponse
+} from "@/server/modules/Organisation/interfaces/OrganisationUpload.interface";
+import { OrganisationService } from "@/server/modules/Organisation/services/Organisation.service";
+import { PlatformRole } from "@/types/Auth.types";
+
+export async function POST(request: NextRequest) {
+  return protectedRoute(
+    {
+      includeOrganisation: true,
+      requiredPlatformRoles: [PlatformRole.USER],
+      requiredPermission: PERMISSION.ORGANISATION_SETTINGS.CREATE
+    },
+    request,
+    async (context) => {
+      try {
+        const formData = await request.formData();
+        const orgTemplateFile = formData.get("orgTemplateFile") as File;
+        const parentOrganisationInfo: ParentOrganisationInfo = {
+          financialYearStartMonthIndex: Number(
+            formData.get("financialYearStartMonthIndex")
+          ),
+          reportingStandardId: String(formData.get("reportingStandardId")),
+          consolidationApproachId: String(
+            formData.get("consolidationApproachId")
+          )
+        };
+        const facilitiesTemplateFile = formData.get(
+          "facilitiesTemplateFile"
+        ) as File;
+
+        if (!orgTemplateFile) {
+          return NextResponse.json(
+            { error: "No organisation template file provided" },
+            { status: 400 }
+          );
+        }
+
+        // Validate file type
+        if (
+          !orgTemplateFile.name.toLowerCase().endsWith(".csv") ||
+          (facilitiesTemplateFile &&
+            !facilitiesTemplateFile.name.toLowerCase().endsWith(".csv"))
+        ) {
+          return NextResponse.json(
+            { error: "Only CSV files are supported" },
+            { status: 400 }
+          );
+        }
+
+        // Process file buffers directly
+        const orgTemplateBytes = await orgTemplateFile.arrayBuffer();
+        const orgTemplateBuffer = Buffer.from(orgTemplateBytes);
+
+        const facilitiesTemplateBytes =
+          await facilitiesTemplateFile?.arrayBuffer();
+
+        const facilitiesTemplateBuffer = facilitiesTemplateBytes
+          ? Buffer.from(facilitiesTemplateBytes)
+          : undefined;
+
+        const organisationService = OrganisationService.build(
+          context.organisation.databaseUrl,
+          context.logger
+        );
+
+        const processedOrganisation =
+          await organisationService.prepareOrganisationTemplate(
+            orgTemplateBuffer,
+            parentOrganisationInfo
+          );
+
+        const createdCount =
+          await organisationService.uploadOrganisationTemplate(
+            processedOrganisation
+          );
+
+        const response: UploadOrganisationResponse = {
+          message: "Organisational units uploaded and processed successfully",
+          success: true,
+          createdCount
+        };
+        return NextResponse.json(response, { status: 200 });
+      } catch (error) {
+        context.logger.error("Failed to import organisations", {
+          error: (error as Error).message,
+          stack: (error as Error).stack
+        });
+
+        if (error instanceof z.ZodError) {
+          return NextResponse.json(
+            {
+              error: "Invalid request parameters",
+              details: error.errors
+            },
+            { status: 400 }
+          );
+        }
+
+        // Return the actual error message from the service layer
+        return NextResponse.json(
+          {
+            error: (error as Error).message || "Failed to process uploaded file"
+          },
+          { status: 500 }
+        );
+      }
+    }
+  );
+}

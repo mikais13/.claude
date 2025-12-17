@@ -1,0 +1,229 @@
+import { ILogger } from "@generatezero/ports/logger";
+
+import { UpdateFacilitySchema } from "@/app/api/facilities/[id]/route.params";
+import { CreateFacilitySchema } from "@/app/api/facilities/route.params";
+import { LoggableClass } from "@/server/common/LoggableClass";
+import { IActivityRepository } from "../../Activity/interfaces/ActivityRepository.interface";
+import { ActivityRepository } from "../../Activity/repositories/ActivityV1.repository";
+import { IEmissionsRepository } from "../../Emissions/interfaces/EmissionsRepository.interface";
+import { ILiabilitiesRepository } from "../../Emissions/interfaces/LibailitiesRepository.interface";
+import { EmissionsRepository } from "../../Emissions/repositories/EmissionsV1.repository";
+import { LiabilitiesRepository } from "../../Emissions/repositories/Liabilities.repository";
+import {
+  ITagRepository,
+  TagInput
+} from "../../Tags/interfaces/TagRepository.interface";
+import { TagRepository } from "../../Tags/repositories/Tag.repository";
+import {
+  IFacilityRepository,
+  UpdateFacilityArgs
+} from "../interfaces/FacilityRepository.interface";
+import { FacilityDto } from "../models/Facility.model";
+import { FacilityRepository } from "../repositories/Facility.repostory";
+import { FacilitiesTemplateCsvParser } from "../parsers/FacilitiesTemplateCsvParser";
+import { FacilityTemplateProcessingResult } from "../interfaces/OrganisationUpload.interface";
+
+export class FacilityServiceError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "FacilityServiceError";
+  }
+}
+
+export class FacilityService extends LoggableClass {
+  private csvParser: FacilitiesTemplateCsvParser;
+  constructor(
+    logger: ILogger,
+    private readonly facilityRepository: IFacilityRepository,
+    private readonly tagRepository: ITagRepository,
+    private readonly activityRepository: IActivityRepository,
+    private readonly emissionRepository: IEmissionsRepository,
+    private readonly liabilityRepository: ILiabilitiesRepository
+  ) {
+    super(logger, "FacilityService");
+    this.csvParser = new FacilitiesTemplateCsvParser(this.logger);
+  }
+
+  static build(dbUrl: string, logger: ILogger) {
+    return new FacilityService(
+      logger,
+      new FacilityRepository(dbUrl, logger),
+      new TagRepository(dbUrl, logger),
+      new ActivityRepository(dbUrl, logger),
+      new EmissionsRepository(dbUrl, logger),
+      new LiabilitiesRepository(dbUrl, logger)
+    );
+  }
+
+  /**
+   * Creates a facility
+   */
+  async createFacility(
+    facilityParams: CreateFacilitySchema
+  ): Promise<FacilityDto> {
+    // Add facility record
+    const newFacility = await this.facilityRepository.createFacility({
+      name: facilityParams.name,
+      description: facilityParams.description,
+      addressLine: facilityParams.addressLine,
+      addressLineAdditional: facilityParams.addressLineAdditional,
+      country: facilityParams.country,
+      state: facilityParams.state,
+      postalCode: facilityParams.postalCode,
+      city: facilityParams.city,
+      isSharedFacility: facilityParams.parentUnitIds.length >= 2 // Set as shared if attached to multiple organisations
+    });
+
+    // Add Facility organisation association
+    await this.facilityRepository.addAssociatedFacilityByOrganisationIds(
+      newFacility.id,
+      facilityParams.parentUnitIds
+    );
+
+    // Add facility tag association
+    if (facilityParams.facilityTagIds) {
+      await this.tagRepository.addAssociatedTagsByFacilityId(
+        newFacility.id,
+        facilityParams.facilityTagIds
+      );
+    }
+
+    return newFacility;
+  }
+
+  /**
+   * Updates an existing facility
+   */
+  async updateFacility(
+    facilityId: number,
+    facilityParams: UpdateFacilitySchema
+  ): Promise<FacilityDto> {
+    const input: UpdateFacilityArgs = {
+      name: facilityParams.name,
+      description: facilityParams.description,
+      addressLine: facilityParams.addressLine,
+      addressLineAdditional: facilityParams.addressLineAdditional,
+      country: facilityParams.country,
+      state: facilityParams.state,
+      postalCode: facilityParams.postalCode,
+      city: facilityParams.city,
+      // Set as shared if attached to multiple organisations
+      isSharedFacility: facilityParams.parentUnitIds
+        ? facilityParams.parentUnitIds.length >= 2
+        : undefined
+    };
+
+    const updatedFacility = await this.facilityRepository.updateFacility(
+      facilityId,
+      input
+    );
+
+    // Update associations to parent organisations
+    if (facilityParams.parentUnitIds) {
+      const hasReportingData = await this.hasReportingData(facilityId);
+      if (hasReportingData) {
+        throw new FacilityServiceError(
+          "Activities, emissions, or liabilities are reported. The facility cannot be switched to another organisation."
+        );
+      }
+
+      await this.facilityRepository.removeAssociatedFacilityById(facilityId);
+      await this.facilityRepository.addAssociatedFacilityByOrganisationIds(
+        facilityId,
+        facilityParams.parentUnitIds
+      );
+    }
+
+    // Update associations to tags
+    if (facilityParams.facilityTagIds) {
+      await this.tagRepository.removeAssociatedTagsByFacilityId(facilityId);
+      await this.tagRepository.addAssociatedTagsByFacilityId(
+        facilityId,
+        facilityParams.facilityTagIds
+      );
+    }
+
+    return updatedFacility;
+  }
+
+  /**
+   * Function to delete a facility
+   */
+  async deleteFacility(facilityId: number) {
+    const hasReportingData = await this.hasReportingData(facilityId);
+    if (hasReportingData) {
+      throw new FacilityServiceError(
+        "Activities, emissions, or liabilities are reported. The facility cannot be switched to another organisation."
+      );
+    }
+
+    await this.facilityRepository.deleteFacility(facilityId);
+  }
+
+  async prepareFacilityTemplate(
+    buffer: Buffer
+  ): Promise<FacilityTemplateProcessingResult> {
+    const { facilities, tagsSet } =
+      this.csvParser.parseFacilitiesTemplateBuffer(buffer);
+
+    if (facilities.length === 0) {
+      throw new FacilityServiceError(
+        "No facilities found in the provided template."
+      );
+    }
+
+    const existingFacilities = await this.facilityRepository.getManyBy();
+    if (existingFacilities.length > 0) {
+      throw new FacilityServiceError("Facilities already exists.");
+    }
+
+    // should we pass in an already found set?
+    const existingTags = await this.tagRepository.getManyTagsByNames(
+      Array.from(tagsSet)
+    );
+    const existingTagMap = new Map<string, string>(
+      existingTags.map((tag) => [tag.name, tag.id])
+    );
+    const tagsToCreate: TagInput[] = [];
+    for (const tagName of tagsSet) {
+      if (!existingTagMap.has(tagName)) {
+        tagsToCreate.push({ name: tagName, description: null });
+      }
+    }
+
+    const bulkFacilities = facilities.map((facility) => ({
+      name: facility.name,
+      description: facility.description,
+      addressLine1: facility.addressLine1,
+      addressLine2: facility.addressLine2,
+      country: facility.country,
+      stateProvince: facility.stateProvince,
+      postalCode: facility.postalCode,
+      city: facility.city,
+      tags: facility.tags
+    }));
+
+    return {
+      facilities: bulkFacilities,
+      existingTagMap,
+      tagsToCreate
+    };
+  }
+
+  /* ---------- PRIVATE FUNCTIONS --------- */
+
+  /**
+   * Returns true if the facility has reporting data
+   */
+  private async hasReportingData(facilityId: number) {
+    const [hasActivity, hasEmission, hasLiability] = await Promise.all([
+      this.activityRepository.hasActivity(facilityId),
+      this.emissionRepository.hasEmissions({
+        facilityIds: [facilityId],
+        isIncluded: undefined
+      }),
+      this.liabilityRepository.hasLiability(facilityId)
+    ]);
+    return hasActivity || hasEmission || hasLiability;
+  }
+}

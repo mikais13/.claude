@@ -1,0 +1,95 @@
+{
+  "version": 2,
+  "plugins": {
+    "ast-grep@ast-grep-marketplace": [
+      {
+        "scope": "project",
+        "installPath": "/home/mikaisomerville/.claude/plugins/cache/ast-grep-marketplace/ast-grep/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-17T20:03:39.935Z",
+        "lastUpdated": "2025-12-17T20:09:29.019Z",
+        "isLocal": true,
+        "projectPath": "/home/mikaisomerville"
+      },
+      {
+        "scope": "user",
+        "installPath": "/home/mikaisomerville/.claude/plugins/cache/ast-grep-marketplace/ast-grep/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-17T20:09:36.693Z",
+        "lastUpdated": "2025-12-17T20:09:36.693Z",
+        "isLocal": true
+      }
+    ],
+    "dev-browser@dev-browser-marketplace": [
+      {
+        "scope": "project",
+        "installPath": "/home/mikaisomerville/.claude/plugins/cache/dev-browser-marketplace/dev-browser/unknown",
+        "version": "unknown",
+        "installedAt": "2025-12-17T20:04:06.945Z",
+        "lastUpdated": "2025-12-17T20:09:29.019Z",
+        "isLocal": true,
+        "projectPath": "/home/mikaisomerville"
+      }
+    ],
+    "hookify@claude-code-plugins": [
+      {
+        "scope": "project",
+        "installPath": "/home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/hookify/0.1.0",
+        "version": "0.1.0",
+        "installedAt": "2025-12-17T20:09:29.019Z",
+        "lastUpdated": "2025-12-17T20:09:29.019Z",
+        "gitCommitSha": "4392352687b2c86d09937daba71ca278f80a9089",
+        "isLocal": true,
+        "projectPath": "/home/mikaisomerville"
+      }
+    ],
+    "pr-review-toolkit@claude-code-plugins": [
+      {
+        "scope": "project",
+        "installPath": "/home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/pr-review-toolkit/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-17T20:09:29.019Z",
+        "lastUpdated": "2025-12-17T20:09:29.019Z",
+        "gitCommitSha": "4392352687b2c86d09937daba71ca278f80a9089",
+        "isLocal": true,
+        "projectPath": "/home/mikaisomerville"
+      }
+    ],
+    "commit-commands@claude-code-plugins": [
+      {
+        "scope": "project",
+        "installPath": "/home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/commit-commands/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-17T20:09:29.019Z",
+        "lastUpdated": "2025-12-17T20:09:29.019Z",
+        "gitCommitSha": "4392352687b2c86d09937daba71ca278f80a9089",
+        "isLocal": true,
+        "projectPath": "/home/mikaisomerville"
+      }
+    ],
+    "feature-dev@claude-code-plugins": [
+      {
+        "scope": "project",
+        "installPath": "/home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/feature-dev/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-17T20:09:29.019Z",
+        "lastUpdated": "2025-12-17T20:09:29.019Z",
+        "gitCommitSha": "4392352687b2c86d09937daba71ca278f80a9089",
+        "isLocal": true,
+        "projectPath": "/home/mikaisomerville"
+      }
+    ],
+    "frontend-design@claude-code-plugins": [
+      {
+        "scope": "project",
+        "installPath": "/home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/frontend-design/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-17T20:09:29.019Z",
+        "lastUpdated": "2025-12-17T20:09:29.019Z",
+        "gitCommitSha": "4392352687b2c86d09937daba71ca278f80a9089",
+        "isLocal": true,
+        "projectPath": "/home/mikaisomerville"
+      }
+    ]
+  }
+}

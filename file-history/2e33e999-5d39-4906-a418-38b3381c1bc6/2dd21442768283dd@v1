@@ -1,0 +1,742 @@
+import { ILogger } from "@generatezero/ports/logger";
+import dayjs from "dayjs";
+
+import { CreateOrganisationSchema } from "@/app/api/organisations/route.params";
+import { stringToEnum } from "@/modules/QueryParams.helpers";
+import { LoggableClass } from "@/server/common/LoggableClass";
+import { BulkOrganisationUnit } from "@/server/modules/Organisation/interfaces/OrganisationRepository.interface";
+import { OrganisationRepository } from "@/server/modules/Organisation/repositories/OrganisationRepository";
+import {
+  ITagRepository,
+  TagInput
+} from "@/server/modules/Tags/interfaces/TagRepository.interface";
+import { TagRepository } from "@/server/modules/Tags/repositories/Tag.repository";
+import { IActivityRepository } from "../../Activity/interfaces/ActivityRepository.interface";
+import { ActivityRepository } from "../../Activity/repositories/ActivityV1.repository";
+import {
+  FinancialQuarterInputArgs,
+  IFinancialQuarterRepository
+} from "../../Date/interfaces/FinancialQuarterRepository.interface";
+import {
+  FinancialYearInputArgs,
+  IFinancialYearRepository
+} from "../../Date/interfaces/FinancialYearRepository.interface";
+import { IMonthRepository } from "../../Date/interfaces/MonthRepository.interface";
+import { MonthDto } from "../../Date/models/Month.model";
+import { FinancialQuarterRepository } from "../../Date/repositories/FinancialQuarter.repository";
+import { FinancialYearRepository } from "../../Date/repositories/FinancialYear.repository";
+import { MonthRepository } from "../../Date/repositories/Month.repository";
+import { IEmissionsRepository } from "../../Emissions/interfaces/EmissionsRepository.interface";
+import { ILiabilitiesRepository } from "../../Emissions/interfaces/LibailitiesRepository.interface";
+import { EmissionsRepository } from "../../Emissions/repositories/EmissionsV1.repository";
+import { LiabilitiesRepository } from "../../Emissions/repositories/Liabilities.repository";
+import { IFacilityRepository } from "../interfaces/FacilityRepository.interface";
+import {
+  IOrganisationRepository,
+  OrganisationUpdateArgs
+} from "../interfaces/OrganisationRepository.interface";
+import { IOrganisationTypeRepository } from "../interfaces/OrganisationTypeRepository.interface";
+import {
+  OrganisationTemplateProcessingResult,
+  ParentOrganisationInfo
+} from "../interfaces/OrganisationUpload.interface";
+import { ConsolidationApproach } from "../models/ConsolidationApproach.model";
+import { OrganisationTypeDto } from "../models/OrganisationType.model";
+import { OrganisationUnitDto } from "../models/OrganisationUnit.model";
+import { OrganisationHelper } from "../Organisation.helpers";
+import { OrganisationTemplateCsvParser } from "../parsers/OrganisationTemplateCsvParser";
+import { FacilityRepository } from "../repositories/Facility.repostory";
+import { OrganisationTypeRepository } from "../repositories/OrganisationType.repository";
+export class OrganisationServiceError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "OrganisationServiceError";
+  }
+}
+export class OrganisationService extends LoggableClass {
+  private csvParser: OrganisationTemplateCsvParser;
+  constructor(
+    logger: ILogger,
+    private organisationTypeRepository: IOrganisationTypeRepository,
+    private organisationRepository: IOrganisationRepository,
+    private tagRepository: ITagRepository,
+    private activityRepository: IActivityRepository,
+    private emissionsRepository: IEmissionsRepository,
+    private liabilitiesRepository: ILiabilitiesRepository,
+    private financialYearRepository: IFinancialYearRepository,
+    private financialQuarterRepository: IFinancialQuarterRepository,
+    private facilityRepository: IFacilityRepository,
+    private monthRepository: IMonthRepository
+  ) {
+    super(logger, "OrganisationService");
+
+    this.csvParser = new OrganisationTemplateCsvParser(this.logger);
+  }
+
+  static build(dbUrl: string, logger: ILogger) {
+    return new OrganisationService(
+      logger,
+      new OrganisationTypeRepository(dbUrl, logger),
+      new OrganisationRepository(dbUrl, logger),
+      new TagRepository(dbUrl, logger),
+      new ActivityRepository(dbUrl, logger),
+      new EmissionsRepository(dbUrl, logger),
+      new LiabilitiesRepository(dbUrl, logger),
+      new FinancialYearRepository(dbUrl, logger),
+      new FinancialQuarterRepository(dbUrl, logger),
+      new FacilityRepository(dbUrl, logger),
+      new MonthRepository(dbUrl, logger)
+    );
+  }
+
+  /**
+   * Fetches all organisation types, and appends a facility object with ID 0
+   */
+  async getAllOrganisationTypes(
+    isActive?: boolean
+  ): Promise<OrganisationTypeDto[]> {
+    let orgTypes = await this.organisationTypeRepository.getAll();
+
+    // Get only org types that are active on an organisation
+    if (isActive) {
+      const organisations = await this.organisationRepository.getManyBy({});
+      orgTypes = orgTypes.filter((type) =>
+        organisations.some((o) => o.organisationTypeId === type.id)
+      );
+    }
+
+    // Append facilities (TODO: Remove when another use case excluding facilities appears)
+    orgTypes.push({ id: 0, name: "Facilities" });
+    return orgTypes;
+  }
+
+  async getOrganisations(input: {
+    orgUnitIds?: number[];
+    includeData?: boolean;
+  }): Promise<OrganisationUnitDto[]> {
+    let organisations = await this.organisationRepository.getManyBy({
+      organisationIds: input.orgUnitIds,
+      includeFacilities: true,
+      includeTags: true
+    });
+
+    // Get organisation hierarchy information
+    const orgHierarchy =
+      await this.organisationRepository.getOrganisationHierarchy();
+    const orgUnitsWithHierarchy =
+      await orgHierarchy.getHierarchyVisualisation();
+
+    // Create a map for quick lookup of hierarchy info
+    const hierarchyMap = new Map();
+    orgUnitsWithHierarchy.forEach((orgUnit, index) => {
+      hierarchyMap.set(orgUnit.id, {
+        order: index,
+        depth: orgUnit.depth
+      });
+    });
+
+    // Append hierarchy information to organisations
+    organisations = organisations.map((org) => {
+      const hierarchyInfo = hierarchyMap.get(org.id);
+      return {
+        ...org,
+        order: hierarchyInfo?.order ?? 0,
+        depth: hierarchyInfo?.depth ?? 0
+      };
+    });
+
+    // Append hasData property detailing if activities/liabilities/emissions exist
+    if (input.includeData) {
+      const organisationIds = organisations.map((org) => org.id);
+      const organisationDataMap =
+        await this.getReportingDataCountByOrganisation(organisationIds);
+
+      const facilities = await this.facilityRepository.getManyBy();
+      const facilityIds = facilities.map((facility) => facility.id);
+      const facilityDataMap =
+        await this.getReportingDataCountByFacility(facilityIds);
+
+      organisations = organisations.map((org) => ({
+        ...org,
+        hasData: organisationDataMap.get(org.id),
+        facilities: org.facilities?.map((facility) => ({
+          ...facility,
+          hasData: facilityDataMap.get(facility.id)
+        }))
+      }));
+    }
+
+    return organisations;
+  }
+
+  /**
+   * Creates an organisation
+   */
+  async createOrganisation(
+    args: CreateOrganisationSchema
+  ): Promise<OrganisationUnitDto> {
+    const {
+      name,
+      description,
+      parentUnitId,
+      startDate,
+      endDate,
+      organisationTagIds,
+      reportingStandardId,
+      consolidationApproachId,
+      financialYearStartMonthIndex
+    } = args;
+
+    let fysToInsert: FinancialYearInputArgs[] = [];
+    let fqsToInsert: FinancialQuarterInputArgs[] = [];
+
+    // Handle child organisation creation - inherit FYs and FQs from parent
+    if (parentUnitId) {
+      const [parentFYs, parentFqs] = await Promise.all([
+        this.financialYearRepository.getManyBy(undefined, undefined, [
+          parentUnitId
+        ]),
+        this.financialQuarterRepository.getManyBy(undefined, undefined, [
+          parentUnitId
+        ])
+      ]);
+
+      fysToInsert = parentFYs
+        .filter((fy) => fy.startMonth && fy.endMonth)
+        .map((fy) => ({
+          startMonthId: fy.startMonth!.id,
+          endMonthId: fy.endMonth!.id,
+          isBaseYear: fy.isBaseYear ?? undefined,
+          label: fy.label,
+          isLocked: fy.locked ?? undefined
+        }));
+
+      fqsToInsert = parentFqs
+        .filter((fq) => fq.startMonth && fq.endMonth)
+        .map((fq) => ({
+          startMonthId: fq.startMonth.id,
+          endMonthId: fq.endMonth.id,
+          label: fq.label ?? ""
+        }));
+    }
+    // Handle root organisation creation - generate FYs and FQs
+    else {
+      const organisations = await this.organisationRepository.getManyBy();
+      if (organisations.length > 0) {
+        throw new OrganisationServiceError("Organisations already exists.");
+      }
+
+      if (financialYearStartMonthIndex === undefined) {
+        throw new OrganisationServiceError(
+          "Financial year start month index is required for root organisation"
+        );
+      }
+
+      const generated = await this.generateFinancialPeriodsForRootOrg(
+        financialYearStartMonthIndex
+      );
+      fysToInsert = generated.fysToInsert;
+      fqsToInsert = generated.fqsToInsert;
+    }
+
+    if (!fysToInsert.length || !fqsToInsert.length || !startDate) {
+      throw new OrganisationServiceError("Financial dates failed to generate.");
+    }
+
+    // Create the organisation
+    const newOrganisation =
+      await this.organisationRepository.createOrganisation(
+        {
+          name,
+          description,
+          parentId: parentUnitId,
+          startDate: startDate,
+          endDate,
+          organisationTagIds,
+          reportingStandardId,
+          consolidationApproachId
+        },
+        fysToInsert,
+        fqsToInsert
+      );
+
+    return newOrganisation;
+  }
+
+  /**
+   * Function to update an organisation given it's ID
+   */
+  async updateOrganisation(
+    args: OrganisationUpdateArgs & {
+      organisationId: number;
+      organisationTagIds?: string[];
+      baselineFinancialYearId?: number;
+    }
+  ): Promise<OrganisationUnitDto> {
+    const { organisationId, baselineFinancialYearId, ...input } = args;
+
+    if (baselineFinancialYearId) {
+      // If root organisation update, check that organisation is root
+      const existingOrganisation =
+        await this.organisationRepository.getOneById(organisationId);
+      if (existingOrganisation.parentId) {
+        throw new OrganisationServiceError(
+          "Updates to these properties can only occur for the root organisation."
+        );
+      }
+
+      if (baselineFinancialYearId) {
+        await this.financialYearRepository.updateFinancialYearBaseYear(
+          baselineFinancialYearId,
+          true
+        );
+      }
+    }
+
+    if (input.endDate || input.parentId) {
+      // Check if end date falls after the latest emission/activities/liabilities
+      const [latestActivity, latestEmission, latestLiability] =
+        await this.getLatestReportingData([organisationId]);
+
+      // If data exists for the organisation, it cannot be switched to a new parent
+      if (
+        input.parentId &&
+        (latestActivity || latestEmission || latestLiability)
+      ) {
+        throw new OrganisationServiceError(
+          "Activities, emissions, or liabilities are reported. The org cannot be switched to another parent"
+        );
+      }
+
+      // End date cannot be selected if reporting data exists after it
+      if (input.endDate) {
+        if (
+          latestActivity?.activityStartDate &&
+          input.endDate < latestActivity.activityStartDate
+        ) {
+          throw new OrganisationServiceError(
+            "Activities exist after the selected end date."
+          );
+        }
+        if (
+          latestEmission?.month?.startDate &&
+          input.endDate < latestEmission?.month?.startDate
+        ) {
+          throw new OrganisationServiceError(
+            "Emissions exist after the selected end date."
+          );
+        }
+        if (
+          latestLiability?.month?.startDate &&
+          input.endDate < latestLiability?.month?.startDate
+        ) {
+          throw new OrganisationServiceError(
+            "Liabilities exist after the selected end date."
+          );
+        }
+      }
+    }
+
+    // Update org properties
+    return await this.organisationRepository.updateOrganisation(
+      organisationId,
+      input
+    );
+  }
+
+  /**
+   * Function to delete an organisation
+   */
+  async deleteOrganisation(organisationId: number) {
+    const organisations = await this.organisationRepository.getManyBy();
+    const descendantsAndSelf = OrganisationHelper.filterDescendants(
+      organisations,
+      [organisationId]
+    );
+
+    const [latestActivity, latestEmission, latestLiability] =
+      await this.getLatestReportingData(descendantsAndSelf);
+
+    // If data exists for the organisation, it cannot be switched to a new parent
+    if (latestActivity || latestEmission || latestLiability) {
+      throw new OrganisationServiceError(
+        "Activities, emissions, or liabilities are reported. The organisation cannot be deleted."
+      );
+    }
+
+    await this.organisationRepository.deleteOrganisations(descendantsAndSelf);
+  }
+
+  /**
+   * Prepares an organisation CSV template and returns the parsed data
+   *
+   * @param buffer The CSV file buffer
+   * @param parentOrganisationInfo Information about the parent organisation to include in it's creation
+   * @returns The parsed organisation units and tags to create
+   */
+  async prepareOrganisationTemplate(
+    buffer: Buffer,
+    parentOrganisationInfo: ParentOrganisationInfo,
+    precomputedTagData?: {
+      existingTagMap: Map<string, string>;
+      tagsToCreate: TagInput[];
+    }
+  ): Promise<OrganisationTemplateProcessingResult> {
+    const { organisationUnits, tagsSet } =
+      this.csvParser.parseOrganisationTemplateBuffer(buffer);
+
+    if (organisationUnits.length === 0) {
+      throw new OrganisationServiceError(
+        "No root organisation found in the uploaded template."
+      );
+    }
+
+    const existingOrganisations = await this.organisationRepository.getManyBy();
+    if (existingOrganisations.length > 0) {
+      throw new OrganisationServiceError("Organisations already exists.");
+    }
+
+    let existingTagMap: Map<string, string>;
+    let tagsToCreate: TagInput[];
+
+    if (precomputedTagData) {
+      // Use pre-computed data and only look up tags not already processed
+      existingTagMap = new Map(precomputedTagData.existingTagMap);
+      tagsToCreate = [...precomputedTagData.tagsToCreate];
+
+      // Check for any new tags from facilities that weren't in the org template
+      const alreadyKnownTagNames = new Set([
+        ...existingTagMap.keys(),
+        ...tagsToCreate.map((t) => t.name)
+      ]);
+
+      const newTagNames = Array.from(tagsSet).filter(
+        (tagName) => !alreadyKnownTagNames.has(tagName)
+      );
+
+      if (newTagNames.length > 0) {
+        // Look up only the new tags we haven't seen before
+        const additionalExistingTags =
+          await this.tagRepository.getManyTagsByNames(newTagNames);
+        for (const tag of additionalExistingTags) {
+          existingTagMap.set(tag.name, tag.id);
+        }
+
+        // Add any remaining new tags to create
+        for (const tagName of newTagNames) {
+          if (!existingTagMap.has(tagName)) {
+            tagsToCreate.push({ name: tagName, description: null });
+          }
+        }
+      }
+    } else {
+      // No pre-computed data, perform full lookup
+      const existingTags = await this.tagRepository.getManyTagsByNames(
+        Array.from(tagsSet)
+      );
+      existingTagMap = new Map<string, string>(
+        existingTags.map((tag) => [tag.name, tag.id])
+      );
+      tagsToCreate = [];
+      for (const tagName of tagsSet) {
+        if (!existingTagMap.has(tagName)) {
+          tagsToCreate.push({ name: tagName, description: null });
+        }
+      }
+    }
+
+    // Generate financial years and quarters for the root organisation
+    const { fysToInsert, fqsToInsert } =
+      await this.generateFinancialPeriodsForRootOrg(
+        parentOrganisationInfo.financialYearStartMonthIndex
+      );
+
+    // Map parsed org units to bulk upload format
+    const consolidationApproach = stringToEnum(
+      parentOrganisationInfo.consolidationApproachId,
+      ConsolidationApproach
+    );
+
+    const bulkOrgUnits: BulkOrganisationUnit[] = organisationUnits.map(
+      (orgUnit, index) => ({
+        name: orgUnit.name,
+        description: orgUnit.description,
+        parentName: orgUnit.parentName,
+        startDate: orgUnit.startDate,
+        endDate: orgUnit.endDate,
+        tags: orgUnit.tags,
+        // Only root org gets reporting standard and consolidation approach
+        ...(index === 0 && {
+          reportingStandardId: parentOrganisationInfo.reportingStandardId,
+          consolidationApproachId: consolidationApproach
+        })
+      })
+    );
+
+    return {
+      organisationUnits: bulkOrgUnits,
+      existingTagMap,
+      tagsToCreate,
+      rootOrgFinancialYears: fysToInsert,
+      rootOrgFinancialQuarters: fqsToInsert
+    };
+  }
+
+  /**
+   * Uploads an organisation CSV template and creates the organisation units
+   *
+   * @param buffer The CSV file buffer
+   * @param parentOrganisationInfo Information about the parent organisation to include in it's creation
+   * @returns The number of organisation units created
+   */
+  async uploadOrganisationTemplate(
+    processedOrganisation: OrganisationTemplateProcessingResult
+  ): Promise<number> {
+    // Execute bulk upload in a single transaction (includes tag creation)
+    return this.organisationRepository.bulkUploadOrganisations(
+      processedOrganisation
+    );
+  }
+
+  /* ---------- PRIVATE FUNCTIONS --------- */
+
+  /**
+   * Generates financial years and quarters for a root organisation
+   */
+  private async generateFinancialPeriodsForRootOrg(
+    financialYearStartMonthIndex: number
+  ): Promise<{
+    fysToInsert: FinancialYearInputArgs[];
+    fqsToInsert: FinancialQuarterInputArgs[];
+  }> {
+    const sortedMonths = await this.monthRepository.getManyBy();
+
+    // Validate start month index
+    if (
+      financialYearStartMonthIndex === undefined ||
+      financialYearStartMonthIndex === null ||
+      financialYearStartMonthIndex < 0 ||
+      financialYearStartMonthIndex >= 12
+    ) {
+      throw new OrganisationServiceError(
+        "Month index must be between 0 and 11"
+      );
+    }
+
+    // Get first month that matches the selected month index
+    const startingMonthIndex = sortedMonths.findIndex(
+      (month) => month.startDate?.getMonth() === financialYearStartMonthIndex
+    );
+
+    // Ensure months have been populated
+    if (sortedMonths.length === 0 || startingMonthIndex === -1) {
+      throw new OrganisationServiceError("Months have not been populated");
+    }
+
+    // Curate FY and FQ objects
+    const fyMonths: MonthDto[][] = [];
+    const fqMonths: MonthDto[][] = [];
+
+    const initialMonthGroup = sortedMonths.slice(0, startingMonthIndex);
+    // Populate first FY which may be < 12 months
+    if (initialMonthGroup.length > 0) {
+      fyMonths.push(initialMonthGroup);
+    }
+
+    // Populate the FQs for the first FY
+    const initialFQMonths = Array.from(
+      { length: Math.ceil(initialMonthGroup.length / 3) },
+      (_, i) =>
+        initialMonthGroup.slice(
+          Math.max(0, initialMonthGroup.length - (i + 1) * 3),
+          initialMonthGroup.length - i * 3
+        )
+    ).reverse();
+    if (initialFQMonths.length) {
+      fqMonths.push(...initialFQMonths);
+    }
+
+    // Iterate and group months into FYs and FQs (12 and 3 months respectively)
+    Array.from(
+      { length: Math.ceil((sortedMonths.length - startingMonthIndex) / 12) },
+      (_, i) => {
+        const start = startingMonthIndex + i * 12;
+        // Ensure the last financial year could be a smaller set < 12 months
+        const end = Math.min(start + 12, sortedMonths.length);
+
+        if (end <= sortedMonths.length) {
+          fyMonths.push(sortedMonths.slice(start, end));
+        }
+
+        for (
+          let fqStart = start;
+          // Ensure the last financial quarter could be a smaller set < 3 months
+          fqStart < Math.min(end, sortedMonths.length);
+          fqStart += 3
+        ) {
+          fqMonths.push(
+            sortedMonths.slice(
+              fqStart,
+              Math.min(fqStart + 3, sortedMonths.length)
+            )
+          );
+        }
+      }
+    );
+
+    // Validates if a group of sorted months have valid dates
+    function validateMonths(months: MonthDto[]) {
+      const startMonth = months.at(0);
+      const endMonth = months.at(-1);
+
+      if (
+        !startMonth?.startDate ||
+        !endMonth?.endDate ||
+        startMonth.startDate.getMonth() +
+          12 -
+          (endMonth.startDate?.getMonth() ?? 0) ===
+          months.length
+      ) {
+        throw new OrganisationServiceError(
+          `Missing dates at ${startMonth?.startDate}.`
+        );
+      }
+
+      return { startMonth, endMonth };
+    }
+
+    // Transform FY args
+    const fysToInsert: FinancialYearInputArgs[] = fyMonths.map(
+      (curr, index) => {
+        const { startMonth, endMonth } = validateMonths(curr);
+
+        const relativeMonthIndex =
+          ((endMonth.startDate?.getMonth() ?? 0) -
+            financialYearStartMonthIndex +
+            12) %
+          12;
+        const year = dayjs(endMonth.startDate)
+          .add(12 - relativeMonthIndex, "month")
+          .subtract(1, "day")
+          .year();
+
+        return {
+          startMonthId: startMonth.id,
+          endMonthId: endMonth.id,
+          isBaseYear: index === 0,
+          isForecastBaseYear: index === 0,
+          label: `FY ${year}`
+        };
+      }
+    );
+
+    // Transform FQ args
+    const fqsToInsert: FinancialQuarterInputArgs[] = fqMonths.map((curr) => {
+      const { startMonth, endMonth } = validateMonths(curr); // Note that start date is validated here
+
+      const quarter =
+        Math.floor(
+          (((startMonth.startDate?.getMonth() ?? 0) -
+            financialYearStartMonthIndex +
+            12) %
+            12) /
+            3
+        ) + 1;
+
+      const year = dayjs(startMonth.startDate)
+        .add(3 * (4 + 1 - quarter), "month")
+        .subtract(1, "day")
+        .year();
+
+      return {
+        startMonthId: startMonth.id,
+        endMonthId: endMonth.id,
+        label: `FY ${year} Q${quarter}`
+      };
+    });
+
+    if (!fysToInsert.length || !fqsToInsert.length) {
+      throw new OrganisationServiceError("Financial dates failed to generate.");
+    }
+
+    return { fysToInsert, fqsToInsert };
+  }
+
+  /**
+   * Returns a map of all organisations that have data
+   */
+  private async getReportingDataCountByOrganisation(
+    organisationUnitIds: number[]
+  ): Promise<Map<number, boolean>> {
+    const [activityCount, liabilityCount, emissionCount] = await Promise.all([
+      this.activityRepository.getCountByOrganisation(),
+      this.liabilitiesRepository.getCountByOrganisation(),
+      this.emissionsRepository.getCountByOrganisation()
+    ]);
+
+    const orgMap = new Map<number, boolean>();
+
+    organisationUnitIds.forEach((orgId) => {
+      if (
+        activityCount.find((activity) => activity.organisationUnitId === orgId)
+          ?._count.id ||
+        liabilityCount.find(
+          (liability) => liability.organisationUnitId === orgId
+        )?._count.id ||
+        emissionCount.find((emission) => emission.organisationUnitId === orgId)
+          ?._count.id
+      ) {
+        orgMap.set(orgId, true);
+      }
+    });
+
+    return orgMap;
+  }
+
+  /**
+   * Returns a map of all facilities that have data
+   */
+  private async getReportingDataCountByFacility(
+    facilityIds: number[]
+  ): Promise<Map<number, boolean>> {
+    const [activityCount, liabilityCount, emissionCount] = await Promise.all([
+      this.activityRepository.getCountByFacility(),
+      this.liabilitiesRepository.getCountByFacility(),
+      this.emissionsRepository.getCountByFacility()
+    ]);
+
+    const facilityMap = new Map<number, boolean>();
+
+    facilityIds.forEach((facilityId) => {
+      if (
+        activityCount.find((activity) => activity.facilityId === facilityId)
+          ?._count.id ||
+        liabilityCount.find((liability) => liability.facilityId === facilityId)
+          ?._count.id ||
+        emissionCount.find((emission) => emission.facilityId === facilityId)
+          ?._count.id
+      ) {
+        facilityMap.set(facilityId, true);
+      }
+    });
+
+    return facilityMap;
+  }
+
+  /**
+   * Returns the latest reporting data for an organisation
+   */
+  private async getLatestReportingData(organisationIds: number[]) {
+    return await Promise.all([
+      this.activityRepository.getLatestActivityDataByOrganisations(
+        organisationIds
+      ),
+      this.emissionsRepository.getLatestEmissionByOrganisations(
+        organisationIds
+      ),
+      this.liabilitiesRepository.getLatestLiabilityByOrganisations(
+        organisationIds
+      )
+    ]);
+  }
+}

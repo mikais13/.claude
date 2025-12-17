@@ -1,0 +1,1036 @@
+2025-12-17T02:28:02.604Z [DEBUG] Getting matching hook commands for SessionEnd with query: clear
+2025-12-17T02:28:02.604Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:28:02.604Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2025-12-17T02:28:02.604Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-12-17T02:28:02.604Z [DEBUG] Cleared all session hooks for session 8a8d3530-bedd-41c9-b5e8-9f1f9281e0eb
+2025-12-17T02:28:02.606Z [DEBUG] Getting matching hook commands for SessionStart with query: clear
+2025-12-17T02:28:02.606Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:28:02.607Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2025-12-17T02:28:02.616Z [DEBUG] [SLOW OPERATION DETECTED] fs.statSync (6.8ms)
+2025-12-17T02:28:02.635Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (18.9ms)
+2025-12-17T02:28:02.636Z [DEBUG] FileHistory: Added snapshot for e26c4265-edec-441f-a51a-2f5f1da968e5, tracking 0 files
+2025-12-17T02:28:03.520Z [DEBUG] Checking for native installer update to version 2.0.71
+2025-12-17T02:28:06.311Z [DEBUG] [SLOW OPERATION DETECTED] fs.readFileSync (11.2ms)
+2025-12-17T02:28:06.311Z [DEBUG] MCP server "atlassian": Token expires in -186829s, attempting proactive refresh
+2025-12-17T02:28:06.311Z [DEBUG] MCP server "atlassian": Starting token refresh
+2025-12-17T02:28:06.312Z [DEBUG] MCP server "figma-remote-mcp": Returning tokens
+2025-12-17T02:28:06.312Z [DEBUG] MCP server "figma-remote-mcp": Token length: 45
+2025-12-17T02:28:06.312Z [DEBUG] MCP server "figma-remote-mcp": Has refresh token: true
+2025-12-17T02:28:06.312Z [DEBUG] MCP server "figma-remote-mcp": Expires in: 7077932s
+2025-12-17T02:28:06.815Z [DEBUG] MCP server "atlassian": Found client info
+2025-12-17T02:28:07.589Z [DEBUG] MCP server "atlassian": Token refresh failed: Invalid refresh token
+2025-12-17T02:28:07.589Z [DEBUG] MCP server "atlassian": Token refresh failed, returning current tokens
+2025-12-17T02:28:07.589Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-17T02:28:07.589Z [DEBUG] MCP server "atlassian": Token length: 93
+2025-12-17T02:28:07.589Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-17T02:28:07.589Z [DEBUG] MCP server "atlassian": Expires in: -186829s
+2025-12-17T02:28:10.563Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /home/mikaisomerville/.local/share/claude/versions/2.0.71 (expected in multi-process scenarios)
+    at UvI (/$bunfs/root/claude:2594:1618)
+    at XAA (/$bunfs/root/claude:2592:35618)
+    at async ed0 (/$bunfs/root/claude:2592:37719)
+    at async mv (/$bunfs/root/claude:2594:236)
+    at async <anonymous> (/$bunfs/root/claude:2594:13006)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T02:28:11.277Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.833365.1765938491277
+2025-12-17T02:28:11.277Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:28:11.296Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (19.5ms)
+2025-12-17T02:28:11.296Z [DEBUG] Temp file written successfully, size: 53955 bytes
+2025-12-17T02:28:11.296Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:28:11.296Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.833365.1765938491277 to /home/mikaisomerville/.claude.json
+2025-12-17T02:28:11.297Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:28:11.306Z [DEBUG] MCP server "azure-mcp-server": Starting connection with timeout of 30000ms
+2025-12-17T02:28:11.321Z [DEBUG] MCP server "atlassian": Token expires in -186834s, attempting proactive refresh
+2025-12-17T02:28:11.321Z [DEBUG] MCP server "atlassian": Starting token refresh
+2025-12-17T02:28:11.322Z [DEBUG] MCP server "figma-remote-mcp": Returning tokens
+2025-12-17T02:28:11.322Z [DEBUG] MCP server "figma-remote-mcp": Token length: 45
+2025-12-17T02:28:11.322Z [DEBUG] MCP server "figma-remote-mcp": Has refresh token: true
+2025-12-17T02:28:11.322Z [DEBUG] MCP server "figma-remote-mcp": Expires in: 7077927s
+2025-12-17T02:28:11.441Z [DEBUG] MCP server "atlassian": Found client info
+2025-12-17T02:28:11.477Z [DEBUG] MCP server "atlassian": Token refresh failed: Invalid refresh token
+2025-12-17T02:28:11.477Z [DEBUG] MCP server "atlassian": Token refresh failed, returning current tokens
+2025-12-17T02:28:11.477Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-17T02:28:11.477Z [DEBUG] MCP server "atlassian": Token length: 93
+2025-12-17T02:28:11.477Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-17T02:28:11.477Z [DEBUG] MCP server "atlassian": Expires in: -186834s
+2025-12-17T02:28:15.150Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.833365.1765938495150
+2025-12-17T02:28:15.150Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:28:15.171Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (21.1ms)
+2025-12-17T02:28:15.171Z [DEBUG] Temp file written successfully, size: 53927 bytes
+2025-12-17T02:28:15.171Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:28:15.171Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.833365.1765938495150 to /home/mikaisomerville/.claude.json
+2025-12-17T02:28:15.171Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:28:15.172Z [DEBUG] MCP server "playwright": Starting connection with timeout of 30000ms
+2025-12-17T02:28:15.184Z [DEBUG] MCP server "atlassian": Token expires in -186838s, attempting proactive refresh
+2025-12-17T02:28:15.184Z [DEBUG] MCP server "atlassian": Starting token refresh
+2025-12-17T02:28:15.185Z [DEBUG] MCP server "figma-remote-mcp": Returning tokens
+2025-12-17T02:28:15.185Z [DEBUG] MCP server "figma-remote-mcp": Token length: 45
+2025-12-17T02:28:15.185Z [DEBUG] MCP server "figma-remote-mcp": Has refresh token: true
+2025-12-17T02:28:15.185Z [DEBUG] MCP server "figma-remote-mcp": Expires in: 7077923s
+2025-12-17T02:28:15.353Z [DEBUG] MCP server "atlassian": Found client info
+2025-12-17T02:28:15.385Z [DEBUG] MCP server "atlassian": Token refresh failed: Invalid refresh token
+2025-12-17T02:28:15.385Z [DEBUG] MCP server "atlassian": Token refresh failed, returning current tokens
+2025-12-17T02:28:15.385Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-17T02:28:15.385Z [DEBUG] MCP server "atlassian": Token length: 93
+2025-12-17T02:28:15.385Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-17T02:28:15.385Z [DEBUG] MCP server "atlassian": Expires in: -186838s
+2025-12-17T02:28:19.704Z [DEBUG] MCP server "atlassian": Revoking tokens via https://cf.mcp.atlassian.com/v1/token
+2025-12-17T02:28:20.068Z [DEBUG] MCP server "atlassian": Successfully revoked refresh_token
+2025-12-17T02:28:20.434Z [DEBUG] MCP server "atlassian": Successfully revoked access_token
+2025-12-17T02:28:20.435Z [DEBUG] MCP server "atlassian": Cleared stored tokens
+2025-12-17T02:28:20.453Z [DEBUG] MCP server "atlassian": Using redirect port: 53527
+2025-12-17T02:28:20.581Z [DEBUG] MCP server "atlassian": Fetched OAuth metadata with scope: NONE
+2025-12-17T02:28:20.581Z [DEBUG] MCP server "atlassian": Generated new OAuth state
+2025-12-17T02:28:20.595Z [DEBUG] MCP server "atlassian": Starting SDK auth
+2025-12-17T02:28:20.595Z [DEBUG] MCP server "atlassian": Server URL: https://mcp.atlassian.com/v1/sse
+2025-12-17T02:28:20.846Z [DEBUG] MCP server "atlassian": No client info found
+2025-12-17T02:28:21.614Z [DEBUG] MCP server "atlassian": Token expired without refresh token
+2025-12-17T02:28:21.625Z [DEBUG] MCP server "atlassian": Saving code verifier
+2025-12-17T02:28:21.626Z [DEBUG] MCP server "atlassian": Authorization URL: https://mcp.atlassian.com/v1/authorize?response_type=code&client_id=WLc-3q6CNaXY0wQc&code_challenge=WlBf4O4SE4-xxJkqnv6ON7FXALei5ymP_UpiEKhoogo&code_challenge_method=S256&redirect_uri=http%3A%2F%2Flocalhost%3A53527%2Fcallback&state=QXUwDzaYebMTfxNP6oTzQ5kLYswTpJLvC0-5jzemK-A
+2025-12-17T02:28:21.626Z [DEBUG] MCP server "atlassian": Scopes in URL: NOT FOUND
+2025-12-17T02:28:21.626Z [DEBUG] MCP server "atlassian": No scopes available from URL or metadata
+2025-12-17T02:28:21.626Z [DEBUG] MCP server "atlassian": Redirecting to authorization URL
+2025-12-17T02:28:21.626Z [DEBUG] MCP server "atlassian": Authorization URL: https://mcp.atlassian.com/v1/authorize?response_type=code&client_id=WLc-3q6CNaXY0wQc&code_challenge=WlBf4O4SE4-xxJkqnv6ON7FXALei5ymP_UpiEKhoogo&code_challenge_method=S256&redirect_uri=http%3A%2F%2Flocalhost%3A53527%2Fcallback&state=QXUwDzaYebMTfxNP6oTzQ5kLYswTpJLvC0-5jzemK-A
+2025-12-17T02:28:21.626Z [DEBUG] MCP server "atlassian": Opening authorization URL: https://mcp.atlassian.com/v1/authorize?response_type=code&client_id=WLc-3q6CNaXY0wQc&code_challenge=WlBf4O4SE4-xxJkqnv6ON7FXALei5ymP_UpiEKhoogo&code_challenge_method=S256&redirect_uri=http%3A%2F%2Flocalhost%3A53527%2Fcallback&state=QXUwDzaYebMTfxNP6oTzQ5kLYswTpJLvC0-5jzemK-A
+2025-12-17T02:28:21.663Z [DEBUG] MCP server "atlassian": Browser didn't open automatically. URL is shown in UI.
+2025-12-17T02:28:21.664Z [DEBUG] MCP server "atlassian": Initial auth result: REDIRECT
+2025-12-17T02:28:32.032Z [DEBUG] BigQuery metrics exported successfully
+2025-12-17T02:28:32.032Z [DEBUG] BigQuery API Response: {
+  "accepted_count": 14,
+  "rejected_count": 0
+}
+2025-12-17T02:28:41.267Z [DEBUG] MCP server "azure-mcp-server": Connection timeout triggered after 29968ms (limit: 30000ms)
+2025-12-17T02:28:41.276Z [DEBUG] MCP server "azure-mcp-server": Connection failed after 29977ms: Connection to MCP server "azure-mcp-server" timed out after 30000ms
+2025-12-17T02:28:41.276Z [ERROR] MCP server "azure-mcp-server" Connection failed: Connection to MCP server "azure-mcp-server" timed out after 30000ms
+2025-12-17T02:28:41.281Z [DEBUG] MCP server "azure-mcp-server": Starting connection with timeout of 30000ms
+2025-12-17T02:28:45.157Z [DEBUG] MCP server "playwright": Connection timeout triggered after 29986ms (limit: 30000ms)
+2025-12-17T02:28:45.158Z [DEBUG] MCP server "playwright": Connection failed after 29987ms: Connection to MCP server "playwright" timed out after 30000ms
+2025-12-17T02:28:45.158Z [ERROR] MCP server "playwright" Connection failed: Connection to MCP server "playwright" timed out after 30000ms
+2025-12-17T02:28:45.160Z [DEBUG] MCP server "playwright": Starting connection with timeout of 30000ms
+2025-12-17T02:28:47.290Z [DEBUG] MCP server "atlassian": MCP OAuth server cleaned up
+2025-12-17T02:28:47.304Z [DEBUG] MCP server "atlassian": Completing auth flow with authorization code
+2025-12-17T02:28:47.684Z [DEBUG] MCP server "atlassian": Found client info
+2025-12-17T02:28:47.687Z [DEBUG] MCP server "atlassian": Returning code verifier
+2025-12-17T02:28:49.541Z [DEBUG] MCP server "atlassian": Saving tokens
+2025-12-17T02:28:49.541Z [DEBUG] MCP server "atlassian": Token expires in: 3300
+2025-12-17T02:28:49.541Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-17T02:28:49.541Z [DEBUG] MCP server "atlassian": Auth result: AUTHORIZED
+2025-12-17T02:28:49.541Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-17T02:28:49.541Z [DEBUG] MCP server "atlassian": Token length: 93
+2025-12-17T02:28:49.541Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-17T02:28:49.541Z [DEBUG] MCP server "atlassian": Expires in: 3300s
+2025-12-17T02:28:49.541Z [DEBUG] MCP server "atlassian": Tokens after auth: Present
+2025-12-17T02:28:49.541Z [DEBUG] MCP server "atlassian": Token access_token length: 93
+2025-12-17T02:28:49.541Z [DEBUG] MCP server "atlassian": Token expires_in: 3300
+2025-12-17T02:28:49.554Z [DEBUG] MCP server "atlassian": SSE transport initialized, awaiting connection
+2025-12-17T02:28:49.555Z [DEBUG] MCP server "atlassian": Starting connection with timeout of 30000ms
+2025-12-17T02:28:49.556Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-17T02:28:49.556Z [DEBUG] MCP server "atlassian": Token length: 93
+2025-12-17T02:28:49.556Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-17T02:28:49.556Z [DEBUG] MCP server "atlassian": Expires in: 3299s
+2025-12-17T02:28:49.986Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-17T02:28:49.986Z [DEBUG] MCP server "atlassian": Token length: 93
+2025-12-17T02:28:49.986Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-17T02:28:49.986Z [DEBUG] MCP server "atlassian": Expires in: 3299s
+2025-12-17T02:28:50.316Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-17T02:28:50.316Z [DEBUG] MCP server "atlassian": Token length: 93
+2025-12-17T02:28:50.316Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-17T02:28:50.316Z [DEBUG] MCP server "atlassian": Expires in: 3299s
+2025-12-17T02:28:50.446Z [DEBUG] MCP server "atlassian": Successfully connected to sse server in 900ms
+2025-12-17T02:28:50.447Z [DEBUG] MCP server "atlassian": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":true,"serverVersion":{"name":"atlassian-mcp-server","version":"1.0.0"}}
+2025-12-17T02:28:50.447Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-17T02:28:50.447Z [DEBUG] MCP server "atlassian": Token length: 93
+2025-12-17T02:28:50.447Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-17T02:28:50.447Z [DEBUG] MCP server "atlassian": Expires in: 3299s
+2025-12-17T02:28:50.448Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-17T02:28:50.448Z [DEBUG] MCP server "atlassian": Token length: 93
+2025-12-17T02:28:50.448Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-17T02:28:50.448Z [DEBUG] MCP server "atlassian": Expires in: 3299s
+2025-12-17T02:28:50.766Z [ERROR] MCP server "atlassian" Failed to fetch resources: MCP error -32601: Method not found
+2025-12-17T02:28:50.772Z [DEBUG] FileHistory: Making snapshot for message dfb842f8-55fb-4544-828a-8b848551bf15
+2025-12-17T02:28:50.772Z [DEBUG] FileHistory: Added snapshot for dfb842f8-55fb-4544-828a-8b848551bf15, tracking 0 files
+2025-12-17T02:28:50.793Z [DEBUG] UserCommandMessage rendering: "mcp" (args: "none")
+2025-12-17T02:28:50.793Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:28:50.895Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-12-17T02:28:51.127Z [DEBUG] [SLOW OPERATION DETECTED] fs.existsSync (9.6ms)
+2025-12-17T02:28:51.586Z [DEBUG] Checking for native installer update to version 2.0.71
+2025-12-17T02:28:54.269Z [DEBUG] [SLOW OPERATION DETECTED] fs.existsSync (21.9ms)
+2025-12-17T02:28:54.875Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-17T02:28:54.876Z [DEBUG] MCP server "atlassian": Token length: 93
+2025-12-17T02:28:54.876Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-17T02:28:54.876Z [DEBUG] MCP server "atlassian": Expires in: 3294s
+2025-12-17T02:28:54.876Z [DEBUG] MCP server "figma-remote-mcp": Returning tokens
+2025-12-17T02:28:54.876Z [DEBUG] MCP server "figma-remote-mcp": Token length: 45
+2025-12-17T02:28:54.876Z [DEBUG] MCP server "figma-remote-mcp": Has refresh token: true
+2025-12-17T02:28:54.876Z [DEBUG] MCP server "figma-remote-mcp": Expires in: 7077884s
+2025-12-17T02:28:58.962Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /home/mikaisomerville/.local/share/claude/versions/2.0.71 (expected in multi-process scenarios)
+    at UvI (/$bunfs/root/claude:2594:1618)
+    at XAA (/$bunfs/root/claude:2592:35618)
+    at async ed0 (/$bunfs/root/claude:2592:37719)
+    at async mv (/$bunfs/root/claude:2594:236)
+    at async <anonymous> (/$bunfs/root/claude:2594:13006)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T02:29:11.298Z [DEBUG] MCP server "azure-mcp-server": Connection timeout triggered after 30021ms (limit: 30000ms)
+2025-12-17T02:29:11.298Z [DEBUG] MCP server "azure-mcp-server": Connection failed after 30021ms: Connection to MCP server "azure-mcp-server" timed out after 30000ms
+2025-12-17T02:29:11.298Z [ERROR] MCP server "azure-mcp-server" Connection failed: Connection to MCP server "azure-mcp-server" timed out after 30000ms
+2025-12-17T02:29:11.346Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-17T02:29:11.346Z [DEBUG] MCP server "atlassian": Token length: 93
+2025-12-17T02:29:11.346Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-17T02:29:11.346Z [DEBUG] MCP server "atlassian": Expires in: 3278s
+2025-12-17T02:29:11.347Z [DEBUG] MCP server "figma-remote-mcp": Returning tokens
+2025-12-17T02:29:11.347Z [DEBUG] MCP server "figma-remote-mcp": Token length: 45
+2025-12-17T02:29:11.347Z [DEBUG] MCP server "figma-remote-mcp": Has refresh token: true
+2025-12-17T02:29:11.347Z [DEBUG] MCP server "figma-remote-mcp": Expires in: 7077867s
+2025-12-17T02:29:15.146Z [DEBUG] MCP server "playwright": Connection timeout triggered after 29988ms (limit: 30000ms)
+2025-12-17T02:29:15.147Z [DEBUG] MCP server "playwright": Connection failed after 29989ms: Connection to MCP server "playwright" timed out after 30000ms
+2025-12-17T02:29:15.147Z [ERROR] MCP server "playwright" Connection failed: Connection to MCP server "playwright" timed out after 30000ms
+2025-12-17T02:29:15.159Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-17T02:29:15.159Z [DEBUG] MCP server "atlassian": Token length: 93
+2025-12-17T02:29:15.159Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-17T02:29:15.159Z [DEBUG] MCP server "atlassian": Expires in: 3274s
+2025-12-17T02:29:15.160Z [DEBUG] MCP server "figma-remote-mcp": Returning tokens
+2025-12-17T02:29:15.160Z [DEBUG] MCP server "figma-remote-mcp": Token length: 45
+2025-12-17T02:29:15.160Z [DEBUG] MCP server "figma-remote-mcp": Has refresh token: true
+2025-12-17T02:29:15.160Z [DEBUG] MCP server "figma-remote-mcp": Expires in: 7077863s
+2025-12-17T02:29:15.546Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.833365.1765938555546
+2025-12-17T02:29:15.546Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:29:15.555Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (9.4ms)
+2025-12-17T02:29:15.555Z [DEBUG] Temp file written successfully, size: 53961 bytes
+2025-12-17T02:29:15.555Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:29:15.555Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.833365.1765938555546 to /home/mikaisomerville/.claude.json
+2025-12-17T02:29:15.555Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:29:15.591Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-17T02:29:15.591Z [DEBUG] MCP server "atlassian": Token length: 93
+2025-12-17T02:29:15.591Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-17T02:29:15.591Z [DEBUG] MCP server "atlassian": Expires in: 3273s
+2025-12-17T02:29:15.591Z [DEBUG] MCP server "figma-remote-mcp": Returning tokens
+2025-12-17T02:29:15.591Z [DEBUG] MCP server "figma-remote-mcp": Token length: 45
+2025-12-17T02:29:15.591Z [DEBUG] MCP server "figma-remote-mcp": Has refresh token: true
+2025-12-17T02:29:15.592Z [DEBUG] MCP server "figma-remote-mcp": Expires in: 7077863s
+2025-12-17T02:29:17.903Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.833365.1765938557903
+2025-12-17T02:29:17.903Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:29:17.916Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (13.5ms)
+2025-12-17T02:29:17.916Z [DEBUG] Temp file written successfully, size: 53983 bytes
+2025-12-17T02:29:17.916Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:29:17.916Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.833365.1765938557903 to /home/mikaisomerville/.claude.json
+2025-12-17T02:29:17.917Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:29:17.939Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-17T02:29:17.939Z [DEBUG] MCP server "atlassian": Token length: 93
+2025-12-17T02:29:17.939Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-17T02:29:17.940Z [DEBUG] MCP server "atlassian": Expires in: 3271s
+2025-12-17T02:29:17.940Z [DEBUG] MCP server "figma-remote-mcp": Returning tokens
+2025-12-17T02:29:17.940Z [DEBUG] MCP server "figma-remote-mcp": Token length: 45
+2025-12-17T02:29:17.940Z [DEBUG] MCP server "figma-remote-mcp": Has refresh token: true
+2025-12-17T02:29:17.940Z [DEBUG] MCP server "figma-remote-mcp": Expires in: 7077861s
+2025-12-17T02:29:19.209Z [DEBUG] UserCommandMessage rendering: "mcp" (args: "none")
+2025-12-17T02:29:19.210Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:29:19.254Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-12-17T02:29:19.736Z [DEBUG] Checking for native installer update to version 2.0.71
+2025-12-17T02:29:26.755Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /home/mikaisomerville/.local/share/claude/versions/2.0.71 (expected in multi-process scenarios)
+    at UvI (/$bunfs/root/claude:2594:1618)
+    at XAA (/$bunfs/root/claude:2592:35618)
+    at async ed0 (/$bunfs/root/claude:2592:37719)
+    at async mv (/$bunfs/root/claude:2594:236)
+    at async <anonymous> (/$bunfs/root/claude:2594:13006)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T02:30:20.881Z [DEBUG] MCP server "ide": Calling MCP tool: getDiagnostics
+2025-12-17T02:30:20.881Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-17T02:30:20.881Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-17T02:30:20.881Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-17T02:30:20.881Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-17T02:30:20.894Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:30:20.894Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:30:20.896Z [DEBUG] MCP server "ide": Tool 'getDiagnostics' completed successfully in 15ms
+2025-12-17T02:30:20.906Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-12-17T02:30:20.906Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:20.906Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-17T02:30:20.911Z [DEBUG] FileHistory: Making snapshot for message 6ea67fca-13d6-4dc6-b311-003b49a3b114
+2025-12-17T02:30:20.911Z [DEBUG] FileHistory: Added snapshot for 6ea67fca-13d6-4dc6-b311-003b49a3b114, tracking 0 files
+2025-12-17T02:30:20.923Z [DEBUG] MCP server "ide": Calling MCP tool: closeAllDiffTabs
+2025-12-17T02:30:20.956Z [DEBUG] MCP server "ide": Tool 'closeAllDiffTabs' completed successfully in 33ms
+2025-12-17T02:30:22.636Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:23.930Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:28.143Z [DEBUG] executePreToolHooks called for tool: Task
+2025-12-17T02:30:28.157Z [DEBUG] Getting matching hook commands for PreToolUse with query: Task
+2025-12-17T02:30:28.157Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:28.157Z [DEBUG] Matched 0 unique hooks for query "Task" (0 before deduplication)
+2025-12-17T02:30:28.205Z [DEBUG] Getting matching hook commands for SubagentStart with query: Explore
+2025-12-17T02:30:28.205Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:28.205Z [DEBUG] Matched 0 unique hooks for query "Explore" (0 before deduplication)
+2025-12-17T02:30:28.233Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (19.2ms)
+2025-12-17T02:30:29.555Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:30.429Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:30:30.450Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:30:30.450Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:30.450Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:30:32.942Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:30:32.942Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:32.942Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:30:32.981Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:30:32.981Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:30:34.284Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:34.359Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:35.260Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-12-17T02:30:35.260Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-12-17T02:30:35.261Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-12-17T02:30:35.275Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-12-17T02:30:35.275Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:35.275Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-12-17T02:30:35.275Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-12-17T02:30:35.275Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:35.275Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-12-17T02:30:35.275Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-12-17T02:30:35.275Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:35.275Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-12-17T02:30:40.667Z [DEBUG] [SLOW OPERATION DETECTED] fs.existsSync (7.2ms)
+2025-12-17T02:30:41.153Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-12-17T02:30:41.153Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:41.153Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-12-17T02:30:41.260Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-12-17T02:30:41.260Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:41.260Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-12-17T02:30:41.346Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-12-17T02:30:41.346Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:41.346Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-12-17T02:30:41.396Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:30:41.396Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:30:42.679Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:43.367Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:30:43.383Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:30:43.383Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:43.383Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:30:43.536Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:30:43.536Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:43.536Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:30:43.572Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:30:43.572Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:30:44.997Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:45.153Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:45.604Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:30:45.621Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:30:45.621Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:45.621Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:30:45.636Z [DEBUG] [SLOW OPERATION DETECTED] fs.statSync (5.5ms)
+2025-12-17T02:30:45.727Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:30:45.727Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:45.727Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:30:45.741Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:30:45.741Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:30:46.489Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:46.690Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:46.972Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:30:46.988Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:30:46.988Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:46.988Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:30:47.101Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Bash
+2025-12-17T02:30:47.101Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:47.101Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:30:47.136Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:30:47.136Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:30:48.130Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:48.375Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:30:48.397Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:30:48.397Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:48.397Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:30:48.566Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:30:48.566Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:48.566Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:30:48.596Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:30:48.596Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:30:49.434Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:49.887Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:50.241Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:30:50.256Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:30:50.256Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:50.256Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:30:50.425Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:30:50.425Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:50.425Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:30:50.456Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:30:50.456Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:30:51.407Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:51.698Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:52.257Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:30:52.273Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:30:52.273Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:52.273Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:30:52.459Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:30:52.459Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:52.459Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:30:52.498Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:30:52.498Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:30:53.481Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:53.800Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:55.107Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:30:55.107Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:30:55.108Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:30:55.120Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:30:55.120Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:55.120Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:30:55.120Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:30:55.120Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:55.120Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:30:55.120Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:30:55.120Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:55.120Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:30:55.200Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:30:55.200Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:55.200Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:30:55.200Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:30:55.200Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:55.200Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:30:55.200Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:30:55.200Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:55.200Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:30:55.253Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:30:55.253Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:30:55.290Z [DEBUG] [SLOW OPERATION DETECTED] fs.statSync (5.2ms)
+2025-12-17T02:30:56.993Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:30:58.564Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:30:58.584Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:30:58.584Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:58.584Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:30:58.584Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:30:58.591Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:30:58.591Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:58.591Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:30:58.665Z [DEBUG] [SLOW OPERATION DETECTED] fs.statSync (7.6ms)
+2025-12-17T02:30:58.673Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:30:58.673Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:30:58.673Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:01.093Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:31:01.093Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:01.093Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:01.140Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:01.140Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:02.215Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:03.233Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:04.324Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:04.325Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:04.325Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:04.338Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:04.338Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:04.338Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:04.338Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:04.338Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:04.338Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:04.338Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:04.338Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:04.338Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:04.397Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:04.397Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:04.397Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:04.397Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:04.397Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:04.397Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:04.819Z [ERROR] MaxFileReadTokenExceededError: MaxFileReadTokenExceededError: File content (32147 tokens) exceeds maximum allowed tokens (25000). Please use offset and limit parameters to read specific portions of the file, or use the GrepTool to search for specific content.
+    at CMI (/$bunfs/root/claude:1368:10587)
+    at async call (/$bunfs/root/claude:1377:972)
+    at async ae0 (/$bunfs/root/claude:2895:24938)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T02:31:04.828Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Read
+2025-12-17T02:31:04.828Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:04.828Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:04.870Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:04.870Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:06.506Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:07.722Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:31:07.744Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:31:07.744Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:07.744Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:07.744Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:07.761Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:07.761Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:07.761Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:07.815Z [DEBUG] [SLOW OPERATION DETECTED] fs.existsSync (6.3ms)
+2025-12-17T02:31:07.838Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:07.838Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:07.838Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:07.955Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:31:07.955Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:07.955Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:08.014Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:08.014Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:09.364Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:09.501Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:10.460Z [ERROR] MaxFileReadTokenExceededError: MaxFileReadTokenExceededError: File content (32147 tokens) exceeds maximum allowed tokens (25000). Please use offset and limit parameters to read specific portions of the file, or use the GrepTool to search for specific content.
+    at CMI (/$bunfs/root/claude:1368:10587)
+    at async call (unknown)
+    at async <anonymous> (/$bunfs/root/claude:1567:1511)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T02:31:10.731Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:31:10.749Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:31:10.749Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:10.749Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:10.749Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:10.766Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:10.766Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:10.766Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:10.850Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:10.850Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:10.850Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:10.901Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:31:10.901Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:10.901Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:10.921Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:10.921Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:11.513Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:12.178Z [ERROR] MaxFileReadTokenExceededError: MaxFileReadTokenExceededError: File content (32147 tokens) exceeds maximum allowed tokens (25000). Please use offset and limit parameters to read specific portions of the file, or use the GrepTool to search for specific content.
+    at CMI (/$bunfs/root/claude:1368:10587)
+    at async call (/$bunfs/root/claude:1377:972)
+    at async <anonymous> (/$bunfs/root/claude:1567:1511)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T02:31:12.339Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:13.887Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:31:13.893Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:31:13.893Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:13.893Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:13.893Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:13.907Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:13.907Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:13.907Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:13.983Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:13.983Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:13.983Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:14.018Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:31:14.018Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:14.018Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:14.054Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:14.054Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:15.735Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:15.972Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:16.961Z [ERROR] MaxFileReadTokenExceededError: MaxFileReadTokenExceededError: File content (32147 tokens) exceeds maximum allowed tokens (25000). Please use offset and limit parameters to read specific portions of the file, or use the GrepTool to search for specific content.
+    at CMI (/$bunfs/root/claude:1368:10587)
+    at async call (/$bunfs/root/claude:1377:972)
+    at async <anonymous> (/$bunfs/root/claude:1567:1511)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T02:31:17.495Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:17.496Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:17.543Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:17.543Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:17.543Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:17.543Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:17.543Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:17.543Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:17.741Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:17.741Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:17.741Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:17.741Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:17.741Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:17.741Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:17.844Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:17.844Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:19.603Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:21.082Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:31:21.083Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:31:21.105Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:31:21.105Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:21.105Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:21.105Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:31:21.105Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:21.105Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:21.307Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:31:21.307Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:21.307Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:22.670Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:23.492Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:31:23.492Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:23.493Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:23.528Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:23.528Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:24.838Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:25.682Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:26.455Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:26.456Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:26.463Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:26.463Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:26.463Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:26.463Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:26.463Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:26.463Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:26.520Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:26.520Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:26.520Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:26.520Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:26.520Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:26.520Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:26.562Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:26.562Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:28.300Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:29.678Z [DEBUG] [SLOW OPERATION DETECTED] fs.existsSync (6.4ms)
+2025-12-17T02:31:29.703Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:31:29.721Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:31:29.721Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:29.721Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:29.721Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:29.735Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:29.735Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:29.735Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:29.806Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:29.806Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:29.806Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:29.949Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:31:29.949Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:29.949Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:29.987Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:29.987Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:31.354Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:31.356Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:32.825Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:31:32.841Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:31:32.841Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:32.841Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:32.841Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:32.848Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:32.848Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:32.848Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:32.910Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:32.910Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:32.910Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:34.960Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:31:34.960Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:34.960Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:34.995Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:34.995Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:35.026Z [DEBUG] [SLOW OPERATION DETECTED] fs.existsSync (5.4ms)
+2025-12-17T02:31:36.138Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:36.397Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:37.373Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:37.374Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:37.380Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:37.380Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:37.380Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:37.380Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:37.380Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:37.380Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:37.447Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:37.447Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:37.447Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:37.448Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:37.448Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:37.448Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:37.517Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:37.517Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:38.947Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:39.979Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:31:39.992Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:31:39.992Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:39.992Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:40.133Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:31:40.133Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:40.133Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:40.171Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:40.171Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:40.802Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:41.517Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:42.326Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:31:42.339Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:31:42.339Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:42.339Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:42.339Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:42.348Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:42.348Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:42.348Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:42.427Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:42.427Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:42.427Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:42.472Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:31:42.472Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:42.472Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:42.507Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:42.507Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:43.331Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:44.396Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:45.892Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:31:45.907Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:31:45.907Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:45.908Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:45.908Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:45.914Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:45.914Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:45.914Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:45.991Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:45.991Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:45.991Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:46.036Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:31:46.036Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:46.036Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:46.076Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:46.076Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:46.937Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:49.555Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:50.359Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:50.368Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:50.368Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:50.368Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:50.420Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:50.420Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:50.420Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:50.449Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:50.449Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:51.818Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:52.762Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:31:52.781Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:31:52.781Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:52.781Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:52.781Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:31:52.794Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:31:52.794Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:52.795Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:52.860Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:31:52.860Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:52.860Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:31:52.944Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:31:52.944Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:52.944Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:52.971Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:52.971Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:54.317Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:55.171Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:31:55.171Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:31:55.191Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:31:55.191Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:55.191Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:55.191Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:31:55.191Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:55.191Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:55.346Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:31:55.346Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:55.346Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:55.359Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:56.818Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:57.440Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:31:57.440Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:31:57.440Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:31:57.449Z [DEBUG] [SLOW OPERATION DETECTED] fs.existsSync (5.4ms)
+2025-12-17T02:31:57.480Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:57.480Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:31:58.354Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:58.821Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:31:59.439Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:31:59.439Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:32:02.015Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:32:03.500Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:32:03.501Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-17T02:32:03.520Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:32:03.520Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:32:03.520Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:32:03.520Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-17T02:32:03.520Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:32:03.520Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:32:03.717Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:32:03.717Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:32:03.717Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:32:03.750Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-17T02:32:03.750Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:32:03.750Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-17T02:32:03.805Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:32:03.805Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:32:03.842Z [DEBUG] [SLOW OPERATION DETECTED] fs.existsSync (5.8ms)
+2025-12-17T02:32:04.407Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:32:05.165Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:32:06.120Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:32:06.398Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:32:06.414Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:32:06.414Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:32:06.414Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:32:06.462Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:32:06.462Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:32:06.462Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:32:06.492Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:32:06.492Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:32:07.873Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:32:08.621Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-17T02:32:08.630Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-17T02:32:08.630Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:32:08.630Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:32:08.708Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-17T02:32:08.708Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:32:08.708Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-17T02:32:08.722Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:32:08.722Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:32:10.203Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:32:14.382Z [DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+2025-12-17T02:32:14.382Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:32:14.383Z [DEBUG] UserCommandMessage rendering: "mcp" (args: "none")
+2025-12-17T02:32:14.383Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:32:14.383Z [DEBUG] UserCommandMessage rendering: "mcp" (args: "none")
+2025-12-17T02:32:14.383Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:32:14.549Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.833365.1765938734549
+2025-12-17T02:32:14.549Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:32:14.557Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (7.9ms)
+2025-12-17T02:32:14.557Z [DEBUG] Temp file written successfully, size: 53910 bytes
+2025-12-17T02:32:14.557Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:32:14.557Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.833365.1765938734549 to /home/mikaisomerville/.claude.json
+2025-12-17T02:32:14.557Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:32:14.564Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.833365.1765938734564
+2025-12-17T02:32:14.564Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:32:14.571Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (7.1ms)
+2025-12-17T02:32:14.571Z [DEBUG] Temp file written successfully, size: 53983 bytes
+2025-12-17T02:32:14.571Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:32:14.571Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.833365.1765938734564 to /home/mikaisomerville/.claude.json
+2025-12-17T02:32:14.571Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:32:34.871Z [DEBUG] [SLOW OPERATION DETECTED] fs.existsSync (8.3ms)
+2025-12-17T02:32:38.092Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-12-17T02:32:38.092Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:32:38.092Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-17T02:32:38.101Z [DEBUG] Getting matching hook commands for PostToolUse with query: Task
+2025-12-17T02:32:38.101Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:32:38.101Z [DEBUG] Matched 0 unique hooks for query "Task" (0 before deduplication)
+2025-12-17T02:32:38.109Z [DEBUG] [SLOW OPERATION DETECTED] fs.existsSync (5.2ms)
+2025-12-17T02:32:38.180Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-12-17T02:32:38.181Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-12-17T02:32:38.182Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-12-17T02:32:38.182Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-12-17T02:32:38.455Z [DEBUG] MCP server "ide": Calling MCP tool: getDiagnostics
+2025-12-17T02:32:38.455Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-17T02:32:38.455Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-17T02:32:38.455Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-17T02:32:38.455Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-17T02:32:38.479Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:32:38.479Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:32:38.480Z [DEBUG] MCP server "ide": Tool 'getDiagnostics' completed successfully in 25ms
+2025-12-17T02:32:41.008Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:32:53.933Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-12-17T02:32:53.933Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:32:53.933Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-17T02:33:08.874Z [DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+2025-12-17T02:33:08.874Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:33:08.875Z [DEBUG] UserCommandMessage rendering: "mcp" (args: "none")
+2025-12-17T02:33:08.875Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:33:08.875Z [DEBUG] UserCommandMessage rendering: "mcp" (args: "none")
+2025-12-17T02:33:08.875Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:33:08.946Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.833365.1765938788946
+2025-12-17T02:33:08.946Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:33:08.965Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (19.0ms)
+2025-12-17T02:33:08.965Z [DEBUG] Temp file written successfully, size: 53910 bytes
+2025-12-17T02:33:08.965Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:33:08.965Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.833365.1765938788946 to /home/mikaisomerville/.claude.json
+2025-12-17T02:33:08.965Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:33:08.973Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.833365.1765938788973
+2025-12-17T02:33:08.973Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:33:08.979Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (6.4ms)
+2025-12-17T02:33:08.979Z [DEBUG] Temp file written successfully, size: 53983 bytes
+2025-12-17T02:33:08.979Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:33:08.979Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.833365.1765938788973 to /home/mikaisomerville/.claude.json
+2025-12-17T02:33:08.979Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:33:08.980Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-12-17T02:33:09.451Z [DEBUG] Checking for native installer update to version 2.0.71
+2025-12-17T02:33:16.444Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /home/mikaisomerville/.local/share/claude/versions/2.0.71 (expected in multi-process scenarios)
+    at UvI (/$bunfs/root/claude:2594:1618)
+    at XAA (/$bunfs/root/claude:2592:35618)
+    at async ed0 (/$bunfs/root/claude:2592:37719)
+    at async mv (/$bunfs/root/claude:2594:236)
+    at async <anonymous> (/$bunfs/root/claude:2594:13006)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T02:33:31.978Z [DEBUG] BigQuery metrics exported successfully
+2025-12-17T02:33:31.978Z [DEBUG] BigQuery API Response: {
+  "accepted_count": 12,
+  "rejected_count": 0
+}
+2025-12-17T02:38:36.796Z [DEBUG] Getting matching hook commands for SessionStart with query: resume
+2025-12-17T02:38:36.796Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:38:36.796Z [DEBUG] Matched 0 unique hooks for query "resume" (0 before deduplication)
+2025-12-17T02:38:36.832Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.854665.1765939116832
+2025-12-17T02:38:36.832Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:38:36.843Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (11.6ms)
+2025-12-17T02:38:36.843Z [DEBUG] Temp file written successfully, size: 54977 bytes
+2025-12-17T02:38:36.843Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:38:36.843Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.854665.1765939116832 to /home/mikaisomerville/.claude.json
+2025-12-17T02:38:36.844Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:38:36.892Z [DEBUG] [SLOW OPERATION DETECTED] fs.statSync (5.5ms)
+2025-12-17T02:38:36.896Z [DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+2025-12-17T02:38:36.896Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:38:36.908Z [DEBUG] UserCommandMessage rendering: "mcp" (args: "none")
+2025-12-17T02:38:36.908Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:38:36.921Z [DEBUG] UserCommandMessage rendering: "mcp" (args: "none")
+2025-12-17T02:38:36.921Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:38:37.578Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.854665.1765939117578
+2025-12-17T02:38:37.578Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:38:37.586Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (8.0ms)
+2025-12-17T02:38:37.586Z [DEBUG] Temp file written successfully, size: 54904 bytes
+2025-12-17T02:38:37.586Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:38:37.586Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.854665.1765939117578 to /home/mikaisomerville/.claude.json
+2025-12-17T02:38:37.586Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:38:37.641Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.854665.1765939117641
+2025-12-17T02:38:37.641Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:38:37.656Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (14.4ms)
+2025-12-17T02:38:37.656Z [DEBUG] Temp file written successfully, size: 54977 bytes
+2025-12-17T02:38:37.656Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:38:37.656Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.854665.1765939117641 to /home/mikaisomerville/.claude.json
+2025-12-17T02:38:37.656Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:38:37.656Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-12-17T02:38:37.698Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.854665.1765939117698
+2025-12-17T02:38:37.698Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:38:37.708Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (10.0ms)
+2025-12-17T02:38:37.708Z [DEBUG] Temp file written successfully, size: 54977 bytes
+2025-12-17T02:38:37.708Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:38:37.708Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.854665.1765939117698 to /home/mikaisomerville/.claude.json
+2025-12-17T02:38:37.708Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:38:38.405Z [DEBUG] Checking for native installer update to version 2.0.71
+2025-12-17T02:38:45.425Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /home/mikaisomerville/.local/share/claude/versions/2.0.71 (expected in multi-process scenarios)
+    at UvI (/$bunfs/root/claude:2594:1618)
+    at XAA (/$bunfs/root/claude:2592:35618)
+    at async ed0 (/$bunfs/root/claude:2592:37719)
+    at async mv (/$bunfs/root/claude:2594:236)
+    at async <anonymous> (/$bunfs/root/claude:2594:13006)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T02:38:53.004Z [DEBUG] MCP server "ide": WebSocket transport closed/disconnected, attempting automatic reconnection
+2025-12-17T02:38:53.011Z [DEBUG] MCP server "ide": Starting connection with timeout of 30000ms
+2025-12-17T02:38:53.030Z [DEBUG] MCP server "ide": Connection failed after 22ms: [object ErrorEvent]
+2025-12-17T02:38:53.030Z [ERROR] MCP server "ide" Connection failed: [object ErrorEvent]
+2025-12-17T02:38:53.031Z [DEBUG] MCP server "ide": WebSocket reconnection attempt 1 completed with status: failed
+2025-12-17T02:38:53.031Z [DEBUG] MCP server "ide": Scheduling reconnection attempt 2 in 1000ms
+2025-12-17T02:38:54.038Z [DEBUG] MCP server "ide": Starting connection with timeout of 30000ms
+2025-12-17T02:38:54.063Z [DEBUG] MCP server "ide": Connection failed after 29ms: [object ErrorEvent]
+2025-12-17T02:38:54.063Z [ERROR] MCP server "ide" Connection failed: [object ErrorEvent]
+2025-12-17T02:38:54.063Z [DEBUG] MCP server "ide": WebSocket reconnection attempt 2 completed with status: failed
+2025-12-17T02:38:54.063Z [DEBUG] MCP server "ide": Scheduling reconnection attempt 3 in 2000ms
+2025-12-17T02:39:35.790Z [DEBUG] [SLOW OPERATION DETECTED] fs.existsSync (7.9ms)
+2025-12-17T02:39:35.804Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-12-17T02:39:35.804Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:39:35.804Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-17T02:39:36.521Z [DEBUG] Getting matching hook commands for SessionStart with query: resume
+2025-12-17T02:39:36.521Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:39:36.521Z [DEBUG] Matched 0 unique hooks for query "resume" (0 before deduplication)
+2025-12-17T02:39:36.538Z [DEBUG] [SLOW OPERATION DETECTED] fs.appendFileSync (16.1ms)
+2025-12-17T02:39:36.589Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.855962.1765939176589
+2025-12-17T02:39:36.589Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:39:36.608Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (19.5ms)
+2025-12-17T02:39:36.608Z [DEBUG] Temp file written successfully, size: 54976 bytes
+2025-12-17T02:39:36.608Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:39:36.608Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.855962.1765939176589 to /home/mikaisomerville/.claude.json
+2025-12-17T02:39:36.609Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:39:36.677Z [DEBUG] [SLOW OPERATION DETECTED] fs.existsSync (35.2ms)
+2025-12-17T02:39:36.712Z [DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+2025-12-17T02:39:36.712Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:39:36.714Z [DEBUG] UserCommandMessage rendering: "mcp" (args: "none")
+2025-12-17T02:39:36.714Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:39:36.727Z [DEBUG] UserCommandMessage rendering: "mcp" (args: "none")
+2025-12-17T02:39:36.727Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:39:37.114Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.855962.1765939177114
+2025-12-17T02:39:37.114Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:39:37.138Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (24.1ms)
+2025-12-17T02:39:37.138Z [DEBUG] Temp file written successfully, size: 54903 bytes
+2025-12-17T02:39:37.138Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:39:37.138Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.855962.1765939177114 to /home/mikaisomerville/.claude.json
+2025-12-17T02:39:37.138Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:39:37.192Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.855962.1765939177192
+2025-12-17T02:39:37.192Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:39:37.205Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (13.5ms)
+2025-12-17T02:39:37.205Z [DEBUG] Temp file written successfully, size: 54976 bytes
+2025-12-17T02:39:37.205Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:39:37.205Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.855962.1765939177192 to /home/mikaisomerville/.claude.json
+2025-12-17T02:39:37.206Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:39:37.206Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-12-17T02:39:37.236Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.855962.1765939177236
+2025-12-17T02:39:37.236Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:39:37.250Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (14.6ms)
+2025-12-17T02:39:37.250Z [DEBUG] Temp file written successfully, size: 54976 bytes
+2025-12-17T02:39:37.250Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:39:37.250Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.855962.1765939177236 to /home/mikaisomerville/.claude.json
+2025-12-17T02:39:37.250Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:39:37.938Z [DEBUG] Checking for native installer update to version 2.0.71
+2025-12-17T02:39:41.302Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /home/mikaisomerville/.local/share/claude/versions/2.0.71 (expected in multi-process scenarios)
+    at UvI (/$bunfs/root/claude:2594:1618)
+    at XAA (/$bunfs/root/claude:2592:35618)
+    at async ed0 (/$bunfs/root/claude:2592:37719)
+    at async mv (/$bunfs/root/claude:2594:236)
+    at async <anonymous> (/$bunfs/root/claude:2594:13006)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T02:39:44.956Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /home/mikaisomerville/.local/share/claude/versions/2.0.71 (expected in multi-process scenarios)
+    at UvI (/$bunfs/root/claude:2594:1618)
+    at XAA (/$bunfs/root/claude:2592:35618)
+    at async ed0 (/$bunfs/root/claude:2592:37719)
+    at async mv (/$bunfs/root/claude:2594:236)
+    at async <anonymous> (/$bunfs/root/claude:2594:13006)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T02:42:53.877Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-17T02:42:53.877Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-17T02:42:53.878Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-17T02:42:53.878Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-17T02:42:53.896Z [DEBUG] [TeammateMailbox] getTeammateMailboxAttachments called: envAgentName=undefined, isTeamLead=false, resolved agentName=undefined, teamName=undefined
+2025-12-17T02:42:53.896Z [DEBUG] [TeammateMailbox] Not checking inbox - not a teammate or team lead
+2025-12-17T02:42:53.933Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-12-17T02:42:53.933Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:42:53.934Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-17T02:42:53.935Z [DEBUG] FileHistory: Making snapshot for message fe5e1889-2739-40fa-8130-ee688cbf6f09
+2025-12-17T02:42:53.935Z [DEBUG] FileHistory: Added snapshot for fe5e1889-2739-40fa-8130-ee688cbf6f09, tracking 0 files
+2025-12-17T02:42:53.954Z [DEBUG] MCP server "ide": Calling MCP tool: closeAllDiffTabs
+2025-12-17T02:42:53.966Z [DEBUG] Total plugin output styles loaded: 0
+2025-12-17T02:42:53.971Z [DEBUG] MCP server "ide": Tool 'closeAllDiffTabs' completed successfully in 17ms
+2025-12-17T02:42:55.323Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:42:56.191Z [DEBUG] [SLOW OPERATION DETECTED] fs.statSync (6.8ms)
+2025-12-17T02:42:57.138Z [DEBUG] Stream started - received first chunk
+2025-12-17T02:43:04.039Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-12-17T02:43:04.050Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-12-17T02:43:04.153Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-12-17T02:43:04.153Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:43:04.153Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-17T02:43:04.165Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.855962.1765939384165
+2025-12-17T02:43:04.165Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:43:04.174Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (9.6ms)
+2025-12-17T02:43:04.174Z [DEBUG] Temp file written successfully, size: 54976 bytes
+2025-12-17T02:43:04.174Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:43:04.174Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.855962.1765939384165 to /home/mikaisomerville/.claude.json
+2025-12-17T02:43:04.175Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:43:12.753Z [DEBUG] UserCommandMessage rendering: "mcp" (args: "none")
+2025-12-17T02:43:12.753Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:43:12.793Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-12-17T02:43:12.794Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-12-17T02:43:12.794Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-12-17T02:43:12.795Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-12-17T02:43:12.812Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-12-17T02:43:12.813Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-12-17T02:43:13.504Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.855962.1765939393504
+2025-12-17T02:43:13.504Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:43:13.514Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (9.2ms)
+2025-12-17T02:43:13.514Z [DEBUG] Temp file written successfully, size: 54903 bytes
+2025-12-17T02:43:13.514Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:43:13.514Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.855962.1765939393504 to /home/mikaisomerville/.claude.json
+2025-12-17T02:43:13.514Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:43:13.527Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.855962.1765939393527
+2025-12-17T02:43:13.527Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:43:13.534Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (7.4ms)
+2025-12-17T02:43:13.534Z [DEBUG] Temp file written successfully, size: 54976 bytes
+2025-12-17T02:43:13.534Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:43:13.534Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.855962.1765939393527 to /home/mikaisomerville/.claude.json
+2025-12-17T02:43:13.534Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:43:14.307Z [DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+2025-12-17T02:43:14.307Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:43:14.309Z [DEBUG] UserCommandMessage rendering: "mcp" (args: "none")
+2025-12-17T02:43:14.309Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:43:14.309Z [DEBUG] UserCommandMessage rendering: "mcp" (args: "none")
+2025-12-17T02:43:14.309Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-17T02:43:14.336Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-12-17T02:43:14.337Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-12-17T02:43:14.375Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.855962.1765939394375
+2025-12-17T02:43:14.375Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:43:14.402Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (26.7ms)
+2025-12-17T02:43:14.402Z [DEBUG] Temp file written successfully, size: 54903 bytes
+2025-12-17T02:43:14.402Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:43:14.402Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.855962.1765939394375 to /home/mikaisomerville/.claude.json
+2025-12-17T02:43:14.402Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:43:14.409Z [DEBUG] Writing to temp file: /home/mikaisomerville/.claude.json.tmp.855962.1765939394409
+2025-12-17T02:43:14.409Z [DEBUG] Preserving file permissions: 100600
+2025-12-17T02:43:14.416Z [DEBUG] [SLOW OPERATION DETECTED] fs.writeFileSync (6.2ms)
+2025-12-17T02:43:14.416Z [DEBUG] Temp file written successfully, size: 54976 bytes
+2025-12-17T02:43:14.416Z [DEBUG] Applied original permissions to temp file
+2025-12-17T02:43:14.416Z [DEBUG] Renaming /home/mikaisomerville/.claude.json.tmp.855962.1765939394409 to /home/mikaisomerville/.claude.json
+2025-12-17T02:43:14.416Z [DEBUG] File /home/mikaisomerville/.claude.json written atomically
+2025-12-17T02:43:14.416Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-12-17T02:43:14.894Z [DEBUG] Checking for native installer update to version 2.0.71
+2025-12-17T02:43:21.942Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /home/mikaisomerville/.local/share/claude/versions/2.0.71 (expected in multi-process scenarios)
+    at UvI (/$bunfs/root/claude:2594:1618)
+    at XAA (/$bunfs/root/claude:2592:35618)
+    at async ed0 (/$bunfs/root/claude:2592:37719)
+    at async mv (/$bunfs/root/claude:2594:236)
+    at async <anonymous> (/$bunfs/root/claude:2594:13006)
+    at processTicksAndRejections (native:7:39)
+2025-12-17T02:44:04.217Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-12-17T02:44:04.217Z [DEBUG] Found 0 hook matchers in settings
+2025-12-17T02:44:04.217Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-12-17T02:44:25.490Z [DEBUG] BigQuery metrics exported successfully
+2025-12-17T02:44:25.490Z [DEBUG] BigQuery API Response: {
+  "accepted_count": 24,
+  "rejected_count": 0
+}

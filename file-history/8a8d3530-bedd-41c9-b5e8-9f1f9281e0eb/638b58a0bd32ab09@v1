@@ -1,0 +1,611 @@
+import { ILogger } from "@generatezero/ports/logger";
+
+import { BulkOrganisationUploadInput } from "../interfaces/OrganisationRepository.interface";
+import { ORGANISATION_TEMPLATE_CSV_COLUMNS } from "../parsers/constants/OrganisationTemplateCsvParser.constants";
+import { OrganisationService } from "../services/Organisation.service";
+
+const mockLogger: ILogger = {
+  info: jest.fn(),
+  warn: jest.fn(),
+  error: jest.fn(),
+  debug: jest.fn(),
+  trace: jest.fn(),
+  critical: jest.fn(),
+  flush: jest.fn(),
+  setService: jest.fn()
+};
+
+const mockOrganisationRepository = {
+  getManyBy: jest.fn(),
+  createOrganisation: jest.fn(),
+  bulkUploadOrganisations: jest.fn()
+};
+const mockTagRepository = {
+  getManyTagsByNames: jest.fn(),
+  createManyTags: jest.fn()
+};
+const mockFinancialYearRepository = { getManyBy: jest.fn() };
+const mockFinancialQuarterRepository = { getManyBy: jest.fn() };
+const mockMonthRepository = { getManyBy: jest.fn() };
+
+const CSV_HEADER = Array.from(Object.values(ORGANISATION_TEMPLATE_CSV_COLUMNS));
+
+function createCsvBuffer(rows: string[][]): Buffer {
+  const csvContent = rows
+    .map((row) =>
+      row.map((cell) => (cell.includes(",") ? `"${cell}"` : cell)).join(",")
+    )
+    .join("\n");
+  return Buffer.from(csvContent, "utf8");
+}
+
+describe("OrganisationService.uploadOrganisationTemplate", () => {
+  let service: OrganisationService;
+  const defaultParentOrgInfo = {
+    financialYearStartMonthIndex: 0,
+    reportingStandardId: "GHG_PROTOCOL",
+    consolidationApproachId: "OPERATIONAL"
+  };
+
+  const mockMonths = Array.from({ length: 72 }, (_, i) => ({
+    id: i,
+    startDate: new Date(2020 + Math.floor(i / 12), i % 12, 1),
+    endDate: new Date(2020 + Math.floor(i / 12), (i % 12) + 1, 0)
+  }));
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+    mockOrganisationRepository.getManyBy.mockResolvedValue([]);
+    mockMonthRepository.getManyBy.mockResolvedValue(mockMonths);
+    mockTagRepository.getManyTagsByNames.mockResolvedValue([]);
+    mockTagRepository.createManyTags.mockImplementation(async (tags) =>
+      tags.map((tag: { name: string }) => ({
+        id: `tag-${tag.name}`,
+        name: tag.name
+      }))
+    );
+    mockFinancialYearRepository.getManyBy.mockResolvedValue(
+      Array.from({ length: 5 }, (_, i) => ({
+        id: i + 1,
+        startMonth: mockMonths[i * 12],
+        endMonth: mockMonths[i * 12 + 11]
+      }))
+    );
+    mockFinancialQuarterRepository.getManyBy.mockResolvedValue(
+      Array.from({ length: 20 }, (_, i) => ({
+        id: i + 1,
+        startMonth: mockMonths[i * 3],
+        endMonth: mockMonths[i * 3 + 2]
+      }))
+    );
+    mockOrganisationRepository.bulkUploadOrganisations.mockImplementation(
+      async (input: BulkOrganisationUploadInput) =>
+        input.organisationUnits.length
+    );
+
+    service = new OrganisationService(
+      mockLogger,
+      {} as never,
+      mockOrganisationRepository as never,
+      mockTagRepository as never,
+      {} as never,
+      {} as never,
+      {} as never,
+      mockFinancialYearRepository as never,
+      mockFinancialQuarterRepository as never,
+      {} as never,
+      mockMonthRepository as never
+    );
+  });
+
+  it("should create organisations with correct hierarchy", async () => {
+    const csvBuffer = createCsvBuffer([
+      CSV_HEADER,
+      ["Parent", "", "", "", "01/01/2024", "", ""],
+      ["Child", "", "Parent", "", "01/01/2024", "", ""]
+    ]);
+
+    const prepared = await service.prepareOrganisationTemplate(
+      csvBuffer,
+      defaultParentOrgInfo
+    );
+    await service.uploadOrganisationTemplate(prepared);
+
+    expect(
+      mockOrganisationRepository.bulkUploadOrganisations
+    ).toHaveBeenCalledTimes(1);
+
+    const callArgs =
+      mockOrganisationRepository.bulkUploadOrganisations.mock.calls[0][0];
+    expect(callArgs.organisationUnits).toHaveLength(2);
+    expect(callArgs.organisationUnits[0]).toMatchObject({
+      name: "Parent",
+      parentName: undefined
+    });
+    expect(callArgs.organisationUnits[1]).toMatchObject({
+      name: "Child",
+      parentName: "Parent"
+    });
+  });
+
+  it("should create and assign tags correctly", async () => {
+    mockTagRepository.getManyTagsByNames.mockResolvedValue([
+      { id: "existing-id", name: "Existing" }
+    ]);
+    const csvBuffer = createCsvBuffer([
+      CSV_HEADER,
+      ["Org", "", "", "", "01/01/2024", "", "Existing, New"]
+    ]);
+
+    const prepared = await service.prepareOrganisationTemplate(
+      csvBuffer,
+      defaultParentOrgInfo
+    );
+    await service.uploadOrganisationTemplate(prepared);
+
+    expect(mockTagRepository.createManyTags).not.toHaveBeenCalled();
+
+    const callArgs =
+      mockOrganisationRepository.bulkUploadOrganisations.mock.calls[0][0];
+    expect(callArgs.organisationUnits[0].tags).toContain("Existing");
+    expect(callArgs.organisationUnits[0].tags).toContain("New");
+    expect(callArgs.existingTagMap.get("Existing")).toBe("existing-id");
+    expect(callArgs.tagsToCreate).toEqual([{ name: "New", description: null }]);
+  });
+
+  it("should use parent organisation info for root org", async () => {
+    const csvBuffer = createCsvBuffer([
+      CSV_HEADER,
+      ["Root", "", "", "", "01/01/2024", "", ""]
+    ]);
+
+    const prepared = await service.prepareOrganisationTemplate(csvBuffer, {
+      financialYearStartMonthIndex: 6,
+      reportingStandardId: "ISO_14064",
+      consolidationApproachId: "EQUITY"
+    });
+    await service.uploadOrganisationTemplate(prepared);
+
+    const callArgs =
+      mockOrganisationRepository.bulkUploadOrganisations.mock.calls[0][0];
+    expect(callArgs.organisationUnits[0]).toMatchObject({
+      reportingStandardId: "ISO_14064",
+      consolidationApproachId: "EQUITY"
+    });
+  });
+
+  it("should throw error when organisations already exist", async () => {
+    mockOrganisationRepository.getManyBy.mockResolvedValue([{ id: 1 }]);
+    const csvBuffer = createCsvBuffer([
+      CSV_HEADER,
+      ["New", "", "", "", "01/01/2024", "", ""]
+    ]);
+
+    await expect(
+      service.prepareOrganisationTemplate(csvBuffer, defaultParentOrgInfo)
+    ).rejects.toThrow(/already exists/);
+  });
+
+  it("should return count of created organisations", async () => {
+    const csvBuffer = createCsvBuffer([
+      CSV_HEADER,
+      ["Root", "", "", "", "01/01/2024", "", ""],
+      ["Child1", "", "Root", "", "01/01/2024", "", ""],
+      ["Child2", "", "Root", "", "01/01/2024", "", ""]
+    ]);
+
+    const prepared = await service.prepareOrganisationTemplate(
+      csvBuffer,
+      defaultParentOrgInfo
+    );
+    const result = await service.uploadOrganisationTemplate(prepared);
+
+    expect(result).toBe(3);
+  });
+
+  it("should pass financial years and quarters to bulk upload", async () => {
+    const csvBuffer = createCsvBuffer([
+      CSV_HEADER,
+      ["Root", "", "", "", "01/01/2024", "", ""]
+    ]);
+
+    const prepared = await service.prepareOrganisationTemplate(
+      csvBuffer,
+      defaultParentOrgInfo
+    );
+    await service.uploadOrganisationTemplate(prepared);
+
+    const callArgs =
+      mockOrganisationRepository.bulkUploadOrganisations.mock.calls[0][0];
+    expect(callArgs.rootOrgFinancialYears.length).toBeGreaterThan(0);
+    expect(callArgs.rootOrgFinancialQuarters.length).toBeGreaterThan(0);
+  });
+
+  it("should not create tags if all tags already exist", async () => {
+    mockTagRepository.getManyTagsByNames.mockResolvedValue([
+      { id: "tag-1", name: "Tag1" },
+      { id: "tag-2", name: "Tag2" }
+    ]);
+    const csvBuffer = createCsvBuffer([
+      CSV_HEADER,
+      ["Org", "", "", "", "01/01/2024", "", "Tag1, Tag2"]
+    ]);
+
+    const prepared = await service.prepareOrganisationTemplate(
+      csvBuffer,
+      defaultParentOrgInfo
+    );
+    await service.uploadOrganisationTemplate(prepared);
+
+    const callArgs =
+      mockOrganisationRepository.bulkUploadOrganisations.mock.calls[0][0];
+    expect(callArgs.tagsToCreate).toEqual([]);
+    expect(callArgs.existingTagMap.get("Tag1")).toBe("tag-1");
+    expect(callArgs.existingTagMap.get("Tag2")).toBe("tag-2");
+  });
+
+  it("should only set reporting standard and consolidation approach on root org", async () => {
+    const csvBuffer = createCsvBuffer([
+      CSV_HEADER,
+      ["Root", "", "", "", "01/01/2024", "", ""],
+      ["Child", "", "Root", "", "01/01/2024", "", ""]
+    ]);
+
+    const prepared = await service.prepareOrganisationTemplate(
+      csvBuffer,
+      defaultParentOrgInfo
+    );
+    await service.uploadOrganisationTemplate(prepared);
+
+    const callArgs =
+      mockOrganisationRepository.bulkUploadOrganisations.mock.calls[0][0];
+    expect(callArgs.organisationUnits[0].reportingStandardId).toBe(
+      "GHG_PROTOCOL"
+    );
+    expect(callArgs.organisationUnits[0].consolidationApproachId).toBe(
+      "OPERATIONAL"
+    );
+    expect(callArgs.organisationUnits[1].reportingStandardId).toBeUndefined();
+    expect(
+      callArgs.organisationUnits[1].consolidationApproachId
+    ).toBeUndefined();
+  });
+
+  describe("facility map extraction", () => {
+    it("should extract facility map from organisation CSV", async () => {
+      const csvBuffer = createCsvBuffer([
+        CSV_HEADER,
+        ["Root", "", "", "Facility A, Facility B", "01/01/2024", "", ""],
+        ["Child", "", "Root", "Facility C", "01/01/2024", "", ""]
+      ]);
+
+      const prepared = await service.prepareOrganisationTemplate(
+        csvBuffer,
+        defaultParentOrgInfo
+      );
+
+      expect(prepared.facilityMap.get("Root")).toEqual([
+        "Facility A",
+        "Facility B"
+      ]);
+      expect(prepared.facilityMap.get("Child")).toEqual(["Facility C"]);
+    });
+
+    it("should not include orgs with empty facilities in facility map", async () => {
+      const csvBuffer = createCsvBuffer([
+        CSV_HEADER,
+        ["Root", "", "", "Facility A", "01/01/2024", "", ""],
+        ["Child", "", "Root", "", "01/01/2024", "", ""]
+      ]);
+
+      const prepared = await service.prepareOrganisationTemplate(
+        csvBuffer,
+        defaultParentOrgInfo
+      );
+
+      expect(prepared.facilityMap.has("Root")).toBe(true);
+      expect(prepared.facilityMap.has("Child")).toBe(false);
+      expect(prepared.facilityMap.size).toBe(1);
+    });
+
+    it("should handle org with no facilities", async () => {
+      const csvBuffer = createCsvBuffer([
+        CSV_HEADER,
+        ["Root", "", "", "", "01/01/2024", "", ""]
+      ]);
+
+      const prepared = await service.prepareOrganisationTemplate(
+        csvBuffer,
+        defaultParentOrgInfo
+      );
+
+      expect(prepared.facilityMap.size).toBe(0);
+    });
+
+    it("should trim whitespace from facility names", async () => {
+      const csvBuffer = createCsvBuffer([
+        CSV_HEADER,
+        ["Root", "", "", "  Facility A  ,  Facility B  ", "01/01/2024", "", ""]
+      ]);
+
+      const prepared = await service.prepareOrganisationTemplate(
+        csvBuffer,
+        defaultParentOrgInfo
+      );
+
+      expect(prepared.facilityMap.get("Root")).toEqual([
+        "Facility A",
+        "Facility B"
+      ]);
+    });
+  });
+
+  describe("uploadOrganisationTemplate with facilities", () => {
+    it("should pass processed facilities to bulk upload", async () => {
+      const csvBuffer = createCsvBuffer([
+        CSV_HEADER,
+        ["Root", "", "", "Facility A", "01/01/2024", "", ""]
+      ]);
+
+      const prepared = await service.prepareOrganisationTemplate(
+        csvBuffer,
+        defaultParentOrgInfo
+      );
+
+      const mockProcessedFacilities = {
+        facilities: [
+          {
+            name: "Facility A",
+            description: "Test facility",
+            addressLine1: "123 Main St",
+            addressLine2: "",
+            stateProvince: "NSW",
+            postalCode: "2000",
+            city: "Sydney",
+            country: "Australia",
+            tags: ["FacilityTag"]
+          }
+        ],
+        existingTagMap: new Map<string, string>(),
+        tagsToCreate: [{ name: "FacilityTag", description: null }]
+      };
+
+      const { facilityMap, ...orgDataWithoutFacilityMap } = prepared;
+
+      await service.uploadOrganisationTemplate(
+        orgDataWithoutFacilityMap,
+        mockProcessedFacilities,
+        facilityMap
+      );
+
+      expect(
+        mockOrganisationRepository.bulkUploadOrganisations
+      ).toHaveBeenCalledWith(
+        orgDataWithoutFacilityMap,
+        mockProcessedFacilities,
+        facilityMap
+      );
+    });
+
+    it("should pass facility map to bulk upload", async () => {
+      const csvBuffer = createCsvBuffer([
+        CSV_HEADER,
+        ["Root", "", "", "Facility A, Facility B", "01/01/2024", "", ""],
+        ["Child", "", "Root", "Facility A", "01/01/2024", "", ""]
+      ]);
+
+      const prepared = await service.prepareOrganisationTemplate(
+        csvBuffer,
+        defaultParentOrgInfo
+      );
+
+      const { facilityMap, ...orgDataWithoutFacilityMap } = prepared;
+
+      await service.uploadOrganisationTemplate(
+        orgDataWithoutFacilityMap,
+        undefined,
+        facilityMap
+      );
+
+      const callArgs =
+        mockOrganisationRepository.bulkUploadOrganisations.mock.calls[0];
+      const passedFacilityMap = callArgs[2] as Map<string, string[]>;
+
+      expect(passedFacilityMap.get("Root")).toEqual([
+        "Facility A",
+        "Facility B"
+      ]);
+      expect(passedFacilityMap.get("Child")).toEqual(["Facility A"]);
+    });
+
+    it("should handle upload without facilities", async () => {
+      const csvBuffer = createCsvBuffer([
+        CSV_HEADER,
+        ["Root", "", "", "", "01/01/2024", "", ""]
+      ]);
+
+      const prepared = await service.prepareOrganisationTemplate(
+        csvBuffer,
+        defaultParentOrgInfo
+      );
+
+      const { facilityMap, ...orgDataWithoutFacilityMap } = prepared;
+
+      await service.uploadOrganisationTemplate(orgDataWithoutFacilityMap);
+
+      expect(
+        mockOrganisationRepository.bulkUploadOrganisations
+      ).toHaveBeenCalledWith(orgDataWithoutFacilityMap, undefined, undefined);
+    });
+  });
+
+  describe("tag handling with facilities", () => {
+    it("should allow pre-computed tag data to be passed for facility tag reuse", async () => {
+      mockTagRepository.getManyTagsByNames.mockResolvedValue([
+        { id: "shared-tag-id", name: "SharedTag" }
+      ]);
+
+      const csvBuffer = createCsvBuffer([
+        CSV_HEADER,
+        ["Root", "", "", "", "01/01/2024", "", "SharedTag, OrgOnlyTag"]
+      ]);
+
+      // First call to prepare org template
+      const prepared = await service.prepareOrganisationTemplate(
+        csvBuffer,
+        defaultParentOrgInfo
+      );
+
+      // Verify tags are prepared correctly
+      expect(prepared.existingTagMap.get("SharedTag")).toBe("shared-tag-id");
+      expect(prepared.tagsToCreate).toContainEqual({
+        name: "OrgOnlyTag",
+        description: null
+      });
+
+      // The existingTagMap and tagsToCreate can be used as precomputedTagData
+      // for facility template preparation to avoid duplicate tag creation
+    });
+
+    it("should identify new tags to create from org CSV", async () => {
+      mockTagRepository.getManyTagsByNames.mockResolvedValue([]);
+
+      const csvBuffer = createCsvBuffer([
+        CSV_HEADER,
+        ["Root", "", "", "", "01/01/2024", "", "NewTag1, NewTag2"]
+      ]);
+
+      const prepared = await service.prepareOrganisationTemplate(
+        csvBuffer,
+        defaultParentOrgInfo
+      );
+
+      expect(prepared.tagsToCreate).toHaveLength(2);
+      expect(prepared.tagsToCreate).toContainEqual({
+        name: "NewTag1",
+        description: null
+      });
+      expect(prepared.tagsToCreate).toContainEqual({
+        name: "NewTag2",
+        description: null
+      });
+    });
+
+    it("should handle orgs with tags and facilities", async () => {
+      mockTagRepository.getManyTagsByNames.mockResolvedValue([]);
+
+      const csvBuffer = createCsvBuffer([
+        CSV_HEADER,
+        ["Root", "", "", "Facility A", "01/01/2024", "", "OrgTag"]
+      ]);
+
+      const prepared = await service.prepareOrganisationTemplate(
+        csvBuffer,
+        defaultParentOrgInfo
+      );
+
+      // Both facility map and tags should be populated
+      expect(prepared.facilityMap.get("Root")).toEqual(["Facility A"]);
+      expect(prepared.tagsToCreate).toContainEqual({
+        name: "OrgTag",
+        description: null
+      });
+      expect(prepared.organisationUnits[0].tags).toContain("OrgTag");
+    });
+  });
+
+  describe("shared facility detection via facility map", () => {
+    it("should allow same facility to be linked to multiple orgs", async () => {
+      const csvBuffer = createCsvBuffer([
+        CSV_HEADER,
+        ["Root", "", "", "Shared Facility", "01/01/2024", "", ""],
+        ["Child1", "", "Root", "Shared Facility", "01/01/2024", "", ""],
+        ["Child2", "", "Root", "Shared Facility", "01/01/2024", "", ""]
+      ]);
+
+      const prepared = await service.prepareOrganisationTemplate(
+        csvBuffer,
+        defaultParentOrgInfo
+      );
+
+      // All three orgs reference the same facility
+      expect(prepared.facilityMap.get("Root")).toEqual(["Shared Facility"]);
+      expect(prepared.facilityMap.get("Child1")).toEqual(["Shared Facility"]);
+      expect(prepared.facilityMap.get("Child2")).toEqual(["Shared Facility"]);
+
+      // The repository will use this map to determine isSharedFacility
+      const facilityOrgCount = new Map<string, number>();
+      prepared.facilityMap.forEach((facilities) => {
+        facilities.forEach((facility) => {
+          facilityOrgCount.set(
+            facility,
+            (facilityOrgCount.get(facility) || 0) + 1
+          );
+        });
+      });
+
+      expect(facilityOrgCount.get("Shared Facility")).toBe(3);
+    });
+
+    it("should identify non-shared facilities linked to single org", async () => {
+      const csvBuffer = createCsvBuffer([
+        CSV_HEADER,
+        ["Root", "", "", "Facility A", "01/01/2024", "", ""],
+        ["Child", "", "Root", "Facility B", "01/01/2024", "", ""]
+      ]);
+
+      const prepared = await service.prepareOrganisationTemplate(
+        csvBuffer,
+        defaultParentOrgInfo
+      );
+
+      const facilityOrgCount = new Map<string, number>();
+      prepared.facilityMap.forEach((facilities) => {
+        facilities.forEach((facility) => {
+          facilityOrgCount.set(
+            facility,
+            (facilityOrgCount.get(facility) || 0) + 1
+          );
+        });
+      });
+
+      expect(facilityOrgCount.get("Facility A")).toBe(1);
+      expect(facilityOrgCount.get("Facility B")).toBe(1);
+    });
+
+    it("should handle mix of shared and non-shared facilities", async () => {
+      const csvBuffer = createCsvBuffer([
+        CSV_HEADER,
+        [
+          "Root",
+          "",
+          "",
+          "Shared Facility, Unique Facility A",
+          "01/01/2024",
+          "",
+          ""
+        ],
+        ["Child", "", "Root", "Shared Facility, Unique Facility B", "01/01/2024", "", ""]
+      ]);
+
+      const prepared = await service.prepareOrganisationTemplate(
+        csvBuffer,
+        defaultParentOrgInfo
+      );
+
+      const facilityOrgCount = new Map<string, number>();
+      prepared.facilityMap.forEach((facilities) => {
+        facilities.forEach((facility) => {
+          facilityOrgCount.set(
+            facility,
+            (facilityOrgCount.get(facility) || 0) + 1
+          );
+        });
+      });
+
+      expect(facilityOrgCount.get("Shared Facility")).toBe(2);
+      expect(facilityOrgCount.get("Unique Facility A")).toBe(1);
+      expect(facilityOrgCount.get("Unique Facility B")).toBe(1);
+    });
+  });
+});

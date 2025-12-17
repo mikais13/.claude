@@ -22,7 +22,7 @@ After you've:
 
 Use kebab-case for feature name.
 
-You should also first add an entry to the .git/info/exclude file in order to keep these docs from being commited.
+You should also first add an entry to the project's .git/info/exclude file in order to keep these docs from being commited.
 
 ## Template
 

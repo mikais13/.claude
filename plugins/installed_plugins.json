@@ -1,12 +1,137 @@
 {
-  "version": 1,
+  "version": 2,
   "plugins": {
-    "ast-grep@ast-grep-marketplace": {
-      "version": "1.0.0",
-      "installedAt": "2025-12-17T20:09:36.693Z",
-      "lastUpdated": "2025-12-17T20:09:36.693Z",
-      "installPath": "/home/mikaisomerville/.claude/plugins/cache/ast-grep-marketplace/ast-grep/1.0.0",
-      "isLocal": true
-    }
+    "ast-grep@ast-grep-marketplace": [
+      {
+        "scope": "project",
+        "projectPath": "/home/mikaisomerville",
+        "installPath": "/home/mikaisomerville/.claude/plugins/cache/ast-grep-marketplace/ast-grep/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-17T20:03:39.935Z",
+        "lastUpdated": "2025-12-17T20:09:29.019Z"
+      },
+      {
+        "scope": "user",
+        "installPath": "/home/mikaisomerville/.claude/plugins/cache/ast-grep-marketplace/ast-grep/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-17T20:09:36.693Z",
+        "lastUpdated": "2025-12-17T20:09:36.693Z"
+      }
+    ],
+    "dev-browser@dev-browser-marketplace": [
+      {
+        "scope": "project",
+        "projectPath": "/home/mikaisomerville",
+        "installPath": "/home/mikaisomerville/.claude/plugins/cache/dev-browser-marketplace/dev-browser/unknown",
+        "version": "unknown",
+        "installedAt": "2025-12-17T20:04:06.945Z",
+        "lastUpdated": "2025-12-17T20:09:29.019Z"
+      }
+    ],
+    "hookify@claude-code-plugins": [
+      {
+        "scope": "project",
+        "projectPath": "/home/mikaisomerville",
+        "installPath": "/home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/hookify/0.1.0",
+        "version": "0.1.0",
+        "installedAt": "2025-12-17T20:09:29.019Z",
+        "lastUpdated": "2025-12-17T20:09:29.019Z",
+        "gitCommitSha": "4392352687b2c86d09937daba71ca278f80a9089"
+      }
+    ],
+    "pr-review-toolkit@claude-code-plugins": [
+      {
+        "scope": "project",
+        "projectPath": "/home/mikaisomerville",
+        "installPath": "/home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/pr-review-toolkit/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-17T20:09:29.019Z",
+        "lastUpdated": "2025-12-17T20:09:29.019Z",
+        "gitCommitSha": "4392352687b2c86d09937daba71ca278f80a9089"
+      }
+    ],
+    "commit-commands@claude-code-plugins": [
+      {
+        "scope": "project",
+        "projectPath": "/home/mikaisomerville",
+        "installPath": "/home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/commit-commands/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-17T20:09:29.019Z",
+        "lastUpdated": "2025-12-17T20:09:29.019Z",
+        "gitCommitSha": "4392352687b2c86d09937daba71ca278f80a9089"
+      }
+    ],
+    "feature-dev@claude-code-plugins": [
+      {
+        "scope": "project",
+        "projectPath": "/home/mikaisomerville",
+        "installPath": "/home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/feature-dev/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-17T20:09:29.019Z",
+        "lastUpdated": "2025-12-17T20:09:29.019Z",
+        "gitCommitSha": "4392352687b2c86d09937daba71ca278f80a9089"
+      }
+    ],
+    "frontend-design@claude-code-plugins": [
+      {
+        "scope": "project",
+        "projectPath": "/home/mikaisomerville",
+        "installPath": "/home/mikaisomerville/.claude/plugins/cache/claude-code-plugins/frontend-design/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-17T20:09:29.019Z",
+        "lastUpdated": "2025-12-17T20:09:29.019Z",
+        "gitCommitSha": "4392352687b2c86d09937daba71ca278f80a9089"
+      }
+    ],
+    "frontend-design@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/frontend-design/261ce4fba4f2",
+        "version": "261ce4fba4f2",
+        "installedAt": "2026-02-18T06:49:55.968Z",
+        "lastUpdated": "2026-02-18T06:49:55.968Z",
+        "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
+      }
+    ],
+    "pr-review-toolkit@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/pr-review-toolkit/261ce4fba4f2",
+        "version": "261ce4fba4f2",
+        "installedAt": "2026-02-18T06:50:05.193Z",
+        "lastUpdated": "2026-02-18T06:50:05.193Z",
+        "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
+      }
+    ],
+    "code-review@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/code-review/261ce4fba4f2",
+        "version": "261ce4fba4f2",
+        "installedAt": "2026-02-18T06:50:17.093Z",
+        "lastUpdated": "2026-02-18T06:50:17.093Z",
+        "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
+      }
+    ],
+    "code-simplifier@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/code-simplifier/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-02-18T06:50:23.548Z",
+        "lastUpdated": "2026-02-18T06:50:23.548Z",
+        "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
+      }
+    ],
+    "ralph-loop@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/ralph-loop/261ce4fba4f2",
+        "version": "261ce4fba4f2",
+        "installedAt": "2026-02-18T06:50:29.422Z",
+        "lastUpdated": "2026-02-18T06:50:29.422Z",
+        "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
+      }
+    ]
   }
 }

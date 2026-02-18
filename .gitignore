@@ -1,2 +1,23 @@
-*/todo/*
-*/plans/*
+# Ignore everything by default
+*
+
+# Allow config files
+!CLAUDE.md
+!settings.json
+!.gitignore
+!keybindings.json
+
+# Allow config directories
+!commands/
+!commands/**
+!rules/
+!rules/**
+!agents/
+!agents/**
+!skills/
+!skills/**
+
+# Allow plugin manifests (not cache)
+!plugins/
+!plugins/installed_plugins.json
+!plugins/known_marketplaces.json

@@ -5,7 +5,7 @@
       "repo": "anthropics/claude-code"
     },
     "installLocation": "/home/mikaisomerville/.claude/plugins/marketplaces/claude-code-plugins",
-    "lastUpdated": "2026-02-18T06:49:34.661Z"
+    "lastUpdated": "2026-02-18T07:00:49.682Z"
   },
   "ast-grep-marketplace": {
     "source": {
@@ -13,7 +13,7 @@
       "repo": "ast-grep/claude-skill"
     },
     "installLocation": "/home/mikaisomerville/.claude/plugins/marketplaces/ast-grep-marketplace",
-    "lastUpdated": "2026-02-18T06:49:40.368Z"
+    "lastUpdated": "2026-02-18T07:00:55.412Z"
   },
   "dev-browser-marketplace": {
     "source": {
@@ -21,7 +21,7 @@
       "repo": "sawyerhood/dev-browser"
     },
     "installLocation": "/home/mikaisomerville/.claude/plugins/marketplaces/dev-browser-marketplace",
-    "lastUpdated": "2026-02-18T06:49:46.482Z"
+    "lastUpdated": "2026-02-18T07:01:01.724Z"
   },
   "claude-plugins-official": {
     "source": {
@@ -29,6 +29,6 @@
       "repo": "anthropics/claude-plugins-official"
     },
     "installLocation": "/Users/mikaisomerville/.claude/plugins/marketplaces/claude-plugins-official",
-    "lastUpdated": "2026-02-18T06:48:48.407Z"
+    "lastUpdated": "2026-02-18T06:56:36.926Z"
   }
 }

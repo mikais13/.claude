@@ -86,30 +86,30 @@
     "frontend-design@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/frontend-design/261ce4fba4f2",
-        "version": "261ce4fba4f2",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/frontend-design/8deab8460a9d",
+        "version": "8deab8460a9d",
         "installedAt": "2026-02-18T06:49:55.968Z",
-        "lastUpdated": "2026-02-18T06:49:55.968Z",
+        "lastUpdated": "2026-02-19T05:44:55.571Z",
         "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
       }
     ],
     "pr-review-toolkit@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/pr-review-toolkit/261ce4fba4f2",
-        "version": "261ce4fba4f2",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/pr-review-toolkit/8deab8460a9d",
+        "version": "8deab8460a9d",
         "installedAt": "2026-02-18T06:50:05.193Z",
-        "lastUpdated": "2026-02-18T06:50:05.193Z",
+        "lastUpdated": "2026-02-19T05:44:55.570Z",
         "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
       }
     ],
     "code-review@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/code-review/261ce4fba4f2",
-        "version": "261ce4fba4f2",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/code-review/8deab8460a9d",
+        "version": "8deab8460a9d",
         "installedAt": "2026-02-18T06:50:17.093Z",
-        "lastUpdated": "2026-02-18T06:50:17.093Z",
+        "lastUpdated": "2026-02-19T05:44:55.572Z",
         "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
       }
     ],
@@ -126,10 +126,10 @@
     "ralph-loop@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/ralph-loop/261ce4fba4f2",
-        "version": "261ce4fba4f2",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/ralph-loop/8deab8460a9d",
+        "version": "8deab8460a9d",
         "installedAt": "2026-02-18T06:50:29.422Z",
-        "lastUpdated": "2026-02-18T06:50:29.422Z",
+        "lastUpdated": "2026-02-19T05:44:55.567Z",
         "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
       }
     ]

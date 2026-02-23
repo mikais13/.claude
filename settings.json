@@ -17,6 +17,11 @@
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
   "permissions": {
+    "deny": [
+      "Read(**/.env*)",
+      "Edit(**/.env*)",
+      "Write(**/.env*)"
+    ],
     "allow": [
       "Bash(ls:*)",
       "Bash(cat:*)",

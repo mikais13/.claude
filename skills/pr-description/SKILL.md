@@ -2,7 +2,19 @@
 
 This skill enables writing pull request descriptions that match Mikai Somerville's voice, tone, and style. Use this when creating PRs in the generatezero/footprint repository or similar codebases.
 
-## Structure Template
+## Template Detection (Do This First)
+
+Before writing the PR description, check the repository for a PR template:
+
+1. Do a case-insensitive search for any file whose name contains "pull" and "template" (with underscores or dashes, e.g. `pull_request_template.md`, `pull-request-template.md`). Use Glob with patterns like `**/*pull*template*` or run `find . -iname "*pull*template*"`. Common locations include `.github/`, `docs/`, and the repo root, but don't limit the search to those paths.
+
+2. **Template found** → Copy the template content verbatim as your starting point. Then fill in each section in-place — replacing placeholder text and instructions with real content written in Mikai's voice — while keeping all headings, checkboxes, labels, and blank structural lines exactly as they appear in the template. The output must be a character-for-character match to the template's skeleton, just with the placeholders replaced.
+
+   **Checkbox preservation is critical.** Unchecked boxes must appear as `- [ ]` and checked boxes as `- [x]`. Never collapse, omit, or reformat them. When outputting the final description, always wrap it in a fenced code block (` ```markdown `) so the raw markdown is visible and copy-pasteable without the renderer eating checkbox syntax.
+
+3. **No template found** → Use the default structure in "## Structure Template (Fallback — No Template Found)" below.
+
+## Structure Template (Fallback — No Template Found)
 
 ```
 ### Description

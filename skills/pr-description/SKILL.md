@@ -7,7 +7,29 @@ description: Writing pull request descriptions in Mikai Somerville's style. Use 
 
 This skill enables writing pull request descriptions that match Mikai Somerville's voice, tone, and style. Use this when creating PRs in the generatezero/footprint repository or similar codebases.
 
-## Template Detection (Do This First)
+## Gathering the Diff (Do This First)
+
+Before writing anything, determine the base branch and get the diff:
+
+1. Find the base branch — do NOT assume `main`:
+   ```bash
+   git log --oneline --decorate HEAD | head -20   # look for the branch point
+   # or
+   git show-branch 2>/dev/null | grep '\*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -1
+   # or simply check if a remote tracking branch is set:
+   git rev-parse --abbrev-ref HEAD@{upstream} 2>/dev/null
+   ```
+   Common bases: `main`, `develop`, `staging`, or a feature branch. Use whichever branch this branch diverged from.
+
+2. Get the diff against that base:
+   ```bash
+   git diff <base-branch>...HEAD          # file-level diff
+   git log <base-branch>...HEAD --oneline # commit list
+   ```
+
+3. Use this diff — not uncommitted working tree changes — as the source of truth for the PR description.
+
+## Template Detection
 
 Before writing the PR description, check the repository for a PR template:
 

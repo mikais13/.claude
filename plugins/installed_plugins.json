@@ -132,6 +132,16 @@
         "lastUpdated": "2026-03-05T07:25:38.963Z",
         "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
       }
+    ],
+    "prompt-improver@severity1-marketplace": [
+      {
+        "scope": "user",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/severity1-marketplace/prompt-improver/0.5.1",
+        "version": "0.5.1",
+        "installedAt": "2026-03-08T09:01:54.571Z",
+        "lastUpdated": "2026-03-08T09:01:54.571Z",
+        "gitCommitSha": "51bcdebfabffbd03ed35dfda629246d23ea60067"
+      }
     ]
   }
 }

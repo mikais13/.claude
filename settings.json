@@ -78,10 +78,9 @@
     "pr-review-toolkit@claude-plugins-official": true,
     "code-review@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
-    "ralph-loop@claude-plugins-official": true
+    "ralph-loop@claude-plugins-official": true,
+    "prompt-improver@severity1-marketplace": true
   },
-  "alwaysThinkingEnabled": true,
-  "skipDangerousModePermissionPrompt": true,
   "extraKnownMarketplaces": {
     "severity1-marketplace": {
       "source": {
@@ -89,5 +88,7 @@
         "repo": "severity1/severity1-marketplace"
       }
     }
-  }
+  },
+  "alwaysThinkingEnabled": true,
+  "skipDangerousModePermissionPrompt": true
 }

@@ -152,6 +152,16 @@
         "lastUpdated": "2026-03-20T23:05:01.438Z",
         "gitCommitSha": "da61886c07a4773f647b6b277e4efdfb436728cc"
       }
+    ],
+    "plannotator@plannotator": [
+      {
+        "scope": "user",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/plannotator/plannotator/0.15.0",
+        "version": "0.15.0",
+        "installedAt": "2026-03-25T01:30:58.550Z",
+        "lastUpdated": "2026-03-25T01:30:58.550Z",
+        "gitCommitSha": "5e369606984cd7bf73fd3b3a3a4ee4903a0bd16c"
+      }
     ]
   }
 }

@@ -16,6 +16,8 @@
 !agents/**
 !skills/
 !skills/**
+!hooks/
+!hooks/**
 
 # Allow plugin manifest (not cache files)
 !plugins/

@@ -41,27 +41,38 @@
     ]
   },
   "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"/Users/mikaisomerville/.claude/hooks/gsd-check-update.js\""
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"/Users/mikaisomerville/.claude/hooks/gsd-context-monitor.js\""
-          }
-        ]
-      }
-    ]
-  },
+			"SessionStart": [
+				{
+					"hooks": [
+						{
+							"type": "command",
+							"command": "node \"/Users/mikaisomerville/.claude/hooks/gsd-check-update.js\""
+						}
+					]
+				}
+			],
+			"PostToolUse": [
+				{
+					"hooks": [
+						{
+							"type": "command",
+							"command": "node \"/Users/mikaisomerville/.claude/hooks/gsd-context-monitor.js\""
+						}
+					]
+				}
+			],
+			"PermissionRequest": [
+				{
+					"matcher": "ExitPlanMode",
+					"hooks": [
+						{
+							"type": "command",
+							"command": "plannotator",
+							"timeout": 345600
+						}
+					]
+				}
+			]		},
   "statusLine": {
     "type": "command",
     "command": "node \"/Users/mikaisomerville/.claude/hooks/gsd-statusline.js\""

@@ -22,3 +22,8 @@
 # Allow plugin manifest (not cache files)
 !plugins/
 !plugins/installed_plugins.json
+
+# Allow linting config/ignore files
+!biome.json
+!eslintignore
+!prettierignore

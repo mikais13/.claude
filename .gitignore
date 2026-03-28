@@ -23,7 +23,9 @@
 !plugins/
 !plugins/installed_plugins.json
 
-# Allow linting config/ignore files
+# Allow linting and IDE config/ignore files
 !biome.json
 !eslintignore
 !prettierignore
+!.vscode/
+!.vscode/**

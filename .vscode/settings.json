@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {},
+  "eslint.enable": false,
+  "biome.enabled": false,
+  "prettier.enable": false
+}

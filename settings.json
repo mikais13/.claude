@@ -81,7 +81,8 @@
     "ralph-loop@claude-plugins-official": true,
     "prompt-improver@severity1-marketplace": true,
     "discord@claude-plugins-official": true,
-    "plannotator@plannotator": true
+    "plannotator@plannotator": true,
+    "typescript-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "severity1-marketplace": {

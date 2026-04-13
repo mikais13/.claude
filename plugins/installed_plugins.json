@@ -162,6 +162,16 @@
         "lastUpdated": "2026-03-25T01:30:58.550Z",
         "gitCommitSha": "5e369606984cd7bf73fd3b3a3a4ee4903a0bd16c"
       }
+    ],
+    "typescript-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/typescript-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-04-13T10:40:24.190Z",
+        "lastUpdated": "2026-04-13T10:40:24.190Z",
+        "gitCommitSha": "05a5f60a19f170028ee23e2e40462f02801b1522"
+      }
     ]
   }
 }

@@ -82,7 +82,8 @@
     "prompt-improver@severity1-marketplace": true,
     "discord@claude-plugins-official": true,
     "plannotator@plannotator": true,
-    "typescript-lsp@claude-plugins-official": true
+    "typescript-lsp@claude-plugins-official": true,
+    "caveman@caveman": true
   },
   "extraKnownMarketplaces": {
     "severity1-marketplace": {
@@ -96,8 +97,15 @@
         "source": "github",
         "repo": "backnotprop/plannotator"
       }
+    },
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      }
     }
   },
   "alwaysThinkingEnabled": true,
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "tui": "fullscreen"
 }

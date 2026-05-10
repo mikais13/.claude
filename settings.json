@@ -40,28 +40,7 @@
       "Write(**/.env*)"
     ]
   },
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"/Users/mikaisomerville/.claude/hooks/gsd-check-update.js\""
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"/Users/mikaisomerville/.claude/hooks/gsd-context-monitor.js\""
-          }
-        ]
-      }
-    ]
-  },
+  "hooks": {},
   "statusLine": {
     "type": "command",
     "command": "node \"/Users/mikaisomerville/.claude/hooks/statusline.js\""

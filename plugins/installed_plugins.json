@@ -86,30 +86,30 @@
     "frontend-design@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/frontend-design/da61886c07a4",
-        "version": "da61886c07a4",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/frontend-design/8100981ebdc3",
+        "version": "8100981ebdc3",
         "installedAt": "2026-02-18T06:49:55.968Z",
-        "lastUpdated": "2026-03-20T23:04:40.341Z",
+        "lastUpdated": "2026-05-10T02:30:11.626Z",
         "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
       }
     ],
     "pr-review-toolkit@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/pr-review-toolkit/da61886c07a4",
-        "version": "da61886c07a4",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/pr-review-toolkit/8100981ebdc3",
+        "version": "8100981ebdc3",
         "installedAt": "2026-02-18T06:50:05.193Z",
-        "lastUpdated": "2026-03-20T23:04:40.343Z",
+        "lastUpdated": "2026-05-10T02:30:11.627Z",
         "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
       }
     ],
     "code-review@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/code-review/da61886c07a4",
-        "version": "da61886c07a4",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/code-review/8100981ebdc3",
+        "version": "8100981ebdc3",
         "installedAt": "2026-02-18T06:50:17.093Z",
-        "lastUpdated": "2026-03-20T23:04:40.341Z",
+        "lastUpdated": "2026-05-10T02:30:11.628Z",
         "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
       }
     ],
@@ -126,10 +126,10 @@
     "ralph-loop@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/ralph-loop/da61886c07a4",
-        "version": "da61886c07a4",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/ralph-loop/1.0.0",
+        "version": "1.0.0",
         "installedAt": "2026-02-18T06:50:29.422Z",
-        "lastUpdated": "2026-03-20T23:04:40.343Z",
+        "lastUpdated": "2026-03-30T23:02:07.362Z",
         "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
       }
     ],
@@ -146,10 +146,10 @@
     "discord@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/discord/0.0.1",
-        "version": "0.0.1",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/discord/0.0.4",
+        "version": "0.0.4",
         "installedAt": "2026-03-20T23:05:01.438Z",
-        "lastUpdated": "2026-03-20T23:05:01.438Z",
+        "lastUpdated": "2026-03-30T23:02:07.359Z",
         "gitCommitSha": "da61886c07a4773f647b6b277e4efdfb436728cc"
       }
     ],

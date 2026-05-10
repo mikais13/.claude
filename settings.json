@@ -87,5 +87,6 @@
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
-  "tui": "fullscreen"
+  "tui": "fullscreen",
+  "skillListingBudgetFraction": 0.02
 }

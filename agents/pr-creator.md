@@ -13,7 +13,7 @@ description: |
   Use this agent when the user wants to create a PR for their current branch.
   </commentary>
   </example>
-model: inherit
+model: haiku 
 color: green
 ---
 

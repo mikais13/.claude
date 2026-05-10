@@ -64,7 +64,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "node \"/Users/mikaisomerville/.claude/hooks/gsd-statusline.js\""
+    "command": "node \"/Users/mikaisomerville/.claude/hooks/statusline.js\""
   },
   "enabledPlugins": {
     "hookify@claude-code-plugins": true,

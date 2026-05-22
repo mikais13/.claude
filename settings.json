@@ -39,8 +39,10 @@
       "Read(**/.env*)",
       "Edit(**/.env*)",
       "Write(**/.env*)"
-    ]
+    ],
+    "defaultMode": "auto"
   },
+  "model": "sonnet",
   "hooks": {},
   "statusLine": {
     "type": "command",
@@ -81,5 +83,6 @@
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
   "tui": "fullscreen",
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "skipAutoPermissionPrompt": true
 }

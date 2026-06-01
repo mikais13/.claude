@@ -23,7 +23,3 @@ semble find-related src/auth.py 42 ./my-project
 2. Read full files only when returned chunk lacks enough context.
 3. Use `find_related` with a result's `file_path` and `line` to discover related implementations.
 4. Use grep only for exhaustive literal matches or exact string confirmation.
-
-# graphify
-- **graphify** (`~/.claude/skills/graphify/SKILL.md`) - any input to knowledge graph. Trigger: `/graphify`
-When the user types `/graphify`, invoke the Skill tool with `skill: "graphify"` before doing anything else.

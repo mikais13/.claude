@@ -42,8 +42,19 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "sonnet",
-  "hooks": {},
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      }
+    ]
+  },
   "statusLine": {
     "type": "command",
     "command": "node \"/Users/mikaisomerville/.claude/hooks/statusline.js\""

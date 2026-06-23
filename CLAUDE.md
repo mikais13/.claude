@@ -23,3 +23,5 @@ semble find-related src/auth.py 42 ./my-project
 2. Read full files only when returned chunk lacks enough context.
 3. Use `find_related` with a result's `file_path` and `line` to discover related implementations.
 4. Use grep only for exhaustive literal matches or exact string confirmation.
+
+@RTK.md

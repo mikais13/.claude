@@ -29,3 +29,6 @@
 !prettierignore
 !.vscode/
 !.vscode/**
+
+# Allow RTK md file
+!RTK.md

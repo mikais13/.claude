@@ -37,8 +37,7 @@
     ],
     "deny": [
       "Read(**/.env*)",
-      "Edit(**/.env*)",
-      "Write(**/.env*)"
+      "Edit(**/.env*)"
     ],
     "defaultMode": "auto"
   },
@@ -50,6 +49,10 @@
           {
             "type": "command",
             "command": "rtk hook claude"
+          },
+          {
+            "type": "command",
+            "command": "cmd=$(jq -r \".tool_input.command // empty\"); if [ -n \"$cmd\" ] && printf \"%s\" \"$cmd\" | grep -qE \"(^|[^a-zA-Z0-9_])\\.env([^a-zA-Z0-9_]|$)\"; then echo \"{\\\"hookSpecificOutput\\\":{\\\"hookEventName\\\":\\\"PreToolUse\\\",\\\"permissionDecision\\\":\\\"deny\\\",\\\"permissionDecisionReason\\\":\\\"Blocked: command references a .env file\\\"}}\"; fi"
           }
         ]
       }

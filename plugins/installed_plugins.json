@@ -86,21 +86,21 @@
     "frontend-design@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/frontend-design/8d095c4869df",
-        "version": "8d095c4869df",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/frontend-design/df2b2f2dbabe",
+        "version": "df2b2f2dbabe",
         "installedAt": "2026-02-18T06:49:55.968Z",
-        "lastUpdated": "2026-05-10T22:07:58.468Z",
-        "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
+        "lastUpdated": "2026-06-23T10:42:59.730Z",
+        "gitCommitSha": "df2b2f2dbabe45fcb4e4139e9ef50b48a8ebd178"
       }
     ],
     "pr-review-toolkit@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/pr-review-toolkit/8d095c4869df",
-        "version": "8d095c4869df",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/pr-review-toolkit/df2b2f2dbabe",
+        "version": "df2b2f2dbabe",
         "installedAt": "2026-02-18T06:50:05.193Z",
-        "lastUpdated": "2026-05-10T22:07:58.468Z",
-        "gitCommitSha": "261ce4fba4f2c314c490302158909a32e5889c88"
+        "lastUpdated": "2026-06-23T10:42:59.730Z",
+        "gitCommitSha": "df2b2f2dbabe45fcb4e4139e9ef50b48a8ebd178"
       }
     ],
     "code-simplifier@claude-plugins-official": [
@@ -171,6 +171,16 @@
         "installedAt": "2026-04-15T08:13:19.990Z",
         "lastUpdated": "2026-04-15T08:13:19.990Z",
         "gitCommitSha": "63e797cd753b301374947a5ed975c21775d962b9"
+      }
+    ],
+    "code-review@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/code-review/df2b2f2dbabe",
+        "version": "df2b2f2dbabe",
+        "installedAt": "2026-05-11T07:41:31.297Z",
+        "lastUpdated": "2026-06-23T10:42:59.729Z",
+        "gitCommitSha": "df2b2f2dbabe45fcb4e4139e9ef50b48a8ebd178"
       }
     ]
   }

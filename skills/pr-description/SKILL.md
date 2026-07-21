@@ -48,13 +48,13 @@ Before writing the PR description, check the repository for a PR template. GitHu
 
 1. **Check GitHub's standard locations, in order:**
    - `.github/PULL_REQUEST_TEMPLATE/` — a directory of multiple templates (e.g. `feature.md`, `bugfix.md`). If present, list its contents. If more than one file exists, ask the user which to use (or pick the one matching the change type — e.g. a bug fix branch → `bugfix.md`) rather than guessing silently.
-   - `.github/PULL_REQUEST_TEMPLATE.md` or `.github/pull_request_template.md`
+   - `.github/PULL_REQUEST_TEMPLATE.md`, `.github/pull_request_template.md`, or `.github/pull-request-template.md`
    - `docs/PULL_REQUEST_TEMPLATE.md` / `docs/pull_request_template.md`
    - Repo root: `PULL_REQUEST_TEMPLATE.md` / `pull_request_template.md`
 
    ```bash
    ls .github/PULL_REQUEST_TEMPLATE/ 2>/dev/null
-   find .github docs . -maxdepth 1 -iname "pull_request_template.md" 2>/dev/null
+   find .github docs . -maxdepth 1 -iname "pull*request*template.md" 2>/dev/null
    ```
 
 2. **If nothing turns up above, broaden the search** — don't stop at exact-name matches. Some repos use non-standard names or nest templates deeper (e.g. `.github/ISSUE_TEMPLATE/../PULL_REQUEST_TEMPLATE.md`, `.gitlab/merge_request_templates/`, a template referenced from `CONTRIBUTING.md`). Run a repo-wide case-insensitive glob and grep:

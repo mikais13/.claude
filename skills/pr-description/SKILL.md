@@ -31,15 +31,30 @@ Before writing anything, determine the base branch and get the diff:
 
 ## Template Detection
 
-Before writing the PR description, check the repository for a PR template:
+Before writing the PR description, check the repository for a PR template. GitHub recognizes templates in specific spots — check those directly instead of a single filename grep, since a broad-but-shallow search misses multi-template setups and a narrow filename match misses valid templates with other names.
 
-1. Do a case-insensitive search for any file whose name contains "pull" and "template" (with underscores or dashes, e.g. `pull_request_template.md`, `pull-request-template.md`). Use Glob with patterns like `**/*pull*template*` or run `find . -iname "*pull*template*"`. Common locations include `.github/`, `docs/`, and the repo root, but don't limit the search to those paths.
+1. **Check GitHub's standard locations, in order:**
+   - `.github/PULL_REQUEST_TEMPLATE/` — a directory of multiple templates (e.g. `feature.md`, `bugfix.md`). If present, list its contents. If more than one file exists, ask the user which to use (or pick the one matching the change type — e.g. a bug fix branch → `bugfix.md`) rather than guessing silently.
+   - `.github/PULL_REQUEST_TEMPLATE.md` or `.github/pull_request_template.md`
+   - `docs/PULL_REQUEST_TEMPLATE.md` / `docs/pull_request_template.md`
+   - Repo root: `PULL_REQUEST_TEMPLATE.md` / `pull_request_template.md`
 
-2. **Template found** → Copy the template content verbatim as your starting point. Then fill in each section in-place — replacing placeholder text and instructions with real content written in Mikai's voice — while keeping all headings, checkboxes, labels, and blank structural lines exactly as they appear in the template. The output must be a character-for-character match to the template's skeleton, just with the placeholders replaced.
+   ```bash
+   ls .github/PULL_REQUEST_TEMPLATE/ 2>/dev/null
+   find .github docs . -maxdepth 1 -iname "pull_request_template.md" 2>/dev/null
+   ```
+
+2. **If nothing turns up above, broaden the search** — don't stop at exact-name matches. Some repos use non-standard names or nest templates deeper (e.g. `.github/ISSUE_TEMPLATE/../PULL_REQUEST_TEMPLATE.md`, `.gitlab/merge_request_templates/`, a template referenced from `CONTRIBUTING.md`). Run a repo-wide case-insensitive glob and grep:
+   ```bash
+   find . -iname "*pull*template*" -o -iname "*pr*template*" -o -iname "*merge*request*template*" 2>/dev/null | grep -v node_modules
+   ```
+   Also check `CONTRIBUTING.md` and any `.github/*.md` for a mention of a PR checklist or linked template file.
+
+3. **Template found** → Copy the template content verbatim as your starting point. Then fill in each section in-place — replacing placeholder text and instructions with real content written in Mikai's voice — while keeping all headings, checkboxes, labels, and blank structural lines exactly as they appear in the template. The output must be a character-for-character match to the template's skeleton, just with the placeholders replaced.
 
    **Checkbox preservation is critical.** Unchecked boxes must appear as `- [ ]` and checked boxes as `- [x]`. Never collapse, omit, or reformat them. When outputting the final description, always wrap it in a fenced code block (` ```markdown `) so the raw markdown is visible and copy-pasteable without the renderer eating checkbox syntax.
 
-3. **No template found** → Use the default structure in "## Structure Template (Fallback — No Template Found)" below.
+4. **No template found anywhere** → Use the default structure in "## Structure Template (Fallback — No Template Found)" below.
 
 ## Structure Template (Fallback — No Template Found)
 

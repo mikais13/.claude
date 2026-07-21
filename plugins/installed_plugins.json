@@ -86,21 +86,21 @@
     "frontend-design@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/frontend-design/f7330991537e",
-        "version": "f7330991537e",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/frontend-design/bf658a57c372",
+        "version": "bf658a57c372",
         "installedAt": "2026-02-18T06:49:55.968Z",
-        "lastUpdated": "2026-07-17T09:46:45.930Z",
-        "gitCommitSha": "f7330991537ea5a69c933b6b902714d62ab9b953"
+        "lastUpdated": "2026-07-21T21:28:46.032Z",
+        "gitCommitSha": "bf658a57c372f2cd27f4180d54ab28da88a247f7"
       }
     ],
     "pr-review-toolkit@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/pr-review-toolkit/f7330991537e",
-        "version": "f7330991537e",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/pr-review-toolkit/bf658a57c372",
+        "version": "bf658a57c372",
         "installedAt": "2026-02-18T06:50:05.193Z",
-        "lastUpdated": "2026-07-17T09:46:45.931Z",
-        "gitCommitSha": "f7330991537ea5a69c933b6b902714d62ab9b953"
+        "lastUpdated": "2026-07-21T21:28:46.032Z",
+        "gitCommitSha": "bf658a57c372f2cd27f4180d54ab28da88a247f7"
       }
     ],
     "code-simplifier@claude-plugins-official": [
@@ -176,11 +176,11 @@
     "code-review@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/code-review/f7330991537e",
-        "version": "f7330991537e",
+        "installPath": "/Users/mikaisomerville/.claude/plugins/cache/claude-plugins-official/code-review/bf658a57c372",
+        "version": "bf658a57c372",
         "installedAt": "2026-05-11T07:41:31.297Z",
-        "lastUpdated": "2026-07-17T09:46:45.931Z",
-        "gitCommitSha": "f7330991537ea5a69c933b6b902714d62ab9b953"
+        "lastUpdated": "2026-07-21T21:28:46.032Z",
+        "gitCommitSha": "bf658a57c372f2cd27f4180d54ab28da88a247f7"
       }
     ]
   }

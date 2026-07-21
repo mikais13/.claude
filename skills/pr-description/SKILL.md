@@ -9,25 +9,38 @@ This skill enables writing pull request descriptions that match Mikai Somerville
 
 ## Gathering the Diff (Do This First)
 
-Before writing anything, determine the base branch and get the diff:
+Before writing anything, determine the base branch and get the diff.
 
-1. Find the base branch — do NOT assume `main`:
+**If the caller (e.g. the pr-creator agent, or the user) already tells you which base branch to use** — use it as-is and skip detection entirely. This matters: a PR description must compare against the exact same point the PR itself is being opened against, so never re-detect a base branch when one has already been resolved elsewhere in the workflow.
+
+Otherwise, detect it yourself, in this order:
+
+1. Repo's default branch (most reliable — matches what `gh pr create` defaults to):
    ```bash
-   git log --oneline --decorate HEAD | head -20   # look for the branch point
-   # or
-   git show-branch 2>/dev/null | grep '\*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -1
-   # or simply check if a remote tracking branch is set:
-   git rev-parse --abbrev-ref HEAD@{upstream} 2>/dev/null
+   git remote show origin 2>/dev/null | grep "HEAD branch" | sed 's/.*: //'
    ```
-   Common bases: `main`, `develop`, `staging`, or a feature branch. Use whichever branch this branch diverged from.
-
-2. Get the diff against that base:
+2. If that fails (no remote, detached, etc.), fall back to the tracked upstream — but only if it doesn't just resolve to this same branch's own push target:
    ```bash
-   git diff <base-branch>...HEAD          # file-level diff
-   git log <base-branch>...HEAD --oneline # commit list
+   git rev-parse --abbrev-ref --symbolic-full-name @{upstream} 2>/dev/null
    ```
+3. If still unresolved, compute the merge-base against each common candidate (`main`, `master`, `develop`, `staging`) and pick the branch with the most recent (closest) merge-base to `HEAD`:
+   ```bash
+   for b in main master develop staging; do
+     git show-ref --verify --quiet "refs/remotes/origin/$b" && \
+       echo "$b: $(git merge-base HEAD "origin/$b")"
+   done
+   ```
+4. If it's still ambiguous, ask the user which branch this diverged from — don't guess silently.
 
-3. Use this diff — not uncommitted working tree changes — as the source of truth for the PR description.
+Once resolved, use that exact branch for every diff/log command below — don't mix branches mid-workflow.
+
+Get the diff against the resolved base:
+```bash
+git diff <base-branch>...HEAD          # file-level diff
+git log <base-branch>...HEAD --oneline # commit list
+```
+
+Use this diff — not uncommitted working tree changes — as the source of truth for the PR description.
 
 ## Template Detection
 

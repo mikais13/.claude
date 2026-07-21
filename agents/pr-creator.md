@@ -43,14 +43,9 @@ Use the AskUserQuestion tool to ask BOTH questions in a single call:
    - "Generate from changes" (Recommended) - You'll create a semantic commit style title
    - "I'll provide it" - User will type their own title
 
-### Step 3: Read the Style Guide
+### Step 3: Load the PR Description Skill
 
-Read the PR description style guide:
-```
-/home/mikaisomerville/.claude/skills/pr-description/SKILL.md
-```
-
-This contains the exact formatting rules for PR descriptions.
+Invoke the `pr-description` skill (Skill tool, `skill: "pr-description"`) before writing any description text. This loads Mikai's exact style rules and formatting. Do not write the description from memory or skip this step — always invoke the skill fresh, even if you've written PR descriptions before in this session.
 
 ### Step 4: Analyze Changes
 
@@ -72,7 +67,7 @@ Run these commands to understand what changed:
   - `refactor(ui): simplify form validation logic`
   - `chore: update dependencies`
 
-**Description** - Following the SKILL.md style guide exactly:
+**Description** - Following the pr-description skill's style guide exactly:
 - Opening: "This PR {verb}s {what it does}."
 - Bullet points starting with lowercase verbs
 - All code references in backticks
@@ -100,7 +95,7 @@ Output the PR URL so the user can view it.
 
 ## Important Rules
 
-- ALWAYS read the SKILL.md file before writing the description
+- ALWAYS invoke the pr-description skill before writing the description — never skip it, never write from memory
 - NEVER skip the user questions - they must choose base branch and title preference
 - ALWAYS use backticks for code references (files, functions, components, routes)
 - ALWAYS include a "How to test this change" section

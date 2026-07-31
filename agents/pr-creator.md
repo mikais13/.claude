@@ -95,11 +95,13 @@ git push -u origin HEAD
 
 Create the PR using heredoc for proper formatting:
 ```bash
-gh pr create --base <base-branch> --title "<title>" --body "$(cat <<'EOF'
+gh pr create --draft --base <base-branch> --title "<title>" --body "$(cat <<'EOF'
 <description content>
 EOF
 )"
 ```
+
+PRs are created as drafts by default. Skip `--draft` only if user explicitly asks for a ready-for-review PR.
 
 ### Step 7: Return Result
 
@@ -114,3 +116,4 @@ Output the PR URL so the user can view it.
 - ALWAYS include a "How to test this change" section
 - ALWAYS use semantic commit format for generated titles
 - If there are uncommitted changes, warn the user but proceed with committed changes
+- ALWAYS create PRs as drafts (`--draft`) unless user explicitly says otherwise

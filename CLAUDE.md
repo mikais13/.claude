@@ -1,3 +1,12 @@
+# Writing Guidelines
+
+Write in ASD-STE100 - Simplified Technical English.
+Also, aim to follow Zinsser's four principles of quality writing:
+- Simplicity
+- Brevity
+- Clarity
+- Humanity
+
 # Code Search (Semble)
 
 Semble is available via **both MCP tools and CLI**. Prefer MCP for top-level agent work; use CLI via Bash for sub-agents (they cannot call MCP tools directly).

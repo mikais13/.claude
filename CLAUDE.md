@@ -26,6 +26,10 @@ semble find-related src/auth.py 42 ./my-project
 
 `path` defaults to current directory when omitted. If `semble` not on `$PATH`, use `uvx --from "semble[mcp]" semble`.
 
+## Pushing to Git
+
+When pushing to git, prefer to use the `-u <remote> <branch>` flag to set the up-stream remote branch.     
+
 ## Workflow
 
 1. Start with `search` (MCP or CLI) to find relevant chunks.
